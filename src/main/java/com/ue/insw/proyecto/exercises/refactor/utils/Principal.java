@@ -1,6 +1,6 @@
 package com.ue.insw.proyecto.exercises.refactor.utils;
 
-import utils2.Calculate1;
+import com.ue.insw.proyecto.exercises.refactor.utils2.Calculate1;
 
 public class Principal {
 

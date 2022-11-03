@@ -1,8 +1,8 @@
 package com.ue.insw.proyecto.exercises.refactor.utils2;
 
-import utils3.Clase1;
-import utils3.Clase2;
-import utils3.Clase3;
+import com.ue.insw.proyecto.exercises.refactor.utils3.Clase1;
+import com.ue.insw.proyecto.exercises.refactor.utils3.Clase2;
+import com.ue.insw.proyecto.exercises.refactor.utils3.Clase3;
 
 public class Calculate3 {
 

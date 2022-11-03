@@ -1,11 +1,12 @@
 package com.ue.insw.proyecto.exercises.refactor.utils3;
 
-import utils.Print;
+
+import com.ue.insw.proyecto.exercises.refactor.utils.Print;
 
 public class Clase1 {
 	
 	public Clase1() {
-		new Print("hola");	
+		new Print("hola");
 		
 	}
 
