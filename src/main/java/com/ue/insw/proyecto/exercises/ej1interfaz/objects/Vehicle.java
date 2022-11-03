@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.ej1.objects;
+package com.ue.insw.proyecto.exercises.ej1interfaz.objects;
 
 import java.math.BigDecimal;
 

@@ -1,8 +1,8 @@
-package com.ue.insw.proyecto.exercises.ej1;
+package com.ue.insw.proyecto.exercises.ej1interfaz;
 
-import com.ue.insw.proyecto.exercises.ej1.enumerates.Brand;
-import com.ue.insw.proyecto.exercises.ej1.enumerates.Color;
-import com.ue.insw.proyecto.exercises.ej1.objects.Car;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Brand;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Color;
+import com.ue.insw.proyecto.exercises.ej1interfaz.objects.Car;
 
 import java.math.BigDecimal;
 

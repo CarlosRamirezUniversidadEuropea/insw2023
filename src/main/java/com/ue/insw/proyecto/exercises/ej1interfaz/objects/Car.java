@@ -1,15 +1,15 @@
-package com.ue.insw.proyecto.exercises.ej1.objects;
+package com.ue.insw.proyecto.exercises.ej1interfaz.objects;
 
-import com.ue.insw.proyecto.exercises.ej1.enumerates.Brand;
-import com.ue.insw.proyecto.exercises.ej1.enumerates.Color;
-import com.ue.insw.proyecto.exercises.ej1.enumerates.Gasoline;
-import com.ue.insw.proyecto.exercises.ej1.enumerates.Status;
-import com.ue.insw.proyecto.exercises.ej1.interfaces.Cleanable;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Brand;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Color;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status;
+import com.ue.insw.proyecto.exercises.ej1interfaz.interfaces.Cleanable;
 
 import java.math.BigDecimal;
 
-import static com.ue.insw.proyecto.exercises.ej1.enumerates.Status.ON;
-import static com.ue.insw.proyecto.exercises.ej1.enumerates.Status.STOPED;
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.ON;
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPED;
 
 //todo extender de Vehicle
 //todo implementar Cleanable
@@ -93,6 +93,7 @@ public class Car extends Vehicle implements Cleanable {
         return maxSpeed;
     }
 
+    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }

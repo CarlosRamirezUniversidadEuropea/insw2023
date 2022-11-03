@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.ej1.enumerates;
+package com.ue.insw.proyecto.exercises.ej1interfaz.enumerates;
 
 //todo wrong package
 public enum Color {
