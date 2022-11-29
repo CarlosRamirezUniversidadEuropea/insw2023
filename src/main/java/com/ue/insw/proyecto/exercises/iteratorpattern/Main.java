@@ -2,6 +2,7 @@ package com.ue.insw.proyecto.exercises.iteratorpattern;
 
 public class Main
 {
+    //more examples in https://refactoring.guru/design-patterns/iterator/java/example
     public static void main(String[] args)
     {
         Topic[] topics = new Topic[5];
