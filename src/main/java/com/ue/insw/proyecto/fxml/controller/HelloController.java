@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.controller;
+package com.ue.insw.proyecto.fxml.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

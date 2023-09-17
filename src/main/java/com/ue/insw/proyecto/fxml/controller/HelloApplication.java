@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto;
+package com.ue.insw.proyecto.fxml.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
