@@ -78,8 +78,7 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
         writeData();
-        this.primaryStage.getIcons().add(new Image(getClass().
-                getResourceAsStream("icon.png").toString()));
+        this.primaryStage.getIcons().add(new Image("file:icon.png"));
 
         initRootLayout();
 
@@ -98,6 +97,7 @@ public class MainApp extends Application {
             
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
+            scene.getStylesheets().add("DarkTheme.css");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
@@ -126,6 +126,7 @@ public class MainApp extends Application {
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
+            scene.getStylesheets().add("DarkTheme.css");
             dialogStage.setScene(scene);
 
             // Set the person into the controller.
