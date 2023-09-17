@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
 
         //todo fix this
         URL fxmlLocation = HelloApplication.class
-                .getResource("hello-view.fxml");
+                .getResource("/hello-view.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(fxmlLocation);
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Hello!");

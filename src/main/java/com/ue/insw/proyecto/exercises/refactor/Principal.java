@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.refactor.utils;
+package com.ue.insw.proyecto.exercises.refactor;
 
 import com.ue.insw.proyecto.exercises.refactor.utils2.Calculate1;
 

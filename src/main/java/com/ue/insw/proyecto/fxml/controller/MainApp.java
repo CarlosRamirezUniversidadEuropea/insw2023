@@ -10,8 +10,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -55,13 +55,13 @@ public class MainApp extends Application {
         
         //Add employees to list
         JSONArray employeeList = new JSONArray();
-        employeeList.add(employeeDetails);
-        employeeList.add(employeeDetails2);
+        employeeList.put(employeeDetails);
+        employeeList.put(employeeDetails2);
          
         //Write JSON file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("employees.json"))) {
  
-            writer.write(employeeList.toJSONString());
+            writer.write(employeeList.toString());
             writer.close();
            
         } catch (IOException e) {
@@ -78,7 +78,8 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
         writeData();
-        this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
+        this.primaryStage.getIcons().add(new Image(getClass().
+                getResourceAsStream("icon.png").toString()));
 
         initRootLayout();
 
@@ -92,7 +93,7 @@ public class MainApp extends Application {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/application/RootLayout.fxml"));
+            loader.setLocation(MainApp.class.getResource("/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             
             // Show the scene containing the root layout.
@@ -116,7 +117,7 @@ public class MainApp extends Application {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/application/PersonEditDialog.fxml"));
+            loader.setLocation(MainApp.class.getResource("/PersonEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -150,7 +151,7 @@ public class MainApp extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/application/PersonOverview.fxml"));
+            loader.setLocation(MainApp.class.getResource("/PersonOverview.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
