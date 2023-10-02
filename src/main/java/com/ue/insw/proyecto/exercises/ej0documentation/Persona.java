@@ -14,9 +14,9 @@ public class Persona {
     
     /**
      * Metodo constructor parametrizado
-     * @param nombre Nombre del empleado
-     * @param edad Edad del empleado
-     * @param sexo Sexo del empleado en formato H o M
+     * @param nombre Nombre de la persona
+     * @param edad Edad de la persona
+     * @param sexo Sexo de la persona en formato H o M
      */
 	public Persona(String nombre, int edad, char sexo) {
 		this.edad = edad;
