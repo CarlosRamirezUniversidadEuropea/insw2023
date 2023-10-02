@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class Main {
 
     public static void main(String[] args) {
-        Car peugeot = new Car(Brand.PEUGEOT, Color.BLACK, 150, new BigDecimal(12000));
+        Car peugeot = new Car(Brand.PEUGEOT, Color.BLACK, 150,12000d);
         System.out.println(peugeot.getPrice());
         System.out.println(peugeot.getBrand());
         System.out.println(peugeot.getColor());

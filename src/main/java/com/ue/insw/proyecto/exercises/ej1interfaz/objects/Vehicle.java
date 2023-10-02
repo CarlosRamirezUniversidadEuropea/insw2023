@@ -1,17 +1,15 @@
 package com.ue.insw.proyecto.exercises.ej1interfaz.objects;
 
-import java.math.BigDecimal;
-
 public class Vehicle {
 
-    private BigDecimal price;
+    private Double price;
     private int speed;
 
-    public Vehicle(BigDecimal price) {
+    public Vehicle(Double price) {
         this.price = price;
     }
 
-    public BigDecimal getPrice(){
+    public Double getPrice(){
         return price;
     }
 }

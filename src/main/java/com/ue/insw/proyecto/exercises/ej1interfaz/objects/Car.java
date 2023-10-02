@@ -6,10 +6,9 @@ import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline;
 import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status;
 import com.ue.insw.proyecto.exercises.ej1interfaz.interfaces.Cleanable;
 
-import java.math.BigDecimal;
 
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.ON;
-import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPED;
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPPED;
 
 //todo extender de Vehicle
 //todo implementar Cleanable
@@ -21,16 +20,16 @@ public class Car extends Vehicle implements Cleanable {
     private int speed;
     private Status status;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, Double price) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
-        this.status = STOPED;
+        this.status = STOPPED;
     }
 
-    public Car(BigDecimal price) {
+    public Car(Double price) {
         super(price);
     }
 
@@ -42,7 +41,7 @@ public class Car extends Vehicle implements Cleanable {
     //todo
     public void stop() {
         this.speed = 0;
-        this.status = STOPED;
+        this.status = STOPPED;
     }
 
     //todo
