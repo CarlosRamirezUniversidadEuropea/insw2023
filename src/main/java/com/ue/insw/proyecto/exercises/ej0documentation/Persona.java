@@ -76,7 +76,16 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
-	
-    
+	/**
+	 * Metodo que devuelve todos los atributos de la persona
+	 * @return todos los atributos de la persona
+	 */
+	public String toString() {
+		return "Persona [Nombre=" + nombre +
+				", Edad=" + edad +
+				", sexo=" + sexo
+				+ "]";
+	}
+
+
 }

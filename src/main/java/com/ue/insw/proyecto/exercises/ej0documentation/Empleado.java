@@ -86,4 +86,14 @@ public class Empleado extends Persona{
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
+    /**
+     * Metodo que devuelve todos los atributos del Empleado
+     * @return todos los atributos del Empleado
+     */
+    public String toString() {
+        return "Empleado [Numero de empleado=" + numeroEmpleado +
+                ", Departamento=" + departamento +
+                ", Puesto=" + puesto
+                + "]";
+    }
 }
