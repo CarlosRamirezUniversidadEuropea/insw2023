@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.ue.insw.proyecto.exercises.ej0documentation"}];updateSearchResults();
