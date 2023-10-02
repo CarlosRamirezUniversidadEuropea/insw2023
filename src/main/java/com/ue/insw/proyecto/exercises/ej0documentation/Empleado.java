@@ -38,7 +38,7 @@ public class Empleado extends Persona{
         this.departamento = departamento;
         this.puesto = puesto;
     }
-    
+
     /**
      * Metodo para regresar el numero de empelado
      * @return Regresa el numero del empleado
@@ -85,5 +85,14 @@ public class Empleado extends Persona{
      */
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "numeroEmpleado=" + numeroEmpleado +
+                ", departamento='" + departamento + '\'' +
+                ", puesto='" + puesto + '\'' +
+                '}';
     }
 }
