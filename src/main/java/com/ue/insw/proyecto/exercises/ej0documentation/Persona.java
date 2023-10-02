@@ -23,7 +23,15 @@ public class Persona {
 		this.nombre = nombre;
 		this.sexo = sexo;
 	}
-	
+
+	/**
+	 * Metodo para imprimir el objeto persona
+	 * @return
+	 */
+	public String toString() {
+    return "Persona="+"nombre:"+nombre+"edad:"+edad+"sexo"+sexo;
+
+	}
 	 /**
      * Metodo constructor por defecto
      */
