@@ -1,9 +1,8 @@
-package com.ue.insw.proyecto.exercises.json;
+package com.ue.insw.proyecto.exercises.ej7json;
 
 import com.google.gson.Gson;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -11,7 +10,7 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
-        String ruta = "src/main/java/com/ue/insw/proyecto/exercises/json/names.json";
+        String ruta = "src/main/java/com/ue/insw/proyecto/exercises/json/person.json";
         // Create a File object for the JSON file
         File file = new File(ruta);
         Gson gson = new Gson();

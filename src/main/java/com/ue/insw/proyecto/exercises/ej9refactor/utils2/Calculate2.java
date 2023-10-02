@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.refactor.utils2;
+package com.ue.insw.proyecto.exercises.ej9refactor.utils2;
 
 public class Calculate2 {
 	

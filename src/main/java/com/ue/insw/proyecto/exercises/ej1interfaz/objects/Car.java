@@ -34,18 +34,18 @@ public class Car extends Vehicle implements Cleanable {
         super(price);
     }
 
-    //todo javadoc
+    //todo
     public void on() {
         this.status = ON;
     }
 
-    //todo javadoc
+    //todo
     public void stop() {
         this.speed = 0;
         this.status = STOPED;
     }
 
-    //todo javadoc
+    //todo
     public void setSpeed(int speed) {
         this.speed = speed;
     }

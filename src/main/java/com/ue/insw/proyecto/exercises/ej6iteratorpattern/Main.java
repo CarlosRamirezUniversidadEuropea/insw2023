@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.iteratorpattern;
+package com.ue.insw.proyecto.exercises.ej6iteratorpattern;
 
 public class Main
 {

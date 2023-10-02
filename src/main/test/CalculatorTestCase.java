@@ -2,7 +2,7 @@
 //todo importar Junit en maven y ejecutar test
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.ue.insw.proyecto.exercises.pruebas.Calculator;
+import com.ue.insw.proyecto.exercises.ej8pruebas.Calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;

@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.documentation;
+package com.ue.insw.proyecto.exercises.ej0documentation;
 
 public class Main {
 

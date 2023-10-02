@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.refactor.utils;
+package com.ue.insw.proyecto.exercises.ej9refactor.utils;
 
 public class Print {
 	

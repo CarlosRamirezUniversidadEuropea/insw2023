@@ -1,4 +1,4 @@
-package com.ue.insw.proyecto.exercises.pruebas;
+package com.ue.insw.proyecto.exercises.ej8pruebas;
 
 
 /**

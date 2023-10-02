@@ -4,11 +4,11 @@ module com.ue.insw.proyecto {
     requires org.json;
     requires com.google.gson;
 
-    opens com.ue.insw.proyecto.exercises.json to com.google.gson;
+    opens com.ue.insw.proyecto.exercises.ej7json to com.google.gson;
     exports com.ue.insw.proyecto.fxml.controller;
     opens com.ue.insw.proyecto.fxml.controller to javafx.fxml,org.json;
     exports com.ue.insw.proyecto.exercises.ej4;
-    exports com.ue.insw.proyecto.exercises.pruebas;
+    exports com.ue.insw.proyecto.exercises.ej8pruebas;
     exports com.ue.insw.proyecto.exercises.ej3polimorfismo;
     exports com.ue.insw.proyecto.exercises.ej2herencia;
     exports com.ue.insw.proyecto.exercises.ej1interfaz;
