@@ -1,22 +1,22 @@
 package com.ue.insw.proyecto.exercises.ej0documentation;
 
 /**
- * Esta clase contiene los atributos y metodos de una Persona
+ * This class contains the attributes and methods of a Person
  * @author Carlos Ram�rez
  * @version 1.0
  * @see Persona
  */
 public class Persona {
 
-    private int edad;
-    private String nombre;
-    private char sexo;
+    private int edad; // age
+    private String nombre; // name
+    private char sexo; // gender
     
     /**
-     * Metodo constructor parametrizado
-     * @param nombre Nombre del empleado
-     * @param edad Edad del empleado
-     * @param sexo Sexo del empleado en formato H o M
+     * Parameterized constructor method
+     * @param nombre Employee name
+     * @param edad Employee age
+     * @param sexo Employee gender in H or M format
      */
 	public Persona(String nombre, int edad, char sexo) {
 		this.edad = edad;
@@ -25,53 +25,67 @@ public class Persona {
 	}
 	
 	 /**
-     * Metodo constructor por defecto
+     * Default constructor method
      */
 	public Persona() {}
 
+
+     /**
+      * Returns a string representation of the object.
+      * @return a string representation of the object.
+      */
+     @Override
+     public String toString() {
+          return "Persona{" +
+                    "edad=" + edad +
+                    ", nombre='" + nombre + '\'' +
+                    ", sexo=" + sexo +
+                    '}';
+     }
+
     /**
-     * Metodo para regresar la edad de la persona
-     * @return Regresa la edad de la persona
+     * Method to return the age of the person
+     * @return Returns the age of the person
      */
 	public int getEdad() {
 		return edad;
 	}
 
 	/**
-     * Metodo que le asigna la edad a una persona
-     * @param edad, la edad deseada a asignar
+     * Method that assigns the age to a person
+     * @param edad, the desired age to assign
      */
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
 
     /**
-     * Metodo para regresar el nombre de la persona
-     * @return Regresa el nombre de la persona
+     * Method to return the name of the person
+     * @return Returns the name of the person
      */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-     * Metodo que le asigna el nombre a una persona
-     * @param nombre, el nombre deseada a asignar
+     * Method that assigns the name to a person
+     * @param nombre, the desired name to assign
      */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
     /**
-     * Metodo para regresar el sexo de la persona
-     * @return Regresa el sexo de la persona
+     * Method to return the gender of the person
+     * @return Returns the gender of the person
      */
 	public char getSexo() {
 		return sexo;
 	}
 
 	/**
-     * Metodo que le asigna el sexo a una persona
-     * @param sexo, el sexo deseado a asignar
+     * Method that assigns the gender to a person
+     * @param sexo, the desired gender to assign
      */
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
