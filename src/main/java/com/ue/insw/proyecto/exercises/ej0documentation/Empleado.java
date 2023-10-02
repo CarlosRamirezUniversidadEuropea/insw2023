@@ -86,4 +86,16 @@ public class Empleado extends Persona{
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
+
+    /**
+     * toString de Empleado
+     * @return String de datos de Empleado
+     */
+    @Override
+    public String toString() {
+        return "Empleado [numeroEmpleado=" + numeroEmpleado +
+                ", departamento=" + departamento +
+                ", puesto=" + puesto
+                + "]";
+    }
 }

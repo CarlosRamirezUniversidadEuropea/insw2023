@@ -19,8 +19,8 @@ public class Persona {
      * @param sexo Sexo del empleado en formato H o M
      */
 	public Persona(String nombre, int edad, char sexo) {
-		this.edad = edad;
 		this.nombre = nombre;
+		this.edad = edad;
 		this.sexo = sexo;
 	}
 	
@@ -76,7 +76,16 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
-	
-    
+
+	/**
+	 * toString de Persona
+	 * @return String de datos de Persona
+	 */
+	@Override
+	public String toString() {
+		return "Persona [edad=" + edad +
+				", nombre=" + nombre +
+				", sexo=" + sexo
+				+ "]";
+	}
 }
