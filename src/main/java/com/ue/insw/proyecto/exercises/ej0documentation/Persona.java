@@ -76,6 +76,13 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
+
+	public String toString() {
+		return "Persona [Nombre=" + nombre +
+				", edad=" + getEdad() +
+				", sexo=" + getSexo()
+				+ "]";
+	}
     
 	
     
