@@ -23,7 +23,6 @@ public class Persona {
 		this.nombre = nombre;
 		this.sexo = sexo;
 	}
-	
 	 /**
      * Metodo constructor por defecto
      */
@@ -36,7 +35,14 @@ public class Persona {
 	public int getEdad() {
 		return edad;
 	}
-
+	 /** Metodo para imprimir por pantalla el objeto en cuestión creado en el main de tipo persona
+	 * @return Regresa todos los parámetros o variables de una persona (nombre, edad, sexo)
+	 */
+	public String toString(){
+		return "Persona [ nombre = " + nombre +
+				"edad = " + edad +
+				"sexo = " + sexo + "]";
+	}
 	/**
      * Metodo que le asigna la edad a una persona
      * @param edad, la edad deseada a asignar
