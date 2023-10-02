@@ -29,21 +29,7 @@ public class Persona {
      */
 	public Persona() {}
 
-    /**
-     * Metodo para regresar la edad de la persona
-     * @return Regresa la edad de la persona
-     */
-	public int getEdad() {
-		return edad;
-	}
 
-	/**
-     * Metodo que le asigna la edad a una persona
-     * @param edad, la edad deseada a asignar
-     */
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
 
     /**
      * Metodo para regresar el nombre de la persona
@@ -59,6 +45,21 @@ public class Persona {
      */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	/**
+	 * Metodo para regresar la edad de la persona
+	 * @return Regresa la edad de la persona
+	 */
+	public int getEdad() {
+		return edad;
+	}
+
+	/**
+	 * Metodo que le asigna la edad a una persona
+	 * @param edad, la edad deseada a asignar
+	 */
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 
     /**
@@ -76,7 +77,13 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
+    @Override
+	public String toString(){
+		return "Persona [nombre="+ nombre +
+				", edad=" + edad +
+				", sexo=" + sexo
+				+"]";
+	}
 	
     
 }

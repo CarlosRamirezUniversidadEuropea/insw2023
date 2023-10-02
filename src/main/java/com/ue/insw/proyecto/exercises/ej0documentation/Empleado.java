@@ -44,6 +44,7 @@ public class Empleado extends Persona{
      * @return Regresa el numero del empleado
      */
     public int getNumeroEmpleado() {
+
         return numeroEmpleado;
     }
     
@@ -52,6 +53,7 @@ public class Empleado extends Persona{
      * @param numeroEmpleado Numero que se le asignara al empleado
      */
     public void setNumeroEmpleado(int numeroEmpleado) {
+
         this.numeroEmpleado = numeroEmpleado;
     }
     
@@ -60,6 +62,7 @@ public class Empleado extends Persona{
      * @return Regresa el departamento
      */
     public String getDepartamento() {
+
         return departamento;
     }
     
@@ -68,6 +71,7 @@ public class Empleado extends Persona{
      * @param departamento Nombre de departamento
      */
     public void setDepartamento(String departamento) {
+
         this.departamento = departamento;
     }
     
@@ -85,5 +89,12 @@ public class Empleado extends Persona{
      */
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+    @Override
+    public String toString(){
+       return "Empleado [numeroEmpleado="+ numeroEmpleado +
+               ", departamento=" + departamento +
+               ", puesto=" + puesto
+               +"]";
     }
 }
