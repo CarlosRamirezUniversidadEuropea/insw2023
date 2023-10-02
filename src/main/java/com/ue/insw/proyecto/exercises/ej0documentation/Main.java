@@ -1,7 +1,5 @@
 package com.ue.insw.proyecto.exercises.ej0documentation;
 
-import java.net.StandardSocketOptions;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Main {
