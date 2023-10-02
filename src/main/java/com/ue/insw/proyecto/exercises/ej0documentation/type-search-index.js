@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.ue.insw.proyecto.exercises.ej0documentation","l":"Alumno"},{"p":"com.ue.insw.proyecto.exercises.ej0documentation","l":"Empleado"},{"p":"com.ue.insw.proyecto.exercises.ej0documentation","l":"Main"},{"p":"com.ue.insw.proyecto.exercises.ej0documentation","l":"Persona"}];updateSearchResults();
