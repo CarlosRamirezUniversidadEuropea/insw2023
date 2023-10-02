@@ -7,7 +7,12 @@ package com.ue.insw.proyecto.exercises.ej0documentation;
  * @see Persona
  */
 public class Empleado extends Persona{
-    
+    /**
+     * Atributos de Empleado
+     * @param numeroEmpleado numero de empleado del empleado
+     * @param departamento departamento en el que trabaja el empleado
+     * @param puesto puesto que ocupa el empleado dentro de la empresa
+     */
     private int numeroEmpleado;
     private String departamento;
     private String puesto;
@@ -85,5 +90,12 @@ public class Empleado extends Persona{
      */
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    public String toString() {
+        return "Alumno [numeroEmpleado=" + numeroEmpleado +
+                ", puesto" + puesto +
+                ", departamento=" + departamento
+                + "]";
     }
 }

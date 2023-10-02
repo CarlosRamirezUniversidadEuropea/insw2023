@@ -7,7 +7,12 @@ package com.ue.insw.proyecto.exercises.ej0documentation;
  * @see Persona
  */
 public class Persona {
-
+	/**
+	 * Atributos de Persona
+	 * @param edad edad de la persona
+	 * @param nombre nombre de la persona
+	 * @param sexo sexo de la persona
+	 */
     private int edad;
     private String nombre;
     private char sexo;
@@ -76,7 +81,12 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
-	
+
+	public String toString() {
+		return "Alumno [edad" + edad +
+				", sexo" + sexo +
+				", nombre" + nombre
+				+ "]";
+	}
     
 }
