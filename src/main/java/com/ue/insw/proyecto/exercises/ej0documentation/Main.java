@@ -24,8 +24,8 @@ public class Main {
         // 3. Creamos una instancia de Alumno con nombre "Paula", edad 20, sexo femenino ('F'),
         // número de expediente 1234567, lista de asignaturas (asignaturas) y curso 2.
         Alumno paula = new Alumno("Paula", 20, 'F', 1234567, asignaturas, 2);
-        pepe.toString();
-        diego.toString();
-        paula.toString();
+        System.out.println(pepe.toString());
+        System.out.println(diego.toString());
+        System.out.println(paula.toString());
     }
 }
