@@ -11,7 +11,15 @@ public class Empleado extends Persona{
     private int numeroEmpleado;
     private String departamento;
     private String puesto;
-    
+
+    public String toString() {
+        return "Empleado [numeroEmpleado=" + numeroEmpleado +
+                ", departamento=" + departamento +
+                ", Puesto=" + puesto + ", Nombre="+ getNombre() + ", Edad=" + getEdad() + ", Sexo=" + getSexo()
+                + "]";
+    }
+
+
     /**
      * Metodo constructor por defecto
      */

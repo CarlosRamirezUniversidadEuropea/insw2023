@@ -18,6 +18,14 @@ public class Persona {
      * @param edad Edad del empleado
      * @param sexo Sexo del empleado en formato H o M
      */
+
+	public String toString() {
+		return "Persona [Nombre=" + nombre +
+				", Edad=" + edad +
+				", Sexo=" + sexo
+				+ "]";
+	}
+
 	public Persona(String nombre, int edad, char sexo) {
 		this.edad = edad;
 		this.nombre = nombre;
