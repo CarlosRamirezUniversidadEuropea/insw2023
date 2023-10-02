@@ -76,7 +76,13 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
-	
+
+	@Override
+	public String toString() {
+		return "Alumno [nombre=" + nombre +
+				", edad=" + edad +
+				", sexo=" + sexo
+				+ "]";
+	}
     
 }

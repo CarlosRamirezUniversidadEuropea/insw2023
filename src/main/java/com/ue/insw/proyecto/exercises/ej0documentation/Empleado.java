@@ -40,7 +40,7 @@ public class Empleado extends Persona{
     }
     
     /**
-     * Metodo para regresar el numero de empelado
+     * Metodo para regresar el numero de empleado
      * @return Regresa el numero del empleado
      */
     public int getNumeroEmpleado() {
@@ -85,5 +85,13 @@ public class Empleado extends Persona{
      */
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno [numeroEmpleado=" + numeroEmpleado+
+                ", departamento=" + departamento +
+                ", puesto=" + puesto
+                + "]";
     }
 }
