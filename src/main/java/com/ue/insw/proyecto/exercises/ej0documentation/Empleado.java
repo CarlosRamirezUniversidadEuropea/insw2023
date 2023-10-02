@@ -38,6 +38,17 @@ public class Empleado extends Persona{
         this.departamento = departamento;
         this.puesto = puesto;
     }
+
+    
+    /**
+     * Returns a string representation of the object
+     * @return Returns a string with the employee's information
+     */
+    @Override
+    public String toString() {
+        return "Empleado [nombre=" + getNombre() + ", edad=" + getEdad() + ", sexo=" + getSexo() + ", numeroEmpleado=" + this.numeroEmpleado
+                + ", departamento=" + this.departamento + ", puesto=" + this.puesto + "]";
+    }
     
     /**
      * Method to return the employee's number
