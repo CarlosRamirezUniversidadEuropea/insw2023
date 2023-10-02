@@ -1,7 +1,7 @@
 package com.ue.insw.proyecto.exercises.ej0documentation;
 
 /**
- * Esta clase contiene los atributos y metodos de un empleado
+ * This class contains the attributes and methods of an employee
  * @author Carlos Ram�rez
  * @version 1.0
  * @see Persona
@@ -13,19 +13,19 @@ public class Empleado extends Persona{
     private String puesto;
     
     /**
-     * Metodo constructor por defecto
+     * Default constructor method
      */
     public Empleado(){
     }
     
     /**
-     * Metodo constructor parametrizado
-     * @param nombre Nombre del empleado
-     * @param edad Edad del empleado
-     * @param sexo Sexo del empleado en formato H o M
-     * @param numeroEmpleado Numero de empleado
-     * @param departamento Departamento donde trabajara el empleado
-     * @param puesto Puesto que ocupara el empleado dentro de la empresa
+     * Parameterized constructor method
+     * @param nombre Employee's name
+     * @param edad Employee's age
+     * @param sexo Employee's gender in H or M format
+     * @param numeroEmpleado Employee's number
+     * @param departamento Department where the employee will work
+     * @param puesto Position that the employee will hold within the company
      */
     public Empleado(String nombre, 
                     int edad, 
@@ -40,48 +40,48 @@ public class Empleado extends Persona{
     }
     
     /**
-     * Metodo para regresar el numero de empelado
-     * @return Regresa el numero del empleado
+     * Method to return the employee's number
+     * @return Returns the employee's number
      */
     public int getNumeroEmpleado() {
         return numeroEmpleado;
     }
     
     /**
-     * Establece el numero del empleado
-     * @param numeroEmpleado Numero que se le asignara al empleado
+     * Sets the employee's number
+     * @param numeroEmpleado Number that will be assigned to the employee
      */
     public void setNumeroEmpleado(int numeroEmpleado) {
         this.numeroEmpleado = numeroEmpleado;
     }
     
     /**
-     * Metodo que regresa el nombre del departamento asignado al empleado
-     * @return Regresa el departamento
+     * Method that returns the name of the department assigned to the employee
+     * @return Returns the department
      */
     public String getDepartamento() {
         return departamento;
     }
     
     /**
-     * Metodo que le asigna departamento a un empelado
-     * @param departamento Nombre de departamento
+     * Method that assigns a department to an employee
+     * @param departamento Department name
      */
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
     
     /**
-     * Metodo que regresa el puesto del empleado
-     * @return Regresa un String que indica el puesto
+     * Method that returns the employee's position
+     * @return Returns a String indicating the position
      */
     public String getPuesto() {
         return puesto;
     }
     
     /**
-     * Metodo que establece el puesto del empleado
-     * @param puesto Indica el puesto del empleado
+     * Method that sets the employee's position
+     * @param puesto Indicates the employee's position
      */
     public void setPuesto(String puesto) {
         this.puesto = puesto;
