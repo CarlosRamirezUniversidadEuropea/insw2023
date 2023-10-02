@@ -14,9 +14,9 @@ public class Persona {
     
     /**
      * Metodo constructor parametrizado
-     * @param nombre Nombre del empleado
-     * @param edad Edad del empleado
-     * @param sexo Sexo del empleado en formato H o M
+     * @param nombre Nombre de la persona
+     * @param edad Edad de la persona
+     * @param sexo Sexo de la persona en formato H o M
      */
 	public Persona(String nombre, int edad, char sexo) {
 		this.edad = edad;
@@ -39,7 +39,7 @@ public class Persona {
 
 	/**
      * Metodo que le asigna la edad a una persona
-     * @param edad, la edad deseada a asignar
+     * @param edad La edad deseada a asignar
      */
 	public void setEdad(int edad) {
 		this.edad = edad;
@@ -55,7 +55,7 @@ public class Persona {
 
 	/**
      * Metodo que le asigna el nombre a una persona
-     * @param nombre, el nombre deseada a asignar
+     * @param nombre El nombre deseado a asignar
      */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -71,7 +71,7 @@ public class Persona {
 
 	/**
      * Metodo que le asigna el sexo a una persona
-     * @param sexo, el sexo deseado a asignar
+     * @param sexo El sexo deseado a asignar
      */
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
