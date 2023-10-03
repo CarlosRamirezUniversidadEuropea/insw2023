@@ -27,8 +27,8 @@ public class Rectangle extends Shape {
     }
 
     /**
-     * Metodo
-     * @return
+     * Metodo que calcula el area
+     * @return Devuelve el area del rectangulo
      */
     @Override
     public double calculateArea() {
@@ -36,6 +36,10 @@ public class Rectangle extends Shape {
         return area;
     }
 
+    /**
+     * Metodo que convierte en string todos los atributos de Rectangulo
+     * @return Un string de los atributos del rectangulo
+     */
     @Override
     public String toString() {
         return "El area del rectángulo es: "+calculateArea() + ", El perimetro del rectangulo es : "+calculatePerimeter();
