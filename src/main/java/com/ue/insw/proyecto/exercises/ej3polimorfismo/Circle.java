@@ -9,6 +9,7 @@ public class Circle extends Shape {
      * @param radio Radio del circulo
      */
     public Circle(double radio) {
+        super(color);
         this.radio = radio;
     }
 

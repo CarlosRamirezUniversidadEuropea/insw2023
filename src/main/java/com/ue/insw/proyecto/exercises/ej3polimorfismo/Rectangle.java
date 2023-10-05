@@ -11,9 +11,12 @@ public class Rectangle extends Shape {
      * @param base   Base del rectangulo
      * @param altura Altura del rectangulo
      */
-    public Rectangle(double base, double altura) {
+    public Rectangle(double base, double altura, String color) {
+
+        super(color);
         this.base = base;
         this.altura = altura;
+
     }
 
     /**
