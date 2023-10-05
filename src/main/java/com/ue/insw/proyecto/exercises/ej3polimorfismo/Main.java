@@ -8,7 +8,7 @@ public class Main {
        Rectangle rectangle = new Rectangle(2, 3, "black");
        System.out.println(rectangle);
 
-       Circle circle = new Circle(2);
+       Circle circle = new Circle(2, "White");
         System.out.println(circle);
 
     }

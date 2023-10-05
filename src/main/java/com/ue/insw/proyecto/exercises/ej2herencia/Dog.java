@@ -9,7 +9,6 @@ public class Dog extends Animal implements Speak{
 
     @Override
     public void speak() {
-        System.out.print("Guau Guau!!");
+        System.out.println("Guau Guau!!");
     }
-    // todo complete extends Animal implements speak, override methods
 }

@@ -8,7 +8,7 @@ public class Circle extends Shape {
      * Metodo constructor parametrizado
      * @param radio Radio del circulo
      */
-    public Circle(double radio) {
+    public Circle(double radio, String color) {
         super(color);
         this.radio = radio;
     }

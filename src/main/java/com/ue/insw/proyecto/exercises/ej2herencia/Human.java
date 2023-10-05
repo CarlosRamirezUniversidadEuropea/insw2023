@@ -8,6 +8,6 @@ public class Human extends Animal implements Speak{
 
     @Override
     public void speak() {
-        System.out.print("Holaa, soy un humano!!");
+        System.out.println("Holaa, soy un humano!!");
     }
 }

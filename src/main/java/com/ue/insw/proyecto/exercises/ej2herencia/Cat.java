@@ -7,7 +7,6 @@ public class Cat extends Animal implements Speak{
 
     @Override
     public void speak() {
-        System.out.print("Miaaauu!!");
+        System.out.println("Miaaauu!!");
     }
-    // todo extends Animal implements speak, override methods
 }
