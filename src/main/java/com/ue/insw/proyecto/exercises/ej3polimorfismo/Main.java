@@ -12,7 +12,7 @@ public class Main {
         c.calculatePerimeter();
 
         System.out.println("EL area del Circulo es: "+p.calculateArea()+" El perimetro es: "+p.calculatePerimeter());
-        System.out.println("");
+        System.out.println(""+"");
         System.out.println("El area del Rectangulo es : "+c.calculateArea()+"El perimetro es: "+c.calculatePerimeter());
 
     }
