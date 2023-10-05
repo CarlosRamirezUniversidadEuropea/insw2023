@@ -9,10 +9,12 @@ import com.ue.insw.proyecto.exercises.ej1interfaz.interfaces.Cleanable;
 import java.math.BigDecimal;
 
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.ON;
-import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPED;
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPPED;
 
-//todo extender de Vehicle
-//todo implementar Cleanable
+/**
+ * Representa un cpche
+ * @author Pablo Ribas
+*/
 public class Car extends Vehicle implements Cleanable {
 
     private Brand brand;
@@ -27,7 +29,7 @@ public class Car extends Vehicle implements Cleanable {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
-        this.status = STOPED;
+        this.status = STOPPED;
     }
 
     public Car(BigDecimal price) {
@@ -42,7 +44,7 @@ public class Car extends Vehicle implements Cleanable {
     //todo
     public void stop() {
         this.speed = 0;
-        this.status = STOPED;
+        this.status = STOPPED;
     }
 
     //todo
@@ -65,7 +67,17 @@ public class Car extends Vehicle implements Cleanable {
      * @param time in seconds
      */
     public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+        if (speed > maxSpeed) {
+            throw new IllegalArgumentException("La velocidad no puede ser mayor a la máxima.");
+        } else if (speed < 0) {
+            throw new IllegalArgumentException("La velocidad no puede ser negativa.");
+        } else if (time < 0) {
+            throw new IllegalArgumentException("El tiempo no puede ser negativo.");
+        } else {
+            this.speed = speed;
+            this.status = ON;
+            System.out.println("El coche está en marcha a " + speed + " km/h durante " + time + " segundos.");
+        }
     }
 
     @Override
@@ -93,9 +105,14 @@ public class Car extends Vehicle implements Cleanable {
         return maxSpeed;
     }
 
-    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+        if (maxSpeed < 0) {
+            throw new IllegalArgumentException("La velocidad no puede ser negativa.");
+        } else if (maxSpeed > 1080000000) {
+            throw new IllegalArgumentException("La velocidad no puede ser mayor que la velocidad de la luz.");
+        } else {
+            this.maxSpeed = maxSpeed;
+        }
     }
 
     public int getSpeed() {
@@ -107,7 +124,11 @@ public class Car extends Vehicle implements Cleanable {
     }
 
     public void setStatus(Status status) {
-        this.status = status;
+        if (status != ON && status != STOPPED) {
+            throw new IllegalArgumentException("El estado no es válido.");
+        } else {
+            this.status = status;
+        }
     }
 
     @Override
