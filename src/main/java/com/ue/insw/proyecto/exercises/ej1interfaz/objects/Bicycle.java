@@ -11,7 +11,7 @@ import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPP
 
 //todo extender de Vehicle
 //todo implements Cleanable
-public class Bicycle extends Vehicle implements Cleanable{
+public class Bicycle extends Vehicle implements Cleanable {
 
     private Brand brand;
     private Color color;
@@ -32,43 +32,43 @@ public class Bicycle extends Vehicle implements Cleanable{
         super(price);
     }
 
-    //todo
-    public void on() {
-        this.status = ON;
-    }
-
-    //todo
+    // todo
     public void stop() {
         this.speed = 0;
         this.status = STOPPED;
     }
 
-    //todo
-    public void setSpeed(int speed) {
+    // todo
+    public void setSpeed(int speed) throws Exception {
         this.speed = speed;
     }
 
     /**
-     * fills the car with gasoline
-     * @param gasoline type of gas
-     * @param liters number of liters
-     */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
-    }
-
-    /**
      * Starts driving the car
+     * 
      * @param speed desired to drive
-     * @param time in seconds
+     * @param time  in seconds
      */
-    public void startDriving (int speed, int time) {
+    public void startRiding(int speed) {
         // todo Create method to start driving
+        if (speed < 0 ) {
+            throw new IllegalArgumentException("la velocidad debe ser positiva");
+        } else {
+            if (speed <= maxSpeed) {
+                try {
+                    setSpeed(speed);
+                    this.status = ON;
+                } catch (Exception e) {
+                }
+            } else {
+                throw new IllegalArgumentException("La velocidad no puede ser mayor a la velocidad máxima");
+            }
+        }
     }
 
     @Override
     public void clean() {
-        System.out.println("Coche limpiándose");
+        System.out.println("Bici limpiándose");
     }
 
     public Brand getBrand() {
@@ -91,9 +91,17 @@ public class Bicycle extends Vehicle implements Cleanable{
         return maxSpeed;
     }
 
-    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    // todo la velocidad tiene que ser un numero positivo, modificar método,
+    // encapsulamiento
+    public void setMaxSpeed(int maxSpeed) throws Exception {
+        if (maxSpeed < 0) {
+            throw new Exception("La velocidad debe ser positiva");
+        }else{
+            if (maxSpeed < this.speed) {
+                this.speed = maxSpeed;
+            }
+            this.maxSpeed = maxSpeed;
+        }
     }
 
     public int getSpeed() {
