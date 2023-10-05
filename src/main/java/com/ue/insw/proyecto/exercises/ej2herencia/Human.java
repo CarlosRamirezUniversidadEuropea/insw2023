@@ -18,4 +18,5 @@ public class Human extends Animal implements Speak{
     public void speak() {
         System.out.println("Mira, un GTR!");
     }
+
 }

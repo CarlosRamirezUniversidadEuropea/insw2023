@@ -54,9 +54,10 @@ public class Car extends Vehicle implements Cleanable {
      * fills the car with gasoline
      * @param gasoline type of gas
      * @param liters number of liters
+     * @param deposit maximum of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
+    public void fillCombustible(Gasoline gasoline, int liters, int deposit) {
+        System.out.println("Se esta llenando co");
     }
 
     /**

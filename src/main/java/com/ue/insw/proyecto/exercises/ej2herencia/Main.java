@@ -12,5 +12,6 @@ public class Main {
         cat.speak();
         dog.speak();
         Mazita.speak();
+        System.out.println(cat.toString() +"\n" +Mazita.toString() +"\n" + dog.toString());
     }
 }
