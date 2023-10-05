@@ -41,6 +41,14 @@ public class Car extends Vehicle implements Cleanable {
      * Status of the car
      */
     private Status status;
+    /**
+     * Tank capacity of the car
+     */
+    private int tankCapacity;
+    /**
+     * Gasoline type of the car
+     */
+    private Gasoline gasoline;
 
     /**
      * Constructor of the class Car
@@ -48,14 +56,29 @@ public class Car extends Vehicle implements Cleanable {
      * @param color of the car
      * @param maxSpeed of the car
      * @param price of the car
+     * @param tankCapacity of the car
+     * @param gasoline type of the car
+     * @throws Exception if the gasoline is not a valid type of gasoline
      */
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, int tankCapacity, Gasoline gasoline) throws Exception {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.tankCapacity = tankCapacity;
+        // Test if the gasoline is a valid type of gasoline with a try-catch
+        try {
+            if (gasoline != Gasoline.OCTANE_95 && gasoline != Gasoline.OCTANE_98 && gasoline != Gasoline.GASOLEO_A) {
+                throw new Exception("Incorrect type of fuel");
+            }
+            else {
+                this.gasoline = gasoline;
+            }
+        } catch (Exception e) {
+            throw new Exception("Incorrect type of fuel");
+        }
     }
 
     /**
@@ -86,11 +109,16 @@ public class Car extends Vehicle implements Cleanable {
 
     //todo
     /**
-     * Accelerates the car
-     * @param speed to accelerate
+     * Method to set the speed of the car. If the speed is negative, it throws an exception
+     * @param speed of the car
+     * @throws Exception if the speed is negative
      */
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public void setSpeed(int speed) throws Exception {
+        if (speed <= 0) {
+            throw new Exception("Speed can't be negative");
+        } else {
+            this.speed = speed;
+        }
     }
 
     /**
@@ -98,17 +126,31 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
+    public void fillCombustible(Gasoline gasoline, int liters) throws Exception {
         //todo Create method to fill car
+        if (liters < 0) {
+            throw new Exception("Liters can't be negative");
+        }
+        if (liters > this.tankCapacity) {
+            throw new Exception("Liters exceed tank capacity");
+        }
+        if (gasoline != this.gasoline) {
+            throw new Exception("Incorrect type of fuel");
+        }
+
     }
 
     /**
      * Starts driving the car
      * @param speed desired to drive
      * @param time in seconds
+     * @throws Exception if the speed is negative
      */
-    public void startDriving (int speed, int time) {
+    public void startDriving (int speed, int time) throws Exception {
         // todo Create method to start driving
+        // the method setSpeed() already throws an exception if the speed is negative
+        setSpeed(speed);
+        on(); // Turn on the car
     }
 
     /**
@@ -162,11 +204,16 @@ public class Car extends Vehicle implements Cleanable {
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
 
     /**
-     * Sets the maximum speed of the car
+     * Sets the maximum speed of the car. If the speed is negative, it throws an exception
      * @param maxSpeed of the car
+     * @throws Exception if the speed is negative
      */
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public void setMaxSpeed(int maxSpeed) throws Exception {
+        if (maxSpeed < 0) {
+            throw new Exception("Speed can't be negative");
+        } else{
+            this.maxSpeed = maxSpeed;
+        }
     }
 
     /**
