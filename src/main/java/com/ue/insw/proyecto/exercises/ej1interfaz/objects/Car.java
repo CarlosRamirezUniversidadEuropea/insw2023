@@ -9,7 +9,7 @@ import com.ue.insw.proyecto.exercises.ej1interfaz.interfaces.Cleanable;
 import java.math.BigDecimal;
 
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.ON;
-import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPED;
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPPED;
 
 //todo extender de Vehicle
 //todo implementar Cleanable
@@ -20,14 +20,26 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    private int tankCurrCapacity;
+    private int tankMaxCapacity;
+    private Gasoline gasoline;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, int tankMaxCapacity) throws Exception{
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
-        this.status = STOPED;
+        this.status = STOPPED;
+        this.tankCurrCapacity = tankMaxCapacity;
+        this.tankMaxCapacity = tankMaxCapacity;
+        // check if the gasoline is a valid one from the enum
+        if (gasoline != Gasoline.OCTANE_95 && gasoline != Gasoline.OCTANE_98 && gasoline != Gasoline.GASOLEO_A) {
+            throw new Exception("El tipo de gasolina no es válido");
+        }
+        else {
+            this.gasoline = gasoline;
+        }
     }
 
     public Car(BigDecimal price) {
@@ -42,7 +54,7 @@ public class Car extends Vehicle implements Cleanable {
     //todo
     public void stop() {
         this.speed = 0;
-        this.status = STOPED;
+        this.status = STOPPED;
     }
 
     //todo
@@ -55,8 +67,24 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
+    public void fillCombustible(Gasoline gasoline, int liters) throws Exception{
+        //todo if the gasoline is not the same as the car, throw an exception
+        if (this.gasoline != gasoline) {
+            throw new Exception("El tipo de gasolina no es el mismo");
+        }
+
+        //check for a positive number of liters
+        if (liters < 0) {
+            throw new Exception("El número de litros no puede ser negativo");
+        }
+
+        //todo if the tank is full, throw an exception
+        if (this.tankCurrCapacity + liters > this.tankMaxCapacity) {
+            throw new Exception("El tanque está lleno");
+        }
+        else {
+            this.tankCurrCapacity += liters;
+        }
     }
 
     /**
@@ -65,7 +93,21 @@ public class Car extends Vehicle implements Cleanable {
      * @param time in seconds
      */
     public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+        // set status to on
+        on();
+
+        // set speed to the desired speed, 
+        // if it is higher than the max speed, set it to the max speed
+        // if it is lower than 0, set it to 0
+        if (speed > this.maxSpeed) {
+            this.speed = this.maxSpeed;
+        }
+        else if (speed < 0) {
+            this.speed = 0;
+        }
+        else {
+            this.speed = speed;
+        }
     }
 
     @Override
@@ -93,8 +135,10 @@ public class Car extends Vehicle implements Cleanable {
         return maxSpeed;
     }
 
-    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
+    public void setMaxSpeed(int maxSpeed) throws Exception{
+        if (maxSpeed < 0) {
+            throw new Exception("La velocidad no puede ser negativa");
+        }
         this.maxSpeed = maxSpeed;
     }
 
