@@ -10,17 +10,19 @@ import java.math.BigDecimal;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        Car ford = new Car(Brand.FORD, Color.RED, 200, new BigDecimal(10000), 50, Gasoline.OCTANE_95);
-        Car peugeot = new Car(Brand.PEUGEOT, Color.BLACK, 150, new BigDecimal(12000), 60, Gasoline.OCTANE_98);
-        System.out.println(peugeot.getPrice());
-        System.out.println(peugeot.getBrand());
-        System.out.println(peugeot.getColor());
-        System.out.println(peugeot.toString());
-        peugeot.clean();
-        try {
-            ford.fillCombustible(Gasoline.OCTANE_95, 20);
-        } catch (Exception e) {
-            throw new Exception(e);
-        }
+        // Create a toyota
+        Car toyota = new Car(Brand.TOYOTA, Color.BLUE, 180, BigDecimal.valueOf(25000), 60, Gasoline.OCTANE_95);
+
+        // Call methods with different values
+        toyota.on();
+        toyota.setSpeed(60);
+        toyota.startDriving(60, 10);
+        toyota.fillCombustible(Gasoline.OCTANE_95, 50);
+        toyota.clean();
+        toyota.stop();
+
+        // Print toyota details
+        System.out.println(toyota.toString());
+
     }
 }
