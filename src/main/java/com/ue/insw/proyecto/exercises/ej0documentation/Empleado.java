@@ -47,10 +47,7 @@ public class Empleado extends Persona{
         return numeroEmpleado;
     }
     
-    /**
-     * Establece el numero del empleado
-     * @param numeroEmpleado Numero que se le asignara al empleado
-     */
+
     public void setNumeroEmpleado(int numeroEmpleado) {
         this.numeroEmpleado = numeroEmpleado;
     }
@@ -83,7 +80,18 @@ public class Empleado extends Persona{
      * Metodo que establece el puesto del empleado
      * @param puesto Indica el puesto del empleado
      */
+
+
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Empleado [numeroEmpleado=" + numeroEmpleado +
+                ", departamento=" + departamento +
+                ", puesto=" + puesto
+                + "]";
     }
 }

@@ -6,6 +6,10 @@ package com.ue.insw.proyecto.exercises.ej0documentation;
  * @version 1.0
  * @see Persona
  */
+
+
+
+ 
 public class Persona {
 
     private int edad;
@@ -23,7 +27,17 @@ public class Persona {
 		this.nombre = nombre;
 		this.sexo = sexo;
 	}
-	
+	/**
+	 *
+	 * atributo int edad el cual representa la edad de la persona
+	 *
+	 * atributo String nombre:Este atributo representa el nombre de la persona.
+	 *
+	 * atributo char sexo: Este atributo representa el sexo de la persona
+	 */
+
+
+
 	 /**
      * Metodo constructor por defecto
      */
@@ -76,7 +90,13 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
-	
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre +
+				", edad=" + edad +
+				", sexo=" + sexo
+				+ "]";
+	}
     
 }
