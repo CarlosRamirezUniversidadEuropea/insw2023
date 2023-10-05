@@ -2,8 +2,6 @@ package com.ue.insw.proyecto.exercises.ej3polimorfismo;
 
 //todo extends shape
 
-import com.ue.insw.proyecto.exercises.ej0documentation.Alumno;
-
 /**
  * Esta clase contiene los atributos y metodos de un rectangulo
  * @author Pablo Embil González
@@ -11,7 +9,7 @@ import com.ue.insw.proyecto.exercises.ej0documentation.Alumno;
  * @see Rectangle
  */
 
-public class Rectangle {
+public class Rectangle extends Shape{
 
     private double lado1;
     private double lado2;
@@ -65,29 +63,25 @@ public class Rectangle {
         this.lado2 = lado2;
     }
 
+    /**
+     * Metodo para regresar el area
+     * @return Regresa area
+     */
+    @Override
+    public double calcularPerimetro() {
+        double area = lado1 * lado2;
+        return area;
+    }
 
     /**
      * Metodo para regresar el area
      * @return Regresa area
      */
+    @Override
     public double calcularArea() {
-
-        double area = lado1 * lado2;
-
-        return area;
-    }
-
-    /**
-     * Metodo para regresar el periemtro
-     * @return Regresa periemtro
-     */
-    public double calcularPerimetro() {
-
         double perimetro = lado1 + lado1 + lado2 + lado2;
-
         return perimetro;
     }
-
 
     /**
      * Metodo para establecer el toString()

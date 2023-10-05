@@ -8,7 +8,7 @@ package com.ue.insw.proyecto.exercises.ej3polimorfismo;
  * @see Circle
  */
 
-public class Circle {
+public class Circle extends Shape{
 
     private double radio;
 
@@ -50,6 +50,7 @@ public class Circle {
      * Metodo para regresar el area
      * @return Regresa area
      */
+    @Override
     public double calcularArea() {
 
         double area = getRadio() * getRadio() * 3.141592;
@@ -61,6 +62,7 @@ public class Circle {
      * Metodo para regresar el periemtro
      * @return Regresa periemtro
      */
+    @Override
     public double calcularPerimetro() {
 
         double perimetro = 2 * getRadio() * 3.141592;

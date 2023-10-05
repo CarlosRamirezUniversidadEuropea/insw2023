@@ -20,14 +20,18 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    private Gasoline gasoline;
+    private double litters;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, double litters) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.gasoline = gasoline;
+        this.litters = litters;
     }
 
     public Car(BigDecimal price) {
@@ -56,7 +60,11 @@ public class Car extends Vehicle implements Cleanable {
      * @param liters number of liters
      */
     public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
+        if(gasoline == getGasoline()) {
+            if (liters < getLitters()) {
+                litters = getLitters();
+            }
+        }
     }
 
     /**
@@ -65,7 +73,7 @@ public class Car extends Vehicle implements Cleanable {
      * @param time in seconds
      */
     public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+        this.status = ON;
     }
 
     @Override
@@ -93,9 +101,13 @@ public class Car extends Vehicle implements Cleanable {
         return maxSpeed;
     }
 
-    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+        if(maxSpeed>0) {
+            this.maxSpeed = maxSpeed;
+        }
+        else {
+            System.out.println("Velocidad Incorrecta");
+        }
     }
 
     public int getSpeed() {
@@ -110,6 +122,23 @@ public class Car extends Vehicle implements Cleanable {
         this.status = status;
     }
 
+    public Gasoline getGasoline() {
+        return gasoline;
+    }
+    public void setGasoline(Gasoline gasoline) {
+        this.gasoline = gasoline;
+    }
+
+    public double getLitters() {
+        if(litters>0) {
+            return litters;
+        }
+        return 0;
+    }
+    public void setLitters(double litters) {
+        this.litters = litters;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -118,6 +147,8 @@ public class Car extends Vehicle implements Cleanable {
                 ", maxSpeed=" + maxSpeed +
                 ", speed=" + speed +
                 ", status=" + status +
+                ", gasolina=" + gasoline +
+                ", litters=" + litters +
                 '}';
     }
 }
