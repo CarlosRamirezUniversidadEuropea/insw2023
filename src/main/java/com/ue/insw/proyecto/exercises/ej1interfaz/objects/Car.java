@@ -94,7 +94,12 @@ public class Car extends Vehicle implements Cleanable {
     }
 
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
+    public void setMaxSpeed(int maxSpeed) throws Exception {
+        if (maxSpeed <= 0){
+            throw new Exception("La velocidad debe ser un número positivo");
+        }else{
+            this.maxSpeed = maxSpeed;
+        }
         this.maxSpeed = maxSpeed;
     }
 

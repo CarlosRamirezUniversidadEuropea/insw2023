@@ -19,4 +19,18 @@ public class Animal{
     public void setEdad(int edad) {
         this.edad = edad;
     }
+    public String getRaza() {
+        return raza;
+    }
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+
+    }
+
 }
