@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.ON;
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPED;
-
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline.*;
 //todo extender de Vehicle
 //todo implementar Cleanable
 public class Car extends Vehicle implements Cleanable {
@@ -20,14 +20,20 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    Gasoline gasoline;
+    private int deposito;
+    private int depMaximo;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price,Gasoline gasoline,int depMaximo,int deposito) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.gasoline = gasoline;
+        this.deposito = deposito;
+        this.depMaximo = depMaximo;
     }
 
     public Car(BigDecimal price) {
@@ -57,6 +63,7 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void fillCombustible(Gasoline gasoline, int liters) {
         //todo Create method to fill car
+
     }
 
     /**
