@@ -10,6 +10,11 @@ import java.math.BigDecimal;
 public class Bicycle extends Vehicle implements Cleanable{
 
     /**
+     * Gear of the bicycle
+     */
+    private int gear;
+
+    /**
      * Constructor for Bicycle
      * @param color of the bicycle
      * @param price of the bicycle
@@ -29,6 +34,7 @@ public class Bicycle extends Vehicle implements Cleanable{
                 ", speed=" + getSpeed() +
                 ", status=" + getStatus() +
                 ", price=" + getPrice() +
+                ", gear=" + getGear() +
                 '}';
     }
 
@@ -57,6 +63,26 @@ public class Bicycle extends Vehicle implements Cleanable{
      */
     public void stopPedaling() {
         stop();
+    }
+
+    /**
+     * Method to get the gear of the bicycle
+     * @return the gear of the bicycle
+     */
+    public int getGear() {
+        return gear;
+    }
+
+    /**
+     * Method to set the gear of the bicycle. It must be 1, 2 or 3
+     * @param gear of the bicycle
+     */
+    public void setGear(int gear) throws Exception {
+        if (gear == 1 || gear == 2 || gear == 3) {
+            this.gear = gear;
+        } else {
+            throw new Exception("The gear must be 1, 2 or 3");
+        }
     }
 
     /**
