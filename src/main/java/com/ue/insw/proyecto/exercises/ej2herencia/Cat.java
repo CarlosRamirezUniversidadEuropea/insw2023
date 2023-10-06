@@ -1,11 +1,12 @@
 package com.ue.insw.proyecto.exercises.ej2herencia;
 // todo extends Animal implements speak, override methods
-    public class Cat extends Animal implements Speak{
+    public class Cat extends Animal implements Speak {
     String raza;
     String nombre;
     int edad;
+
     public Cat(String raza, String nombre, int edad) {
-        super(raza, nombre);
+        super(raza, edad);
         this.raza = raza;
         this.nombre = nombre;
         this.edad = edad;
@@ -27,13 +28,24 @@ package com.ue.insw.proyecto.exercises.ej2herencia;
         this.raza = raza;
     }
 
-    @Override
+
     public int getEdad() {
         return edad;
     }
 
-    @Override
+
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public void speak() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Gato [Su nombre es = " + nombre + ", es" + raza +
+                " y  tiene " + edad + " años.";
     }
 }

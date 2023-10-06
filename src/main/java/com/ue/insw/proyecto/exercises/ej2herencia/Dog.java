@@ -1,10 +1,43 @@
 package com.ue.insw.proyecto.exercises.ej2herencia;
-
+// todo complete extends Animal implements speak, override methods
 public class Dog extends Animal implements Speak{
-    public Dog(String raza, String nombre) {
-        super(raza, nombre);
+    private String raza;
+    private String nombre;
+    private int edad;
+    public Dog(String raza, String nombre, int edad) {
+        super(raza, edad);
+        this.raza = raza;
+        this.nombre = nombre;
+        this.edad = edad;
     }
 
+    public String getRaza() {
+        return raza;
+    }
 
-    // todo complete extends Animal implements speak, override methods
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public int getEdad() {
+        return edad;
+    }
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    @Override
+    public void speak() {
+
+    }
+    @Override
+    public String toString(){
+        return "Perro [Su nombre es = " + nombre + ", es" + raza +
+                " y  tiene " + edad + " años.";
+    }
 }
