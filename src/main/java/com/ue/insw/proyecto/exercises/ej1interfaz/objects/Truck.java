@@ -10,6 +10,11 @@ import java.math.BigDecimal;
 public class Truck extends Vehicle implements Cleanable{
 
     /**
+     * Cargo capacity of the truck
+     */
+    private double cargoCapacity;
+
+    /**
      * Constructor for Truck
      * @param color of the truck
      * @param maxSpeed of the truck
@@ -25,6 +30,25 @@ public class Truck extends Vehicle implements Cleanable{
      */
     public Truck(BigDecimal price) {
         super(price);
+    }
+
+    /**
+     * Method to get the cargo capacity of the truck
+     */
+    public double getCargoCapacity() {
+        return cargoCapacity;
+    }
+
+    /**
+     * Method to set the cargo capacity of the truck. It must be greater than 0
+     */
+    public void setCargoCapacity(double cargoCapacity) throws Exception {
+        if (cargoCapacity > 0) {
+            this.cargoCapacity = cargoCapacity;
+        } else {
+            throw new Exception("The cargo capacity must be greater than 0");
+        }
+
     }
 
     /**
@@ -45,6 +69,7 @@ public class Truck extends Vehicle implements Cleanable{
                 ", speed=" + getSpeed() +
                 ", status=" + getStatus() +
                 ", price=" + getPrice() +
+                ", cargoCapacity=" + getCargoCapacity() +
                 '}';
     }
 }
