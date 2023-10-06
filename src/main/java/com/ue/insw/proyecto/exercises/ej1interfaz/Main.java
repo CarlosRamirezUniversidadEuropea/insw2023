@@ -3,7 +3,9 @@ package com.ue.insw.proyecto.exercises.ej1interfaz;
 import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Brand;
 import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Color;
 import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline;
+import com.ue.insw.proyecto.exercises.ej1interfaz.objects.Bicycle;
 import com.ue.insw.proyecto.exercises.ej1interfaz.objects.Car;
+import com.ue.insw.proyecto.exercises.ej1interfaz.objects.Truck;
 
 import java.math.BigDecimal;
 
@@ -20,9 +22,31 @@ public class Main {
         toyota.fillCombustible(Gasoline.OCTANE_95, 50);
         toyota.clean();
         toyota.stop();
-
-        // Print toyota details
         System.out.println(toyota.toString());
+
+        System.out.println("--------------------------------------------------");
+
+        // Create truck and test all the methods in it
+        Truck truck = new Truck(Color.BLACK, 100, BigDecimal.valueOf(100000));
+        truck.on();
+        truck.setSpeed(60);
+        //truck.startDriving(60, 10);
+        //truck.fillCombustible(Gasoline.OCTANE_95, 50);
+        truck.clean();
+        truck.stop();
+        System.out.println(truck.toString());
+
+        System.out.println("--------------------------------------------------");
+
+        // Create a bicycle and test all the methods in it
+        Bicycle bicycle = new Bicycle(Color.RED, BigDecimal.valueOf(1000));
+        bicycle.on();
+        bicycle.setSpeed(60);
+        bicycle.clean();
+        bicycle.stop();
+        System.out.println(bicycle.toString());
+
+        System.out.println("--------------------------------------------------");
 
     }
 }
