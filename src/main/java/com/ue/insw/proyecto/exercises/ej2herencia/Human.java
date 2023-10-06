@@ -6,7 +6,7 @@ public class Human extends Animal implements Speak {
 
     // todo extends Animal implements speak, override methods
 
-    public Human(String raza, String nombre, String sonido) {
+    public Human(String raza, String nombre, String sonido, int edad) {
         super(raza, nombre);
         this.sonido = sonido;
 
