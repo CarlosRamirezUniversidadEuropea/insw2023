@@ -1,5 +1,6 @@
 package com.ue.insw.proyecto.exercises.ej2herencia;
 
+
 // todo implements Speak
 public class Animal{
 
@@ -7,9 +8,10 @@ public class Animal{
     private String nombre;
     private int edad;
 
-    public Animal(String raza, String nombre) {
+    public Animal(String raza, String nombre, int edad) {
         this.raza = raza;
         this.nombre = nombre;
+        this.edad = edad;
     }
 
     public int getEdad() {
@@ -18,5 +20,14 @@ public class Animal{
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "raza='" + raza + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                '}';
     }
 }
