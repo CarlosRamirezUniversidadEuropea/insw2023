@@ -13,14 +13,24 @@ public class Bicycle extends Vehicle implements Cleanable{
      * Gear of the bicycle
      */
     private int gear;
+    /**
+     * Wheel of the bicycle, assuming that a bicycle has 2 wheels
+     */
+    private Wheel[] wheels = new Wheel[2];
 
     /**
      * Constructor for Bicycle
      * @param color of the bicycle
      * @param price of the bicycle
+     * @param gear of the bicycle
      */
-    public Bicycle(Color color, BigDecimal price) throws Exception {
-        super(color, price, 0);
+    public Bicycle(Color color, BigDecimal price, int gear) throws Exception {
+        super(color, price, 80);
+        //initializing the wheels
+        for (int i = 0; i < wheels.length; i++) {
+            wheels[i] = new Wheel();
+        }
+        this.setGear(gear);
     }
 
     /**
