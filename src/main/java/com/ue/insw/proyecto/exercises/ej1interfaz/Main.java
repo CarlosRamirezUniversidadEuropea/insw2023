@@ -27,7 +27,7 @@ public class Main {
         System.out.println("--------------------------------------------------");
 
         // Create truck and test all the methods in it
-        Truck truck = new Truck(Color.BLACK, 100, BigDecimal.valueOf(100000));
+        Truck truck = new Truck(Color.BLACK, 100, BigDecimal.valueOf(100000), 1000);
         truck.on();
         truck.setSpeed(60);
         //truck.startDriving(60, 10);
