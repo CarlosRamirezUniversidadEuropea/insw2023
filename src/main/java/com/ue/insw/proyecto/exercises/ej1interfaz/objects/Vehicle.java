@@ -98,8 +98,8 @@ public class Vehicle {
      * @throws Exception if the speed is negative
      */
     public void setSpeed(int speed) throws Exception {
-        if (speed <= 0) {
-            throw new Exception("Speed can't be negative");
+        if (speed <= 0 || speed > this.maxSpeed) {
+            throw new Exception("Speed can't be negative or greater than the maximum speed");
         } else {
             this.speed = speed;
         }
