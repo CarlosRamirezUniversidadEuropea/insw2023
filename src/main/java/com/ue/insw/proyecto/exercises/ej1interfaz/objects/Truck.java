@@ -20,8 +20,9 @@ public class Truck extends Vehicle implements Cleanable{
      * @param maxSpeed of the truck
      * @param price of the truck
      */
-    public Truck(Color color, int maxSpeed, BigDecimal price) throws Exception {
+    public Truck(Color color, int maxSpeed, BigDecimal price, double cargoCapacity) throws Exception {
         super(color, price, maxSpeed);
+        this.setCargoCapacity(cargoCapacity);
     }
 
     /**
