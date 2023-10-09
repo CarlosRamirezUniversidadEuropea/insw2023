@@ -86,4 +86,11 @@ public class Empleado extends Persona{
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
+
+    public String toString() {
+        return "Empleado [numeroEmpleado=" + numeroEmpleado +
+                ", departamento=" + departamento +
+                ", puesto=" + puesto
+                + "]";
+    }
 }
