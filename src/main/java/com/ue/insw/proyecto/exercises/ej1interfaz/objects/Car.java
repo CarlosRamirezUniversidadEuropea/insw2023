@@ -91,7 +91,6 @@ public class Car extends Vehicle implements Cleanable {
     public int getSpeed() {
         return speed;
     }
-    //todo
     public void setSpeed(int speed) {
         this.speed = speed;
     }
