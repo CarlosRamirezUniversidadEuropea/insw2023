@@ -10,7 +10,6 @@ public class Vehicle {
     public Vehicle(BigDecimal price) {
         this.price = price;
     }
-
     public BigDecimal getPrice(){
         return price;
     }

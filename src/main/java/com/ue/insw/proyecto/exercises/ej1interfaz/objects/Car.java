@@ -29,27 +29,18 @@ public class Car extends Vehicle implements Cleanable {
         this.speed = 0;
         this.status = STOPED;
     }
-
     public Car(BigDecimal price) {
         super(price);
     }
-
     //todo
     public void on() {
         this.status = ON;
     }
-
     //todo
     public void stop() {
         this.speed = 0;
         this.status = STOPED;
     }
-
-    //todo
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
     /**
      * fills the car with gasoline
      * @param gasoline type of gas
@@ -57,8 +48,8 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void fillCombustible(Gasoline gasoline, int liters) {
         //todo Create method to fill car
+        System.out.println("Se han introducido "+liters+" litros del combustible "+gasoline);
     }
-
     /**
      * Starts driving the car
      * @param speed desired to drive
@@ -66,8 +57,9 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void startDriving (int speed, int time) {
         // todo Create method to start driving
+        System.out.println("Hace "+time+"segundos que se inció la marcha con una velocidad de "+speed);
+        this.speed = speed;
     }
-
     @Override
     public void clean() {
         System.out.println("Coche limpiándose");
@@ -76,40 +68,39 @@ public class Car extends Vehicle implements Cleanable {
     public Brand getBrand() {
         return brand;
     }
-
     public void setBrand(Brand brand) {
         this.brand = brand;
     }
-
     public Color getColor() {
         return color;
     }
-
     public void setColor(Color color) {
         this.color = color;
     }
-
     public int getMaxSpeed() {
         return maxSpeed;
     }
-
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+        if(maxSpeed <=0){
+            System.out.println("Velocidad incorrecta");
+        }else{
+            this.maxSpeed = maxSpeed;
+        }
     }
-
     public int getSpeed() {
         return speed;
     }
-
+    //todo
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
     public Status getStatus() {
         return status;
     }
-
     public void setStatus(Status status) {
         this.status = status;
     }
-
     @Override
     public String toString() {
         return "Car{" +
