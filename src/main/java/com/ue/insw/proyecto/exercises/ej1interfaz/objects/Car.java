@@ -74,6 +74,7 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void startDriving (int speed, int time) {
         this.status = ON;
+
     }
 
     @Override
