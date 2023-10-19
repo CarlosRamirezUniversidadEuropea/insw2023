@@ -1,7 +1,9 @@
 package com.ue.insw.proyecto.exercises.ej7json;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,10 +30,11 @@ public class Main {
                 Persona obj = gson.fromJson(reader, Persona.class);
 
                 // Print the data from the Java object
-                System.out.println(obj.getFirst_name());
-                System.out.println(obj.getLast_name());
-                System.out.println(obj.getLocation());
-                System.out.println(obj.getFollowers());
+                System.out.print("Persona: ");
+                System.out.print(obj.getFirst_name()+ ", ");
+                System.out.print(obj.getLast_name()+ ", ");
+                System.out.print(obj.getLocation()+ ", ");
+                System.out.print(obj.getFollowers());
             } catch (IOException e) {
                 // Handle the IOException
             }
@@ -58,11 +61,12 @@ public class Main {
                 // Print the data from the Java object
                 //Loop to print the data of obj2
                 for (Employee employee : obj2) {
-                    System.out.println(employee.getName());
-                    System.out.println(employee.getEmail());
-                    System.out.println(employee.getPhone());
-                    System.out.println(employee.isSubscribed());
-                    System.out.println(employee.getBirth());
+                    System.out.print("\nEmployee: ");
+                    System.out.print(employee.getName() + ", ");
+                    System.out.print(employee.getEmail()+ ", ");
+                    System.out.print(employee.getPhone()+ ", ");
+                    System.out.print(employee.isSubscribed()+ ", ");
+                    System.out.print(employee.getBirth());
                 }
 
             } catch (IOException e) {
@@ -74,8 +78,8 @@ public class Main {
         }
 
         // reading sensor values from url
-        String url_sensor_values = "https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_values.json";
-        String url_sensor_descr = "https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_descr.json";
+        System.out.println("\n\n\nReading sensor values from url");
+
 
         try {
 
@@ -84,21 +88,36 @@ public class Main {
              * we are going to read and parse
              * JSON using Gson
              */
-            URL url = new URL(url_sensor_values);
+            URL url_sensor_values = new URL("https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_values.json");
+            URL url_sensor_descr = new URL("https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_descr.json");
 
             //create a reader to read the URL
-            InputStreamReader reader = new InputStreamReader(url.openStream());
+            InputStreamReader reader_values = new InputStreamReader(url_sensor_values.openStream());
+            InputStreamReader reader_descr = new InputStreamReader(url_sensor_descr.openStream());
 
             /*
              * Use the fromJson method of the Gson
              * class that accepts a reader object
              */
-            JsonObject jsonObject = new Gson().fromJson(reader, JsonObject.class);
+            JsonArray jsonValues = JsonParser.parseReader(reader_values).getAsJsonArray();
+            JsonArray jsonDescr = JsonParser.parseReader(reader_descr).getAsJsonArray();
 
             //Print the jsonObject
+            //for to print the values of the jsonValues array
+            for (int i = 0; i < jsonValues.size(); i++) {
+                JsonObject jsonObject = jsonValues.get(i).getAsJsonObject();
+                System.out.println("\nSensor values: " + jsonObject.toString());
+            }
+            // for to print the values of the jsonDescr array
+            for (int i = 0; i < jsonDescr.size(); i++) {
+                JsonObject jsonObject = jsonDescr.get(i).getAsJsonObject();
+                System.out.println("\nSensor description: " + jsonObject.toString());
+            }
+
 
             //close the reader
-            reader.close();
+            reader_values.close();
+            reader_descr.close();
 
         }catch(Exception e) {
             //e.printStackTrace();
