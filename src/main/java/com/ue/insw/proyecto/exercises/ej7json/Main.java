@@ -36,5 +36,38 @@ public class Main {
             System.out.println("Error: Este programa no ha hecho nada");
             // Handle the case where the file does not exist or cannot be read
         }
+
+        // Employee
+        String ruta2 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/employees.json";
+        // Create a File object for the JSON file
+        File file2 = new File(ruta2);
+        Gson gson2 = new Gson();
+
+        // Check if the file exists and if we have permission to read it
+        if (file2.exists() && file2.canRead()) {
+            try {
+                // Read the JSON file into a string
+                Reader reader2 = Files.newBufferedReader(Paths.get(ruta2));
+
+                // Convert the JSON string to a Java object
+                Employee[] obj2 = gson2.fromJson(reader2, Employee[].class);
+
+                // Print the data from the Java object
+                //Loop to print the data of obj2
+                for (Employee employee : obj2) {
+                    System.out.println(employee.getName());
+                    System.out.println(employee.getEmail());
+                    System.out.println(employee.getPhone());
+                    System.out.println(employee.isSubscribed());
+                    System.out.println(employee.getBirth());
+                }
+
+            } catch (IOException e) {
+                // Handle the IOException
+            }
+        } else {
+            System.out.println("Error: Este programa no ha hecho nada");
+            // Handle the case where the file does not exist or cannot be read
+        }
     }
 }
