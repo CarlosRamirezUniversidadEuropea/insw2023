@@ -1,10 +1,13 @@
 package com.ue.insw.proyecto.exercises.ej7json;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -68,6 +71,38 @@ public class Main {
         } else {
             System.out.println("Error: Este programa no ha hecho nada");
             // Handle the case where the file does not exist or cannot be read
+        }
+
+        // reading sensor values from url
+        String url_sensor_values = "https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_values.json";
+        String url_sensor_descr = "https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_descr.json";
+
+        try {
+
+            /*
+             * World time API URL from which
+             * we are going to read and parse
+             * JSON using Gson
+             */
+            URL url = new URL(url_sensor_values);
+
+            //create a reader to read the URL
+            InputStreamReader reader = new InputStreamReader(url.openStream());
+
+            /*
+             * Use the fromJson method of the Gson
+             * class that accepts a reader object
+             */
+            JsonObject jsonObject = new Gson().fromJson(reader, JsonObject.class);
+
+            //Print the jsonObject
+
+            //close the reader
+            reader.close();
+
+        }catch(Exception e) {
+            //e.printStackTrace();
+            System.out.println(e);
         }
     }
 }
