@@ -1,5 +1,5 @@
 package com.ue.insw.proyecto.exercises.ej2herencia;
 
-public interface Speak {
-    void speak();
+public interface habalar {
+    String speak();
 }
