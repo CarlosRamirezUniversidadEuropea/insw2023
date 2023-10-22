@@ -19,15 +19,26 @@ public class Car extends Vehicle implements Cleanable {
     private Color color;
     private int maxSpeed;
     private int speed;
-    private Status status;
+    private Status status; // Determina si el coche esta en "on" o "off"
+    private Gasoline gasoline; // Tipo de gasolina del coche
+    private double tankCapacity; // Capacidad del deposito
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    /**
+     * Constructor de Car
+     * @param brand Marca del coche
+     * @param color Color del coche
+     * @param maxSpeed Velocidad maxima del coche
+     * @param price Precio del coche
+     */
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, double tankCapacity) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.gasoline = gasoline;
+        this.tankCapacity = tankCapacity;
     }
 
     public Car(BigDecimal price) {
@@ -55,17 +66,27 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
+    public void fillCombustible(Gasoline gasoline, int liters) throws Exception{
+        if(this.gasoline.equals(gasoline) && tankCapacity >= liters && liters>0){
+            System.out.println("Se ha llenado el coche con " + liters + " litros de " + gasoline);
+        }else{
+            throw new Exception("La gasolina seleccionada no es la correcta o se ha superado el limite del deposito");
+        }
     }
 
     /**
      * Starts driving the car
-     * @param speed desired to drive
+     * @param speed desired to drive (Km/h)
      * @param time in seconds
      */
-    public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+    public void startDriving (int speed, int time) throws Exception{
+        if(speed >= 0 && time > 0){
+            status = ON;
+            this.speed = speed;
+            System.out.println("Se ha empezado a conducir a " + speed + " Km/h ");
+        }else{
+            throw new Exception("La velocidad o el tiempo no pueden ser negativos");
+        }
     }
 
     @Override
@@ -93,9 +114,12 @@ public class Car extends Vehicle implements Cleanable {
         return maxSpeed;
     }
 
-    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public void setMaxSpeed(int maxSpeed) throws Exception {
+        if(maxSpeed < 0){
+            throw new Exception("La velocidad no puede ser negativa");
+        }else{
+            this.maxSpeed = maxSpeed;
+        }
     }
 
     public int getSpeed() {
@@ -118,6 +142,8 @@ public class Car extends Vehicle implements Cleanable {
                 ", maxSpeed=" + maxSpeed +
                 ", speed=" + speed +
                 ", status=" + status +
+                ", gasoline=" + gasoline +
+                ", tankCapacity=" + tankCapacity +
                 '}';
     }
 }

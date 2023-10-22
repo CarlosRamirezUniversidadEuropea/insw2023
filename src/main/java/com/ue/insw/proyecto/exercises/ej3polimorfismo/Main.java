@@ -1,6 +1,5 @@
 package com.ue.insw.proyecto.exercises.ej3polimorfismo;
 
-import java.util.concurrent.atomic.AtomicStampedReference;
 
 public class Main {
 
@@ -9,7 +8,7 @@ public class Main {
        System.out.println(rectangle);
 
        Circle circle = new Circle(2, "White");
-        System.out.println(circle);
+       System.out.println(circle);
 
     }
 }
