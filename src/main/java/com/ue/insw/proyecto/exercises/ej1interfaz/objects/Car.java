@@ -19,6 +19,8 @@ public class Car extends Vehicle implements Cleanable {
     private Color color;
     private int maxSpeed;
     private int speed;
+    private int liters;
+    private Gasoline gas;
     private Status status;
 
     public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
@@ -28,6 +30,8 @@ public class Car extends Vehicle implements Cleanable {
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+
+
     }
 
     public Car(BigDecimal price) {
@@ -56,7 +60,7 @@ public class Car extends Vehicle implements Cleanable {
      * @param liters number of liters
      */
     public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
+       System.out.println("Se ha repostado "+ liters + " de la gasolina "+ gasoline);
     }
 
     /**
@@ -66,6 +70,12 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void startDriving (int speed, int time) {
         // todo Create method to start driving
+        if(speed > 0 && time < 0){
+            System.out.println("Llevas "+ time + "conduciendo y has empezado a "+ speed + "km/h.");
+        }else{
+            System.out.println("No se ha empezado conducir.");
+
+        }
     }
 
     @Override
@@ -89,11 +99,15 @@ public class Car extends Vehicle implements Cleanable {
         this.color = color;
     }
 
-    public int getMaxSpeed() {
+    public int getMaxSpeed(int maxSpeed) {
+        if(maxSpeed < 0){
+            System.out.println("Error de velocidad");
+        }
+        else{
+            this.maxSpeed = maxSpeed;
+        }
         return maxSpeed;
     }
-
-    //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
