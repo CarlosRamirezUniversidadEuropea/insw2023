@@ -18,6 +18,7 @@ public class Main {
         System.out.println(peugeot.getColor());
         System.out.println(peugeot.toString());
         peugeot.clean();
+        peugeot.toString();
 
         Truck camion = new Truck(Brand.RENAULT,Color.WHITE,120,new BigDecimal(90000));
         camion.on();
@@ -27,6 +28,7 @@ public class Main {
         System.out.println(camion.getSpeed());
         System.out.println(camion.toString());
         camion.clean();
+        camion.toString();
 
         Bicycle bici = new Bicycle(Color.LIGHT_GREY,70, new BigDecimal(3500));
         System.out.println(bici.getColor());

@@ -7,6 +7,12 @@ public class Persona {
     protected String location;
     protected boolean online;
     protected int followers;
+    protected String name;
+    protected String email;
+    protected int phone;
+    protected boolean subscribed;
+    protected String birth;
+
 
     public Persona(String first_name, String last_name, String location, boolean online, int followers) {
         this.first_name = first_name;
@@ -14,6 +20,13 @@ public class Persona {
         this.location = location;
         this.online = online;
         this.followers = followers;
+    }
+    public Persona(String name, String email, int phone, boolean subscribed, String birth){
+        this.name = name;
+        this.email = email;
+        this.birth = birth;
+        this.subscribed = subscribed;
+        this.phone = phone;
     }
 
     public String getFirst_name() {
@@ -54,5 +67,45 @@ public class Persona {
 
     public void setFollowers(int followers) {
         this.followers = followers;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public boolean isSubscribed() {
+        return subscribed;
+    }
+
+    public void setSubscribed(boolean subscribed) {
+        this.subscribed = subscribed;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 }

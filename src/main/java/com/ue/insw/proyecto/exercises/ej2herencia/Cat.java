@@ -9,4 +9,10 @@ public class Cat extends Animal implements Speak {
     public void speak(){
         System.out.println("Miau");
     }
+
+    public String toString(){
+        return "Cat = [Raza: "+getRaza()+"\n"+
+                "Nombre: "+getNombre()+"\n"+
+                "Edad: "+getEdad();
+    }
 }

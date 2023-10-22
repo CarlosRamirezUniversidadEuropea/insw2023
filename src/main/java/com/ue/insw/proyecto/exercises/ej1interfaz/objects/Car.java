@@ -14,7 +14,6 @@ import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPE
 //todo extender de Vehicle
 //todo implementar Cleanable
 public class Car extends Vehicle implements Cleanable {
-
     private Brand brand;
     private Color color;
     private int maxSpeed;

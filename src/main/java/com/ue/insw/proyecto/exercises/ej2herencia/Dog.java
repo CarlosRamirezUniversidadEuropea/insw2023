@@ -9,4 +9,9 @@ public class Dog extends Animal implements Speak {
     public void speak(){
         System.out.println("Guau Guau");
     }
+    public String toString(){
+        return "Dog = [Raza: "+getRaza()+"\n"+
+                "Nombre: "+getNombre()+"\n"+
+                "Edad: "+getEdad();
+    }
 }

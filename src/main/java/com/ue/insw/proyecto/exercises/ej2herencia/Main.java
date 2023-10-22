@@ -8,5 +8,9 @@ public class Main {
         c.speak();
         Human h = new Human("Humana","Iván",78);
         h.speak();
+
+        d.toString();
+        c.toString();
+        h.toString();
     }
 }
