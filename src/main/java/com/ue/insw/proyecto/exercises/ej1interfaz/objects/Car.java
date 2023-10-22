@@ -15,49 +15,42 @@ import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPE
 //todo implementar Cleanable
 public class Car extends Vehicle implements Cleanable {
 
-    private Brand brand;
-    private Color color;
-    private int maxSpeed;
-    private int speed;
-    private Status status;
-
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
-        super(price);
-        this.brand = brand;
-        this.color = color;
-        this.maxSpeed = maxSpeed;
-        this.speed = 0;
-        this.status = STOPED;
-    }
-
-    public Car(BigDecimal price) {
-        super(price);
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gas, int deposit) {
+        super(price, 0, gas, STOPED, brand, color, maxSpeed, deposit);
     }
 
     //todo
     public void on() {
-        this.status = ON;
+        super.setStatus(ON);
     }
 
     //todo
     public void stop() {
-        this.speed = 0;
-        this.status = STOPED;
+        super.setSpeed(0);
+        super.setStatus(STOPED);
     }
 
     //todo
     public void setSpeed(int speed) {
-        this.speed = speed;
+        super.setSpeed(speed);
     }
 
     /**
      * fills the car with gasoline
      * @param gasoline type of gas
      * @param liters number of liters
-     * @param deposit maximum of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters, int deposit) {
-        System.out.println("Se esta llenando co");
+    public void fillCombustible(Gasoline gasoline, int liters) throws Exception{
+        if (super.getGasoline() != gasoline){
+            throw new RuntimeException("El conbustible introducido no es correcto");
+        } else if (liters >= super.getDeposit()){
+            throw new RuntimeException("No puedes añadir mas litros de los que caben en el deposito");
+        } else if (liters <= 0) {
+            throw new RuntimeException("No puedes añadir litros en negativo");
+        } else {
+            System.out.println("Se estan anhadiendo " +liters +" litros de "+gasoline +"al deposito de " +super.getDeposit() +" litros");
+        }
+
     }
 
     /**
@@ -65,8 +58,13 @@ public class Car extends Vehicle implements Cleanable {
      * @param speed desired to drive
      * @param time in seconds
      */
-    public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+    public void startDriving (int speed, int time) throws Exception{
+        if (speed < 0){
+            throw new RuntimeException("La velocidad no puede ser negativa");
+        }else {
+            super.setSpeed(speed);
+            super.setStatus(ON);
+        }
     }
 
     @Override
@@ -74,51 +72,29 @@ public class Car extends Vehicle implements Cleanable {
         System.out.println("Coche limpiándose");
     }
 
-    public Brand getBrand() {
-        return brand;
-    }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
 
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public void setMaxSpeed(int maxSpeed) throws Exception {
+        if (maxSpeed >= 0) {
+            throw new RuntimeException("La velocidad no puede ser negativa");
+        } else {
+            super.setMaxSpeed(maxSpeed);
+        }
     }
 
     public int getSpeed() {
-        return speed;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
+        return super.getSpeed();
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "brand=" + brand +
-                ", color=" + color +
-                ", maxSpeed=" + maxSpeed +
-                ", speed=" + speed +
-                ", status=" + status +
+                "brand=" + super.getBrand() +
+                ", color=" + super.getColor() +
+                ", maxSpeed=" + super.getMaxSpeed() +
+                ", speed=" + super.getSpeed() +
+                ", status=" + super.getStatus() +
                 '}';
     }
 }
