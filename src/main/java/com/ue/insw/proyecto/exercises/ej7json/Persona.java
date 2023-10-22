@@ -55,4 +55,15 @@ public class Persona {
     public void setFollowers(int followers) {
         this.followers = followers;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", location='" + location + '\'' +
+                ", online=" + online +
+                ", followers=" + followers +
+                '}';
+    }
 }
