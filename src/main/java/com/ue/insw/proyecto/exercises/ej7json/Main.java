@@ -14,7 +14,6 @@ public class Main {
         String ruta2 = "src/main/java/com/ue/insw/proyecto/exercises/json/employees.json";
         // Create a File object for the JSON file
         File file = new File(ruta);
-        File file2 = new File(ruta2);
         Gson gson = new Gson();
 
         // Check if the file exists and if we have permission to read it
