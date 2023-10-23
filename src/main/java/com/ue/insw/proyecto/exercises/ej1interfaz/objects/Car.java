@@ -20,14 +20,19 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    private Gasoline gasoline;
+    private double capacidad;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, double capacidad) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.gasoline = gasoline;
+        this.capacidad = capacidad;
     }
 
     public Car(BigDecimal price) {
@@ -55,7 +60,12 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
+    public void fillCombustible(Gasoline gasoline, int liters) throws Exception{
+        if(this.gasoline.equals(gasoline) && capacidad >= liters && liters > 0) {
+            System.out.println("Se ha llenado de: " + gasoline + liters);
+        } else {
+            throw new Exception("Se lleno el desposito");
+        }
         //todo Create method to fill car
     }
 
@@ -64,8 +74,22 @@ public class Car extends Vehicle implements Cleanable {
      * @param speed desired to drive
      * @param time in seconds
      */
-    public void startDriving (int speed, int time) {
+    public void startDriving (int speed, int time) throws Exception{
         // todo Create method to start driving
+        if (speed < 0 && time < 0) {
+            System.out.println("La velocidad tiene que ser positiva");
+        } else{
+            if (speed <= maxSpeed) {
+                try {
+                    setSpeed(speed);
+                    this.status = ON;
+                    this.speed = speed;
+                } catch (Exception e) {
+                }
+            } else {
+                throw new Exception("No supere a la velocidad maxima");
+            }
+        }
     }
 
     @Override
@@ -94,8 +118,14 @@ public class Car extends Vehicle implements Cleanable {
     }
 
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public void setMaxSpeed(int maxSpeed) throws Exception{
+        if (maxSpeed < 0) {
+            throw new Exception("La velocidad tiene que ser positiva");
+        } else {
+            if(maxSpeed < this.speed) {
+                this.speed = maxSpeed;
+            } this.maxSpeed = maxSpeed;
+        }
     }
 
     public int getSpeed() {
@@ -118,6 +148,8 @@ public class Car extends Vehicle implements Cleanable {
                 ", maxSpeed=" + maxSpeed +
                 ", speed=" + speed +
                 ", status=" + status +
+                ", gasoline=" + gasoline +
+                ", capacidad=" + capacidad +
                 '}';
     }
 }

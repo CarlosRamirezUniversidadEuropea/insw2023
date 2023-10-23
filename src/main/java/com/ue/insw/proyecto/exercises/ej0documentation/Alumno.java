@@ -38,7 +38,7 @@ public class Alumno extends Persona {
 
 	/**
 	 * Metodo para regresar el numero de alumno
-	 * @return
+	 * @return Regresa numero Expediente
 	 */
 
 
