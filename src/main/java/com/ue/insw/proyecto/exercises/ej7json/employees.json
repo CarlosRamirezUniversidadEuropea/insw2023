@@ -1,0 +1,37 @@
+[
+  {
+    "name":"Shyam",
+    "email":"shyamjaiswal@gmail.com",
+    "phone": 634858016,
+    "subscribed" :  false,
+    "birth" : "2000-10-31"
+  },
+  {
+    "name":"Bob",
+    "email":"bob32@gmail.com",
+    "phone": 634858013,
+    "subscribed" : false,
+    "birth" : "2001-10-31"
+  },
+  {
+    "name":"Jai",
+    "email":"jai87@gmail.com",
+    "phone": 634858018,
+    "subscribed" : false,
+    "birth" : "2002-10-31"
+  },
+  {
+    "name":"Emma",
+    "email":"emma@gmail.com",
+    "phone": 634858012,
+    "subscribed" : true,
+    "birth" : "2003-10-31"
+  },
+  {
+    "name":"Phill",
+    "email":"phill@gmail.com",
+    "phone": 634858013,
+    "subscribed" : true,
+    "birth" : "2004-10-31"
+  }
+]
