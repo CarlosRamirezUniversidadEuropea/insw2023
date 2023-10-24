@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         // COCHE
-        Car corsa = new Car(Brand.OPEL, Color.RED, 200, new BigDecimal(20000), Gasoline.OCTANE_95, 50);
+        Car corsa = new Car(new BigDecimal(20000), Brand.OPEL, Color.RED, 200, Gasoline.OCTANE_95, 50);
         System.out.println(corsa);
 
         corsa.startDriving(120, 100);
@@ -34,7 +34,7 @@ public class Main {
         bici.clean();
 
         // CAMION
-        Truck camion = new Truck(Brand.MERCEDES, Color.WHITE, 150, new BigDecimal(70000), Gasoline.OCTANE_98, 250);
+        Truck camion = new Truck(new BigDecimal(70000), Brand.MERCEDES, Color.WHITE, 150, Gasoline.OCTANE_98, 250);
         System.out.println("\n" + camion);
 
         camion.startDriving(120, 100);
