@@ -1,7 +1,7 @@
 package com.ue.insw.proyecto.exercises.ej2herencia;
 
 // todo implements Speak
-public class Animal{
+public abstract class Animal implements Speak{
 
     private String raza;
     private String nombre;
