@@ -20,14 +20,16 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    private int capacidad;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price,int capacidad) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.capacidad = capacidad;
     }
 
     public Car(BigDecimal price) {
@@ -47,7 +49,9 @@ public class Car extends Vehicle implements Cleanable {
 
     //todo
     public void setSpeed(int speed) {
-        this.speed = speed;
+        if (speed >= 0) {
+            this.speed = speed;
+        }
     }
 
     /**
@@ -57,6 +61,16 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void fillCombustible(Gasoline gasoline, int liters) {
         //todo Create method to fill car
+        if(liters<0){
+            throw new IllegalArgumentException("NO PUEDE SER NEGATIVO");
+        }
+        if(gasoline != gasoline){
+            throw new IllegalArgumentException("NO PUEDE METER ESTE TIPO DE GASOLINA");
+        }
+        if(liters>capacidad){
+            throw new IllegalArgumentException("HA LLEGADO A LA CAPACIDAD MAXIMA");
+        }
+        System.out.println("El coche se ha llenado con "+liters+" litros");
     }
 
     /**
