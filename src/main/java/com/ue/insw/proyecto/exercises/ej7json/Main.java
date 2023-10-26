@@ -2,19 +2,17 @@ package com.ue.insw.proyecto.exercises.ej7json;
 
 import com.google.gson.Gson;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import com.google.gson.Gson;
+
 import com.google.gson.reflect.TypeToken;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
+import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +21,52 @@ public class Main {
         // Create a File object for the JSON file
         File file = new File(ruta);
         Gson gson = new Gson();
-
         // Check if the file exists and if we have permission to read it
+
+        try {
+            URL url = new URL("https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_values.json");
+            InputStreamReader reader = new InputStreamReader(url.openStream());
+            Vector<Sensor_values> sv = new Gson().fromJson(reader, new TypeToken<Vector<Sensor_values>>(){}.getType());
+
+            for (Sensor_values container : sv) {
+                System.out.println("type: " + container.getType());
+                System.out.println("num: " + container.getNum());
+
+                for (List<Value> values : container.getValues()) {
+                    for (Value value : values) {
+                        System.out.println("v: " + value.getV());
+                    }
+                }
+            }
+
+        } catch (IOException exc2) {
+            System.out.println("Error: Este programa no ha hecho nada");
+        }
+
+        try {
+            URL url1 = new URL("https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_descr.json");
+            InputStreamReader reader2 = new InputStreamReader(url1.openStream());
+            List<Sensor_descr> sd = new Gson().fromJson(reader2, new TypeToken<List<Sensor_descr>>(){}.getType());
+
+            for (Sensor_descr container : sd) {
+                System.out.println("type: " + container.getType());
+                System.out.println("num: " + container.getNum());
+
+                for (Field field : container.getFields()) {
+                    System.out.println("name: " + field.getName());
+                    System.out.println("unit: " + field.getUnit());
+                    System.out.println("decPrecision: " + field.getDecPrecision());
+                }
+
+                for (Property property : container.getProperties()) {
+                    System.out.println("name: " + property.getName());
+                    System.out.println("id: " + property.getId());
+                }
+            }
+
+        } catch (IOException exc2) {
+            System.out.println("Error: Este programa no ha hecho nada");
+        }
         if (file.exists() && file.canRead()) {
             try {
                 // Read the JSON file into a string
@@ -61,7 +103,7 @@ public class Main {
                     System.out.println(emp.getPhone());
                     System.out.println(emp.getSubscribed());
                 }
-            } catch (IOException e1) {
+            } catch (IOException exc) {
                 // Handle the IOException
             }
         } else {
