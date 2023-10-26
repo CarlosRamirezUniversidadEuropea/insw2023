@@ -58,12 +58,13 @@ public class Persona {
 
     @Override
     public String toString () {
-        return "Employee{" +
-                "name=" + first_name +
-                ", email=" + last_name +
-                ", subscribed=" + location +
-                ", phone=" + online +
-                ", birth=" + followers +
-                '}';
+        return "Employee {" +
+                "name = " + first_name +
+                ", email = " + last_name +
+                ", subscribed = " + location +
+                ", phone = " + online +
+                ", birth = " + followers +
+                "\n--------------"
+                ;
     }
 }

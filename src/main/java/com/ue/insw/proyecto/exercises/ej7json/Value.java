@@ -5,8 +5,9 @@ public class Value {
     public double v;
     @Override
     public String toString() {
-        return "Value{" +
-                "v=" + v +
+        return "Value {" +
+                " v = " + v +
+                "------------" +
                 '}';
     }
     public Value(double v) {

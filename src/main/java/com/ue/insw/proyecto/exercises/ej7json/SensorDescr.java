@@ -19,10 +19,11 @@ public class SensorDescr {
     @Override
     public String toString() {
         return "SensorDescr {" +
-                "type=" + type +
-                ", num=" + num +
-                ", fields=" + fields +
-                ", properties=" + properties +
+                "Type = " + type +
+                ", num = " + num +
+                ", fields = " + fields +
+                ", properties = " + properties +
+                "-----------------" +
                 '}';
     }
 

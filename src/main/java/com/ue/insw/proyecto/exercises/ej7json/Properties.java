@@ -26,9 +26,10 @@ public class Properties {
 
     @Override
     public String toString() {
-        return "Properties{" +
-                "id=" + id +
-                ", name=" + name +
+        return "Properties {" +
+                " Id = " + id +
+                ", name = " + name +
+                "--------------" +
                 '}';
     }
 }

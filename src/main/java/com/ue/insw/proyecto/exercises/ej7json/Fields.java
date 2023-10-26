@@ -9,10 +9,11 @@ public class Fields {
 
     @Override
     public String toString() {
-        return "Fields{" +
-                "name=" + name +
-                ", unit=" + unit +
-                ", decPrecision=" + decPrecision +
+        return "Fields {" +
+                "Name = " + name +
+                ", unit = " + unit +
+                ", decPrecision = " + decPrecision +
+                "----------------------" +
                 '}';
     }
 

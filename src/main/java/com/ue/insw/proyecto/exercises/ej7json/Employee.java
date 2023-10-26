@@ -49,13 +49,14 @@ public class Employee {
 
     @Override
     public String toString () {
-        return "Employee{" +
-                "name=" + name +
-                ", email=" + email +
-                ", subscribed=" + subscribed +
-                ", phone=" + phone +
-                ", birth=" + birth +
-                '}';
+        return "Employee {" +
+                "name = " + name +
+                ", email = " + email +
+                ", subscribed = " + subscribed +
+                ", phone = " + phone +
+                ", birth = " + birth +
+                "\n---------------"
+                ;
     }
 
 }
