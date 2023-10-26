@@ -25,7 +25,7 @@ public class Persona {
 	}
 	
 	 /**
-     * Metodo constructor por defecto
+     * Metodo constructor por defecto de la clase Persona
      */
 	public Persona() {}
 
@@ -76,7 +76,17 @@ public class Persona {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-    
-	
+
+	/**
+	 * Método que devuelve una representación en cadena de texto del objeto Persona
+	 * @return Cadena que representa el objeto Persona
+	 */
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre +
+				", edad=" + edad +
+				", sexo=" + sexo
+				+ "]";
+	}
     
 }

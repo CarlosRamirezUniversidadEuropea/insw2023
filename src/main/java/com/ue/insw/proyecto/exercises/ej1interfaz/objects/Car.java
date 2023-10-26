@@ -20,14 +20,19 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    private Gasoline gasolineType;
+    private int liters;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price,
+               Gasoline gasolineType, int liters) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPED;
+        this.gasolineType = gasolineType;
+        this.liters = liters;
     }
 
     public Car(BigDecimal price) {
@@ -37,6 +42,10 @@ public class Car extends Vehicle implements Cleanable {
     //todo
     public void on() {
         this.status = ON;
+    }
+
+    public Gasoline getGasolineType() {
+        return this.gasolineType;
     }
 
     //todo
@@ -55,8 +64,27 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
+    public void fillCombustible(Gasoline gasoline, int liters,int capacity) {
+        if (gasoline == getGasolineType()){
+            if (liters < 0) {
+                System.out.println("La cantidad de litros no puede ser negativa.");
+            }
+            if (liters == 0){
+                System.out.println("No hay combustible en el camión ");
+            }
+            if (liters > capacity) {
+                System.out.println("La cantidad de litros no puede superar la capacidad del depósito.");
+            }
+            if (this.liters + liters > capacity) {
+                System.out.println("No se pueden agregar más litros que la capacidad del depósito.");
+            }else{
+                this.liters += liters;
+                System.out.println("Se han añadido "+liters+" litros al deposito");
+            }
+        }
+        if (gasoline != getGasolineType()) {
+            System.out.println("El tipo de combustible no coincide con el del vehículo.");
+        }
     }
 
     /**
@@ -65,7 +93,15 @@ public class Car extends Vehicle implements Cleanable {
      * @param time in seconds
      */
     public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+        if (speed < 0) {
+            System.out.println("La velocidad no puede ser negativa.");
+        } else if(speed> maxSpeed){
+            System.out.println("La velocidad no puede ser mayor a 120..");
+        }else {
+            System.out.println("El coche se esta moviendo");
+        }
+        this.setStatus(Status.ON);
+        this.setSpeed(speed);
     }
 
     @Override
@@ -95,8 +131,12 @@ public class Car extends Vehicle implements Cleanable {
 
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
+        if (maxSpeed < 0) {
+            System.out.println("La velocidad máxima no puede ser negativa.");
+        }
         this.maxSpeed = maxSpeed;
     }
+
 
     public int getSpeed() {
         return speed;
@@ -112,12 +152,14 @@ public class Car extends Vehicle implements Cleanable {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "brand=" + brand +
-                ", color=" + color +
-                ", maxSpeed=" + maxSpeed +
-                ", speed=" + speed +
-                ", status=" + status +
+        return "Car {" +
+                "brand = " + brand +
+                ", color = " + color +
+                ", maxSpeed = " + maxSpeed +
+                ", speed = " + speed +
+                ", status = " + status +
+                ", gasolineType = " + gasolineType +
+                ", liters = " + liters +
                 '}';
     }
 }

@@ -86,4 +86,19 @@ public class Empleado extends Persona{
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
+
+    /**
+     * Método que devuelve una representación en cadena de texto del objeto Empleado
+     * @return Cadena que representa el objeto Empleado
+     */
+    @Override
+    public String toString() {
+        return "Empleado [nombre=" + getNombre() +
+                ", edad=" + getEdad() +
+                ", sexo=" + getSexo() +
+                ", numeroEmpleado=" + numeroEmpleado +
+                ", departamento=" + departamento +
+                ", puesto=" + puesto
+                + "]";
+    }
 }
