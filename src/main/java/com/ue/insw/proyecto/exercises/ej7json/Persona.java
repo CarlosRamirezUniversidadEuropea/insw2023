@@ -2,34 +2,34 @@ package com.ue.insw.proyecto.exercises.ej7json;
 
 public class Persona {
 
-    protected String first_name;
-    protected String last_name;
+    protected String nombre;
+    protected String apellido;
     protected String location;
     protected boolean online;
-    protected int followers;
+    protected int seguidores;
 
     public Persona(String first_name, String last_name, String location, boolean online, int followers) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.nombre = first_name;
+        this.apellido = last_name;
         this.location = location;
         this.online = online;
-        this.followers = followers;
+        this.seguidores = followers;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getLocation() {
@@ -48,11 +48,22 @@ public class Persona {
         this.online = online;
     }
 
-    public int getFollowers() {
-        return followers;
+    public int getSeguidores() {
+        return seguidores;
     }
 
-    public void setFollowers(int followers) {
-        this.followers = followers;
+    public void setSeguidores(int seguidores) {
+        this.seguidores = seguidores;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", location='" + location + '\'' +
+                ", online=" + online +
+                ", seguidores=" + seguidores +
+                '}';
     }
 }

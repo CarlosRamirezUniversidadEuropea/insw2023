@@ -1,7 +1,7 @@
 {
-  "first_name" : "Sammy",
-  "last_name" : "Shark",
+  "nombre" : "Sammy",
+  "apellido" : "Shark",
   "location" : "Ocean",
   "online" : true,
-  "followers" : 987
+  "seguidores" : 987
 }

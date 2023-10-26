@@ -1,37 +1,37 @@
 [
   {
-    "name":"Shyam",
+    "nombre":"Shyam",
     "email":"shyamjaiswal@gmail.com",
-    "phone": 634858016,
+    "telefono": 634858016,
     "subscribed" :  false,
-    "birth" : "2000-10-31"
+    "cumple": "2000-10-31"
   },
   {
-    "name":"Bob",
+    "nombre":"Bob",
     "email":"bob32@gmail.com",
-    "phone": 634858013,
+    "telefono": 634858013,
     "subscribed" : false,
-    "birth" : "2001-10-31"
+    "cumple": "2001-10-31"
   },
   {
-    "name":"Jai",
+    "nombre":"Jai",
     "email":"jai87@gmail.com",
-    "phone": 634858018,
+    "telefono": 634858018,
     "subscribed" : false,
-    "birth" : "2002-10-31"
+    "cumple": "2002-10-31"
   },
   {
-    "name":"Emma",
+    "nombre":"Emma",
     "email":"emma@gmail.com",
-    "phone": 634858012,
+    "telefono": 634858012,
     "subscribed" : true,
-    "birth" : "2003-10-31"
+    "cumple": "2003-10-31"
   },
   {
-    "name":"Phill",
+    "nombre":"Phill",
     "email":"phill@gmail.com",
-    "phone": 634858013,
+    "telefono": 634858013,
     "subscribed" : true,
-    "birth" : "2004-10-31"
+    "cumple": "2004-10-31"
   }
 ]
