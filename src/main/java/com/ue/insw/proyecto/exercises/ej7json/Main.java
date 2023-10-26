@@ -76,16 +76,15 @@ public class Main {
             System.out.println("Error: Este programa no ha hecho nada");
         }
 
-        System.out.println("Sensor value: \n" + URLdeJSON(sensorvalue, SensorValue.class));
-        System.out.println("Sensor description: \n" + URLdeJSON(sensordescr, SensorDescr.class));
+        System.out.println ("Sensor value: \n" + URLdeJSON(sensorvalue, SensorValue.class));
+        System.out.println ("Sensor description: \n" + URLdeJSON(sensordescr, SensorDescr.class));
     }
-
-    static String URLdeJSON(String url, Object object) {
+    static String URLdeJSON (String url, Object object) {
         StringBuilder q = new StringBuilder();
         Gson g = new Gson();
 
         try {
-            URL jsonUrl = new URL(url);
+            URL jsonUrl = new URL (url);
             InputStreamReader reader = new InputStreamReader(jsonUrl.openStream());
             Object[] objects = g.fromJson(reader, Object[].class);
 
