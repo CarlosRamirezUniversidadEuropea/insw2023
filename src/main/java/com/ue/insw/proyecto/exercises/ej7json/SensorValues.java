@@ -1,12 +1,13 @@
 package com.ue.insw.proyecto.exercises.ej7json;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Object1 {
 
     protected int type;
     protected int num;
-    protected List<Value> values;
+    protected List<List<Value>> values;
 
     @Override
     public String toString() {
@@ -16,7 +17,7 @@ public class Object1 {
     public Object1(int type, int num, List<Value> values) {
         this.type = type;
         this.num = num;
-        this.values = values;
+        this.values = Collections.singletonList(values);
     }
 
     public int getType() {
@@ -35,11 +36,11 @@ public class Object1 {
         this.num = num;
     }
 
-    public List<Value> getValues() {
+    public List<List<Value>> getValues() {
         return values;
     }
 
     public void setValues(List<Value> values) {
-        this.values = values;
+        this.values = Collections.singletonList(values);
     }
 }

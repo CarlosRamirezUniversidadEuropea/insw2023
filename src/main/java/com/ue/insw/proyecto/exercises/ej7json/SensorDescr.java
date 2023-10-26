@@ -2,13 +2,13 @@ package com.ue.insw.proyecto.exercises.ej7json;
 
 import java.util.List;
 
-public class Object2 {
+public class SensorDescr {
     protected int type;
     protected int num;
     protected List<Fields> fields;
     protected List<Properties> properties;
 
-    public Object2(int type, int num, List<Fields> fields, List<Properties> properties) {
+    public SensorDescr(int type, int num, List<Fields> fields, List<Properties> properties) {
         this.type = type;
         this.num = num;
         this.fields = fields;
@@ -49,6 +49,6 @@ public class Object2 {
 
     @Override
     public String toString() {
-        return "Object2{" + "type=" + type + ", num=" + num + ", fields=" + fields + ", properties=" + properties + '}';
+        return "Sensor Description {" + "type=" + type + ", num=" + num + ", fields=" + fields + ", properties=" + properties + '}';
     }
 }
