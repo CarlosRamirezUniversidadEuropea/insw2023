@@ -21,12 +21,19 @@ public class Car extends Vehicle implements Cleanable {
     private int speed;
     private Status status;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
+    private Gasoline gs;
+
+    private int capacidad = 50;
+
+    private int litros_actuales;
+
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, int speed) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
-        this.speed = 0;
+        this.speed = speed;
+        this.litros_actuales =0;
         this.status = STOPED;
     }
 
@@ -37,6 +44,7 @@ public class Car extends Vehicle implements Cleanable {
     //todo
     public void on() {
         this.status = ON;
+
     }
 
     //todo
@@ -48,24 +56,6 @@ public class Car extends Vehicle implements Cleanable {
     //todo
     public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    /**
-     * fills the car with gasoline
-     * @param gasoline type of gas
-     * @param liters number of liters
-     */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
-    }
-
-    /**
-     * Starts driving the car
-     * @param speed desired to drive
-     * @param time in seconds
-     */
-    public void startDriving (int speed, int time) {
-        // todo Create method to start driving
     }
 
     @Override
@@ -110,14 +100,27 @@ public class Car extends Vehicle implements Cleanable {
         this.status = status;
     }
 
+    public void fillCombustible(Gasoline gs, int litros){
+        System.out.println("Se esta llenando el déposito");
+        if (capacidad<litros){
+            System.out.println("La gasolina excede la capacidad ");
+        }
+        else{
+            litros_actuales = litros;
+            System.out.println("Deposito llenado correctamente");
+            capacidad = capacidad - litros;
+        }
+    }
+
+    public void startDriving(int speed){
+   if (speed>0){
+      setStatus(status.ON);
+      setSpeed(speed);
+   }
+
+    }
     @Override
     public String toString() {
-        return "Car{" +
-                "brand=" + brand +
-                ", color=" + color +
-                ", maxSpeed=" + maxSpeed +
-                ", speed=" + speed +
-                ", status=" + status +
-                '}';
+        return "Car{" + "brand=" + brand + ", color=" + color + ", maxSpeed=" + maxSpeed + ", speed=" + speed + ", status=" + status + '}';
     }
 }
