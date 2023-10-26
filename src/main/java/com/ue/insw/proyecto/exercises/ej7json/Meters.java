@@ -1,70 +1,58 @@
 package com.ue.insw.proyecto.exercises.ej7json;
-
-import com.ue.insw.proyecto.exercises.ej6iteratorpattern.List;
-
+import java.util.List;
 public class Meters {
 
-    private String type;
+    private int type;
     private int num;
+    private List<Field> fields;
+    private List<Property> properties;
 
-    private Field field;
-
-    private Property property;
-
-    public Meters(String type, int num, Field field, Property property) {
-        this.type = type;
-        this.num = num;
-        this.field = field;
-        this.property = property;
+    public int getType() {
+        return type;
     }
 
-    public String getType() {
-        return type;
+    public void setType(int type) {
+        this.type = type;
     }
 
     public int getNum() {
         return num;
     }
 
-    public Field getField() {
-        return field;
-    }
-
-    public Property getProperty() {
-        return property;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public void setNum(int num) {
         this.num = num;
     }
 
-    public void setField(Field field) {
-        this.field = field;
+    public List<Field> getFields() {
+        return fields;
     }
 
-    public void setProperty(Property property) {
-        this.property = property;
+    public void setFields(List<Field> fields) {
+        this.fields = fields;
+    }
+
+    public List<Property> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(List<Property> properties) {
+        this.properties = properties;
     }
 
     @Override
     public String toString() {
-        return "Meters{" +
-                "type='" + type + '\'' +
+        return "Meters {" + "type=" + type +
                 ", num=" + num +
-                ", field=" + field +
-                ", property=" + property +
-                '}';
+                ", fields=" + fields +
+                ", properties=" + properties +
+                "}";
     }
 }
 
 class Field {
-    private String name;
-    private String unit;
-    private int decPrecision;
+    protected String name;
+    protected String unit;
+    protected int decPrecision;
 
     public Field(String name, String unit, int decPrecision) {
         this.name = name;
@@ -72,15 +60,67 @@ class Field {
         this.decPrecision = decPrecision;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public int getDecPrecision() {
+        return decPrecision;
+    }
+
+    public void setDecPrecision(int decPrecision) {
+        this.decPrecision = decPrecision;
+    }
+
+    @Override
+    public String toString() {
+        return "Fields {" +
+                "name=" + name +
+                ", unit=" + unit +
+                ", decPrecision=" + decPrecision + "}, " ;
+    }
+
 }
 
 class Property {
-    private String id;
-    private String name;
+    protected String id;
+    protected String name;
 
     public Property(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Property {" +
+                "id=" + id +
+                ", nameOwner=" + name +"}, ";
     }
 
 }

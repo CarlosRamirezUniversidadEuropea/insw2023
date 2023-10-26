@@ -91,5 +91,32 @@ public class Main {
             System.out.println("Error: Este programa no ha hecho nada");
             // Handle the case where the file does not exist or cannot be read
         }
+
+        String ruta3 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/values.json";
+        // Create a File object for the JSON file
+        File file3 = new File(ruta3);
+        Gson gson3 = new Gson();
+
+        // Check if the file exists and if we have permission to read it
+        if (file3.exists() && file3.canRead()) {
+            try {
+                // Read the JSON file into a string
+                Reader reader = Files.newBufferedReader(Paths.get(ruta3));
+
+                // Convert the JSON string to a Java object
+                Value[] val = gson3.fromJson(reader, Value[].class);
+
+                // Print the data from the Java object
+                for(Value values : val) {
+                    System.out.println(values.toString());
+                }
+
+            } catch (IOException e) {
+                // Handle the IOException
+            }
+        } else {
+            System.out.println("Error: Este programa no ha hecho nada");
+            // Handle the case where the file does not exist or cannot be read
+        }
     }
 }

@@ -22,6 +22,7 @@ public class Car extends Vehicle implements Cleanable {
     private Status status;
     private Gasoline gasoline;
     private double litters;
+    private int time;
 
     public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, double litters) {
         super(price);
@@ -74,6 +75,8 @@ public class Car extends Vehicle implements Cleanable {
      */
     public void startDriving (int speed, int time) {
         this.status = ON;
+        this.speed = speed;
+        this.time = time;
 
     }
 
@@ -138,6 +141,13 @@ public class Car extends Vehicle implements Cleanable {
     }
     public void setLitters(double litters) {
         this.litters = litters;
+    }
+
+    public int getTime() {
+        return time;
+    }
+    public void setTime(int time) {
+        this.time = time;
     }
 
     @Override
