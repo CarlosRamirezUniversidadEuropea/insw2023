@@ -1,40 +1,61 @@
 package com.ue.insw.proyecto.exercises.ej7json;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 import com.google.gson.Gson;
 
-import java.io.File;
+
+
 import java.io.IOException;
+
+import java.io.File;
+
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+
+
+
 public class Main {
+
     public static void main(String[] args) {
-        String ruta = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/person.json";
-        // Create a File object for the JSON file
-        File file = new File(ruta);
+        String personFilePath = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/person.json";
+        String employeesFilePath = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/employees.json";
+        File personFile = new File(personFilePath);//Crea objetos archivo para los archivos json
+        File employeesFile = new File(employeesFilePath);
         Gson gson = new Gson();
 
-        // Check if the file exists and if we have permission to read it
-        if (file.exists() && file.canRead()) {
+        if (personFile.exists() && personFile.canRead()) {//comprueba si el archivo json de persona existe y es redeable.
             try {
-                // Read the JSON file into a string
-                Reader reader = Files.newBufferedReader(Paths.get(ruta));
-
-                // Convert the JSON string to a Java object
-                Persona obj = gson.fromJson(reader, Persona.class);
-
-                // Print the data from the Java object
-                System.out.println(obj.getFirst_name());
-                System.out.println(obj.getLast_name());
-                System.out.println(obj.getLocation());
-                System.out.println(obj.getFollowers());
+                Reader reader = Files.newBufferedReader(Paths.get(personFilePath));//lee el archivo JSON a un string
+                Persona persona = gson.fromJson(reader, Persona.class);//convierte el JSON string a un objeto de java (Persona)
+                System.out.println(persona);//printea la informacion de esta Persona
             } catch (IOException e) {
-                // Handle the IOException
+                System.out.println("Error when reading persona: " + e);
             }
         } else {
-            System.out.println("Error: Este programa no ha hecho nada");
-            // Handle the case where the file does not exist or cannot be read
+            System.out.println("Error, el archivo PERSON no existe o no se puede leer");
         }
+        System.out.println();
+
+
+        //Comprueba si el archivo de employees.json existe y es readeable.
+        if (employeesFile.exists() && employeesFile.canRead()) {
+            try {
+                Reader reader = Files.newBufferedReader(Paths.get(employeesFilePath));//lee el archivo JSON a un string
+                Employee[] employees = gson.fromJson(reader, Employee[].class);//convierte el JSON string a una lista de objetos de java (Employee[])
+                for (Employee employee : employees) {//printea la informacion de esta lista
+                    System.out.println(employee);
+                }
+
+            } catch (IOException e) {
+                System.out.println("Error when reading employees: " + e);
+            }
+        } else {
+            System.out.println("Error, el archivo employees no existe o no se puede leer");
+        }
+
+
     }
 }
