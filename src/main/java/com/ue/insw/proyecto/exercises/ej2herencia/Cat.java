@@ -45,7 +45,7 @@ package com.ue.insw.proyecto.exercises.ej2herencia;
 
     @Override
     public String toString() {
-        return "Gato [Su nombre es = " + nombre + ", es" + raza +
+        return "Gato [Su nombre es = " + nombre + ", es " + raza +
                 " y  tiene " + edad + " años.";
     }
 }
