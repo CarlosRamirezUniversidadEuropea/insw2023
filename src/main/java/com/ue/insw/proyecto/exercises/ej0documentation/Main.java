@@ -7,8 +7,8 @@ public class Main {
         Alumno alumno = new Alumno("Juan", 20, 'H', 123456, null, 1);
         Empleado empleado = new Empleado("Pedro", 20, 'H', 123456, "Sistemas", "Programador");
 
-        System.out.println(persona.getNombre());
-        System.out.println(alumno.getNombre());
-        System.out.println(empleado.getNombre());
+        System.out.println(persona.toString());
+        System.out.println(alumno.toString());
+        System.out.println(empleado.toString());
     }
 }
