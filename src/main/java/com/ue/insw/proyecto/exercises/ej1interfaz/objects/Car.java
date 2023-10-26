@@ -36,14 +36,6 @@ public class Car extends Vehicle implements Cleanable {
         this.depMaximo = depMaximo;
     }
 
-    public Car(BigDecimal price) {
-        super(price);
-    }
-
-  //  public Car( brand, Color color, int i, BigDecimal bigDecimal) {
-    //    super();
-    //}
-
     //todo
     public void on() {
         this.status = ON;
@@ -71,13 +63,18 @@ public class Car extends Vehicle implements Cleanable {
             if(this.deposito == this.depMaximo) {
                 throw new Exception("El deposito esta lleno");
             }else{
-                if(liters < 0){
+                if(liters <= 0){
                     throw new Exception("No se puede llenar con litros negativos");
+                }if(liters > depMaximo){throw new Exception("Los litros no pueden superar la capacidad del deposito");
                 }else{
                     this.deposito += liters;
+                    System.out.println("Se han ingresado los litros en el deposito");
                 }
             }
+        }else {
+            throw new Exception("No coincide el tipo de gasolina");
         }
+
     }
     /**
      * Starts driving the car
