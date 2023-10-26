@@ -23,10 +23,11 @@ public class Main {
 
         // Create a File object for the JSON file
         File file = new File(ruta);
+        File file2 = new File(ruta2);
         Gson gson = new Gson();
 
         // Check if the file exists and if we have permission to read it
-        if (file.exists() && file.canRead()) {
+        if ((file.exists() && file.canRead()) && (file2.exists() && file2.canRead())) {
             try {
                 // Read the JSON file into a string
                 Reader reader = Files.newBufferedReader(Paths.get(ruta));
