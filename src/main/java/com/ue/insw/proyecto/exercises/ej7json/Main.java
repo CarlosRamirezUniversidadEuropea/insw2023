@@ -1,120 +1,117 @@
 package com.ue.insw.proyecto.exercises.ej7json;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import java.lang.reflect.Type;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        // Paths for the json files
-        String ruta_1 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/person.json";
-        String ruta_2 = "https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_values.json";
-        String ruta_3 = "https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_descr.json";
+        // Create a Gson object
+        Gson gson = new Gson();
 
-        // Create a File object for each file
+        String ruta_1 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/person.json";
+        String ruta_2 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/employees.json";
+        // Create a File object for the JSON file
         File file_1 = new File(ruta_1);
         File file_2 = new File(ruta_2);
-        File file_3 = new File(ruta_3);
 
-        // Check if the files exist, if not print an error message
-        boolean file_1_available = file_1.exists() && file_1.canRead();
-        boolean file_2_available = file_2.exists() && file_2.canRead();
-        boolean file_3_available = file_3.exists() && file_3.canRead();
-
-        boolean parse_files = file_1_available && file_2_available && file_3_available;
-
-        // Check if the file exists and if we have permission to read it
-        if (parse_files) {
+        // Check if the file_1 exists and if we have permission to read it
+        if (file_1.exists() && file_1.canRead() && file_2.exists() && file_2.canRead()) {
             try {
-                // Create a Gson object
-                Gson gson = new Gson();
-            
-                // Parse JSON from the first URL
-                Type firstUrlType = new TypeToken<List<Data>>() {}.getType();
-                List<Data> firstUrlData = gson.fromJson(new FileReader(ruta_1), firstUrlType);
-                System.out.println("Data from the first URL:");
-                for (Data data : firstUrlData) {
-                    System.out.println("Type: " + data.getType());
-                    System.out.println("Number: " + data.getNum());
-                    System.out.println("Values:");
-                    for (List<Value> values : data.getValues()) {
-                        for (Value value : values) {
-                            System.out.println("Value: " + value.getV());
-                        }
-                    }
-                    System.out.println();
-            }
+                // Read the JSON file into a string
+                Reader reader = Files.newBufferedReader(Paths.get(ruta_1));
+
+                // Convert the JSON string to a Java object
+                Persona person = gson.fromJson(reader, Persona.class);
+
+                // Print the data from the Java object
+                System.out.println(person.getFirst_name());
+                System.out.println(person.getLast_name());
+                System.out.println(person.getLocation());
+                System.out.println(person.getFollowers());
+
+                
+                // Read the JSON file into a string
+                Reader reader2 = Files.newBufferedReader(Paths.get(ruta_2));
+
+                // Convert the JSON string to a Java object
+                Employee[] employee = gson.fromJson(reader2, Employee[].class);
+
+                for (int i = 0; i < args.length; i++) {
+                    // Print the data from the Java object
+                    System.out.println(employee[i].getFirst_name());
+                    System.out.println(employee[i].getLast_name());
+                    System.out.println(employee[i].getLocation());
+                    System.out.println(employee[i].getFollowers());
+                }
+                    
             } catch (IOException e) {
-                // Handle the IOException
+                System.out.println("Error: No se pudo leer el archivo");
+                // Handle exceptions
             }
         } else {
-            System.out.println("Error: Este programa no ha hecho nada");
+            System.out.println("Error: Este programa no ha hecho nada :(");
             // Handle the case where the file does not exist or cannot be read
         }
 
-        // For file URL1.json
-        String ruta_2 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/person.json";
-        // Create a File object for the JSON file
-        File file_2 = new File(ruta_2);
-        Gson gson_2 = new Gson();
+        // URL 1
+        try {
+            URL url_1 = new URL("https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_values.json");
 
-        // Check if the file exists and if we have permission to read it
-        if (file_2.exists() && file_2.canRead()) {
-            try {
-                // Read the JSON file into a string
-                Reader reader = Files.newBufferedReader(Paths.get(ruta_2));
+            // Read the JSON file from url
+            InputStreamReader reader_3 = new InputStreamReader(url_1.openStream());
 
-                // Convert the JSON string to a Java object
-                Persona obj = gson_2.fromJson(reader, Persona.class);
+            // JsonArray from reader
+            JsonArray jsonArray = JsonParser.parseReader(reader_3).getAsJsonArray();
 
+            // Convert the JSON string to a Java object
+            SensorValue[] value = gson.fromJson(jsonArray, SensorValue[].class);
+
+            for (int i = 0; i < value.length; i++) {
                 // Print the data from the Java object
-                System.out.println(obj.getFirst_name());
-                System.out.println(obj.getLast_name());
-                System.out.println(obj.getLocation());
-                System.out.println(obj.getFollowers());
-            } catch (IOException e) {
-                // Handle the IOException
+                System.out.println(value[i].getNum());
+                System.out.println(value[i].getType());
+                System.out.println(value[i].getClass());
+                System.out.println(value[i].getValues());
             }
-        } else {
-            System.out.println("Error: Este programa no ha hecho nada");
-            // Handle the case where the file does not exist or cannot be read
+                
+        } catch (IOException e) {
+            System.out.println("Error: No se pudo leer el archivo");
+            // Handle exceptions
         }
 
-        // For file URL2.json
-        String ruta_3 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/person.json";
-        // Create a File object for the JSON file
-        File file_3 = new File(ruta_3);
-        Gson gson_3 = new Gson();
+        // URL 2
+        try {
+            URL url_2 = new URL("https://raw.githubusercontent.com/CarlosRamirezUniversidadEuropea/json-data/main/sensor_descr.json");
 
-        // Check if the file exists and if we have permission to read it
-        if (file_3.exists() && file_3.canRead()) {
-            try {
-                // Read the JSON file into a string
-                Reader reader = Files.newBufferedReader(Paths.get(ruta_3));
+            // Read the JSON file from url
+            InputStreamReader reader_4 = new InputStreamReader(url_2.openStream());
 
-                // Convert the JSON string to a Java object
-                Persona obj = gson_3.fromJson(reader, Persona.class);
+            // JsonArray from reader
+            JsonArray jsonArray = JsonParser.parseReader(reader_4).getAsJsonArray();
 
+            // Convert the JSON string to a Java object
+            Sensor[] sensor = gson.fromJson(jsonArray, Sensor[].class);
+
+            for (int i = 0; i < sensor.length; i++) {
                 // Print the data from the Java object
-                System.out.println(obj.getFirst_name());
-                System.out.println(obj.getLast_name());
-                System.out.println(obj.getLocation());
-                System.out.println(obj.getFollowers());
-            } catch (IOException e) {
-                // Handle the IOException
+                System.out.println(sensor[i].getNum());
+                System.out.println(sensor[i].getType());
+                System.out.println(sensor[i].getFields());
+                System.out.println(sensor[i].getProperties());
             }
-        } else {
-            System.out.println("Error: Este programa no ha hecho nada");
-            // Handle the case where the file does not exist or cannot be read
+                
+        } catch (IOException e) {
+            System.out.println("Error: No se pudo leer el archivo");
+            // Handle exceptions
         }
     }
 }
