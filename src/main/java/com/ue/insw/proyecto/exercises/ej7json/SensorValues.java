@@ -3,7 +3,7 @@ package com.ue.insw.proyecto.exercises.ej7json;
 import java.util.Collections;
 import java.util.List;
 
-public class Object1 {
+public class SensorValues {
 
     protected int type;
     protected int num;
@@ -11,10 +11,10 @@ public class Object1 {
 
     @Override
     public String toString() {
-        return "Object1{" + "type=" + type + ", num=" + num + ", values=" + values + '}';
+        return "Sensor Values {" + "type=" + type + ", num=" + num + ", values=" + values + '}';
     }
 
-    public Object1(int type, int num, List<Value> values) {
+    public SensorValues(int type, int num, List<Value> values) {
         this.type = type;
         this.num = num;
         this.values = Collections.singletonList(values);
