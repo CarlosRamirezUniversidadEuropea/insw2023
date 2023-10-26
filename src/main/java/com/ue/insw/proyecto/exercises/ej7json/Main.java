@@ -25,9 +25,10 @@ public class Main {
                 Persona obj = gson.fromJson(reader, Persona.class);
 
                 // Print the data from the Java object
-                System.out.println(obj.getFirst_name());
-                System.out.println(obj.getLast_name());
-                System.out.println(obj.getLocation());
+                System.out.println("Persona: ");
+                System.out.println(obj.getFirst_name() + ", ");
+                System.out.println(obj.getLast_name()+ ", ");
+                System.out.println(obj.getLocation()+ ", ");
                 System.out.println(obj.getFollowers());
             } catch (IOException e) {
                 // Handle the IOException
@@ -36,5 +37,6 @@ public class Main {
             System.out.println("Error: Este programa no ha hecho nada");
             // Handle the case where the file does not exist or cannot be read
         }
+
     }
 }
