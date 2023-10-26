@@ -104,70 +104,50 @@ public class Main {
             JsonArray jsonArray_v = JsonParser.parseReader(reader_v).getAsJsonArray();
             JsonArray jsonArray_d = JsonParser.parseReader(reader_d).getAsJsonArray();
 
-            // Usamos un for para recorrer los arrays y guardarlos en los jsonObjects
-            for (int i = 0; i < jsonArray_v.size(); i++) {
-                System.out.println("\nSensor " + (i+1) + ": ");
-                JsonObject jsonObject_v = jsonArray_v.get(i).getAsJsonObject();
-                System.out.println("Valores del sensor: " + jsonObject_v.toString());
-                JsonObject jsonObject_d = jsonArray_d.get(i).getAsJsonObject();
-                System.out.println("Descripción del sensor: " + jsonObject_d.toString());
-            }
-
-            /** 
-             * QUERÍA IMPRIMIRLO BONITO PERO DA ERROR POR LA ESTRUCTURA DEL JSON :(
-             * 
-            // Guardamos el JsonArray como JSON en un fichero
-            Files.write(Paths.get("C:/Users/pablo/Documents/Java Projects/insw2023/src/main/java/com/ue/insw/proyecto/exercises/ej7json/valores.json"), jsonValores.toString().getBytes());
-            Files.write(Paths.get("C:/Users/pablo/Documents/Java Projects/insw2023/src/main/java/com/ue/insw/proyecto/exercises/ej7json/descripciones.json"), jsonDescripciones.toString().getBytes());
-
-            // Repetimos el proceso que se usó anteriormente pero con los ficheros que acabamos de crear
-            String ruta_v = "C:/Users/pablo/Documents/Java Projects/insw2023/src/main/java/com/ue/insw/proyecto/exercises/ej7json/valores.json";
-            String ruta_d = "C:/Users/pablo/Documents/Java Projects/insw2023/src/main/java/com/ue/insw/proyecto/exercises/ej7json/descripciones.json";
-
-            // Creamos files y gson para ambos
-            File file_v = new File(ruta_v);
+            // Creamos los GSON
             Gson gson_v = new Gson();
-            File file_d = new File(ruta_d);
             Gson gson_d = new Gson();
 
-            // Miramos si existen y se pueden leer
-            if (file_v.exists() && file_v.canRead() && file_d.exists() && file_d.canRead()) { 
-                try {
-                    // Read the JSON file into a string
-                    Reader reader_v_f = Files.newBufferedReader(Paths.get(ruta_v));
-                    Reader reader_d_f = Files.newBufferedReader(Paths.get(ruta_d));
+            // Creamos los arrays de objetos
+            SensorValores[] obj_v = new SensorValores[jsonArray_v.size()];
+            SensorDescripciones[] obj_d = new SensorDescripciones[jsonArray_d.size()];
 
-                    // Convert the JSON string to a Java object
-                    ObjetoValores[] obj_v = gson_v.fromJson(reader_v_f, ObjetoValores[].class);
-                    ObjetoDescripciones[] obj_d = gson_d.fromJson(reader_d_f, ObjetoDescripciones[].class);
+            // Bucle for para ir convirtiendo cada posición del JSONArray a un JSONObject
+            for (int i = 0; i < jsonArray_v.size(); i++) {
+                // Vamos convirtiendo cada posición del array
+                JsonObject jsonObject_v = jsonArray_v.get(i).getAsJsonObject();
 
-                    // Print the data from the Java object
-                    // Bucle for para recorrer el array de empleados
-                    for (ObjetoValores objetoValores : obj_v) {
-                        System.out.println("\nValores del sensor " + objetoValores.getNum() + ": ");
-                        System.out.println(" - Tipo: " + objetoValores.getType());
-                        System.out.println(" - Valores: " + objetoValores.getValues());
-                    }
+                // Lo guarda en el array de objetos
+                obj_v[i] = gson_v.fromJson(jsonObject_v.toString(), SensorValores.class);
+            }
 
-                    // Hacemos lo mismo con las descripciones
-                    for (ObjetoDescripciones objetoDescripciones : obj_d) {
-                        System.out.println("\nDescripción del sensor " + objetoDescripciones.getNum() + ": ");
-                        System.out.println(" - Tipo: " + objetoDescripciones.getType());
-                        System.out.println(" - Campos: " + objetoDescripciones.getFields());
-                        System.out.println(" - Propiedades: " + objetoDescripciones.getProperties());
-                    }
+            // Lo mismo para el otro array
+            for (int i = 0; i < jsonArray_d.size(); i++) {
+                // Vamos convirtiendo cada posición del array
+                JsonObject jsonObject_d = jsonArray_d.get(i).getAsJsonObject();
 
-                } catch (IOException e) {
-                    // Handle the IOException
+                // Lo guarda en el array de objetos
+                obj_d[i] = gson_d.fromJson(jsonObject_d.toString(), SensorDescripciones.class);
+            }
+
+            // Bucle for para recorrer los arrays de valores y descripciones, imprimiendo los datos de cada objeto
+            for (int i = 0; i < obj_v.length || i < obj_d.length; i++) {
+                if (i < obj_v.length) {
+                    System.out.println("\nValores del sensor " + obj_v[i].getNum() + ": ");
+                    System.out.println(" - Tipo: " + obj_v[i].getType());
+                    System.out.println(" - Valores: " + obj_v[i].getValues());
                 }
-            } else {
-                System.out.println("Error: Este programa no ha hecho nada");
-                // Handle the case where the file does not exist or cannot be read
+                if (i < obj_d.length) {
+                    System.out.println("\nDescripción del sensor " + obj_d[i].getNum() + ": ");
+                    System.out.println(" - Tipo: " + obj_d[i].getType());
+                    System.out.println(" - Campos: " + obj_d[i].getFields());
+                    System.out.println(" - Propiedades: " + obj_d[i].getProperties());
+                }
             }
 
             // Cerramos los lectores
             reader_v.close();
-            reader_d.close(); */
+            reader_d.close();
 
         } catch(Exception e) {
             //e.printStackTrace();

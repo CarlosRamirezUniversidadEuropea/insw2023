@@ -2,12 +2,12 @@ package com.ue.insw.proyecto.exercises.ej7json;
 
 import java.util.List;
 
-public class ObjetoValores {
+public class SensorValores {
 
     // Atributos
     protected int type;
     protected int num;
-    protected List<Valores> values;
+    protected List<List<Valores>> values;
 
     /**
      * Constructor de la clase
@@ -15,7 +15,7 @@ public class ObjetoValores {
      * @param num Número del sensor
      * @param values Valores
      */
-    public ObjetoValores(int type, int num, List<Valores> values) {
+    public SensorValores(int type, int num, List<List<Valores>> values) {
         this.type = type;
         this.num = num;
         this.values = values;
@@ -38,11 +38,11 @@ public class ObjetoValores {
         this.num = num;
     }
 
-    public List<Valores> getValues() {
+    public List<List<Valores>> getValues() {
         return values;
     }
 
-    public void setValues(List<Valores> values) {
+    public void setValues(List<List<Valores>> values) {
         this.values = values;
     }
 

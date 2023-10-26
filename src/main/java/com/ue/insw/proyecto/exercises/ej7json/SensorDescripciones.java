@@ -2,7 +2,7 @@ package com.ue.insw.proyecto.exercises.ej7json;
 
 import java.util.List;
 
-public class ObjetoDescripciones {
+public class SensorDescripciones {
     
     // Atributos
     protected int type;
@@ -17,7 +17,7 @@ public class ObjetoDescripciones {
      * @param fields Campos
      * @param properties Propiedades
      */
-    public ObjetoDescripciones(int type, int num, List<Campos> fields, List<Propiedades> properties) {
+    public SensorDescripciones(int type, int num, List<Campos> fields, List<Propiedades> properties) {
         this.type = type;
         this.num = num;
         this.fields = fields;

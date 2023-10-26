@@ -40,6 +40,6 @@ public class Propiedades {
     // Método toString
     @Override
     public String toString() {
-        return "ID ~ " + id + " // Nombre " + name;
+        return "ID ~> " + id + " // Nombre ~> " + name;
     }
 }
