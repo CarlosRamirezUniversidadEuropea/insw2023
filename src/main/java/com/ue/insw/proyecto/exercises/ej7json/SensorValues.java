@@ -17,4 +17,13 @@ public class SensorValues extends Sensor{
     public void setValues(List<List<Values>> values) {
         this.values = values;
     }
+
+    @Override
+    public String toString() {
+        return "SensorValues{" + "\ntype=" + type +
+                "\n num=" + num + "\nValues: " + values.toString() +
+                '}';
+    }
 }
+
+
