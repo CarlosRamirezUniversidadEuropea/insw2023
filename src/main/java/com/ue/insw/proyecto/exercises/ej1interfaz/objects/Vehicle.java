@@ -8,11 +8,16 @@ public class Vehicle {
     private int speed;
     private int maxSpeed;
 
-    public Vehicle(BigDecimal price) {
+    public Vehicle(BigDecimal price, int maxSpeed) {
         this.price = price;
+        this.maxSpeed = maxSpeed;
     }
 
     public BigDecimal getPrice(){
         return price;
+    }
+
+    public int getSpeed(){
+        return speed;
     }
 }

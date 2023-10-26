@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 public class Main {
 
     public static void main(String[] args) {
+        // Creamos un coche y probamos que tódos los métodos funcionan.
         Car gt3rs = null;
         try {
             gt3rs = new Car(Brand.PORSCHE, Color.BLACK, 296, new BigDecimal(287000), Gasoline.OCTANE_98, 92);
@@ -22,6 +23,10 @@ public class Main {
             System.out.println(gt3rs.getColor());
             System.out.println(gt3rs.toString());
             gt3rs.clean();
+            gt3rs.on();
+            gt3rs.setSpeed(100);
+            System.out.println(gt3rs.getSpeed());
+            gt3rs.stop();
         }
     }
 }

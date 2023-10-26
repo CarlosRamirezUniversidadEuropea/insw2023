@@ -1,6 +1,43 @@
 package com.ue.insw.proyecto.exercises.ej1interfaz.objects;
+import com.ue.insw.proyecto.exercises.ej1interfaz.interfaces.Cleanable;
 
-//todo extender de Vehicle
-//todo implements Cleanable
-public class Bicycle{
+import java.math.BigDecimal;
+
+
+public class Bicycle extends Vehicle implements Cleanable {
+
+    private int speed;
+    private static BigDecimal price;
+    private int maxSpeed;
+
+    public Bicycle(int maxSpeed) {
+        super(price, maxSpeed);
+        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public void clean() {
+        System.out.println("Bicicleta limpia");
+    }
+
+    public void setSpeed(int speed) {
+        if (speed > maxSpeed) {
+            System.out.println("La velocidad no puede ser mayor a la velocidad máxima");
+        }
+        else {
+            this.speed = speed;
+        }
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public String toString() {
+        return "Bicycle{" +
+                "speed=" + speed +
+                ", maxSpeed=" + maxSpeed +
+                '}';
+    }
 }

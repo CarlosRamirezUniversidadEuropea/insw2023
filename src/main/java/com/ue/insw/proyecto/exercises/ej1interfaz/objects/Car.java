@@ -11,8 +11,7 @@ import java.math.BigDecimal;
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.ON;
 import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status.STOPPED;
 
-//todo extender de Vehicle
-//todo implementar Cleanable
+
 public class Car extends Vehicle implements Cleanable {
 
     private Brand brand;
@@ -25,7 +24,7 @@ public class Car extends Vehicle implements Cleanable {
     private Gasoline gasoline;
 
     public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, int tankMaxCapacity) throws Exception{
-        super(price);
+        super(price, maxSpeed);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
@@ -42,22 +41,19 @@ public class Car extends Vehicle implements Cleanable {
         }
     }
 
-    public Car(BigDecimal price) {
-        super(price);
+    public Car(BigDecimal price, int maxSpeed) {
+        super(price, maxSpeed);
     }
 
-    //todo
     public void on() {
         this.status = ON;
     }
 
-    //todo
     public void stop() {
         this.speed = 0;
         this.status = STOPPED;
     }
 
-    //todo
     public void setSpeed(int speed) {
         this.speed = speed;
     }
