@@ -144,6 +144,7 @@ public class Main {
                     System.out.println(" - Propiedades: " + obj_d[i].getProperties());
                 }
             }
+            System.out.print("\n");
 
             // Cerramos los lectores
             reader_v.close();
