@@ -6,7 +6,7 @@ package com.ue.insw.proyecto.exercises.ej2herencia;
     int edad;
 
     public Cat(String raza, String nombre, int edad) {
-        super(raza, edad);
+        super(raza, nombre, edad);
         this.raza = raza;
         this.nombre = nombre;
         this.edad = edad;
@@ -40,7 +40,7 @@ package com.ue.insw.proyecto.exercises.ej2herencia;
 
     @Override
     public void speak() {
-
+        System.out.println("miau");
     }
 
     @Override

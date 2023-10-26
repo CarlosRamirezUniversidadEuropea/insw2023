@@ -7,9 +7,9 @@ public class Animal implements Speak {
     private String nombre;
     private int edad;
 
-    public Animal(String raza, int edad) {
+    public Animal(String raza, String nombre, int edad) {
         this.raza = raza;
-        this.nombre = nombre;
+        this.nombre = this.nombre;
         this.edad = edad;
     }
 

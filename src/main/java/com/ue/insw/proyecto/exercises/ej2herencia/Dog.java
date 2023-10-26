@@ -5,7 +5,7 @@ public class Dog extends Animal implements Speak{
     private String nombre;
     private int edad;
     public Dog(String raza, String nombre, int edad) {
-        super(raza, edad);
+        super(raza, nombre, edad);
         this.raza = raza;
         this.nombre = nombre;
         this.edad = edad;
@@ -33,6 +33,7 @@ public class Dog extends Animal implements Speak{
     }
     @Override
     public void speak() {
+        System.out.println("woof");
 
     }
     @Override
