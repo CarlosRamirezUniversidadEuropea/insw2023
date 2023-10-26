@@ -55,20 +55,35 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
-        //todo Create method to fill car
-    }
 
+    public void fillCombustible(Gasoline gasoline, int liters, int capacity) throws Exception {
+        if (liters <= 0) {
+            throw new IllegalArgumentException("Los litros deben ser un número positivo.");
+        }
+
+        if (gasoline != Gasoline.OCTANE_95 && gasoline != Gasoline.OCTANE_98 && gasoline != Gasoline.GASOLEO_A) {
+            throw new IllegalArgumentException("No se puede llenar con un tipo de combustible diferente.");
+        }
+
+        if (liters > capacity) {
+            throw new IllegalArgumentException("La cantidad de combustible no puede superar la capacidad del depósito.");
+        }
+
+        // Implementar la lógica para llenar el combustible
+        // this.capacity -= liters;
+    }
     /**
      * Starts driving the car
      * @param speed desired to drive
      * @param time in seconds
      */
-    public void startDriving (int speed, int time) {
-        // todo Create method to start driving
+    public void startDriving(int speed, int time) throws Exception {
+        if (speed < 0) {
+            throw new IllegalArgumentException("La velocidad debe ser un número positivo.");
+        }
     }
 
-    @Override
+        @Override
     public void clean() {
         System.out.println("Coche limpiándose");
     }
