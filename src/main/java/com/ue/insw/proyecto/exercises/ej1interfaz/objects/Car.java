@@ -126,13 +126,18 @@ public class Car extends Vehicle implements Cleanable {
     }
 
     @Override
+    public BigDecimal getPrice() {
+        return super.getPrice();
+    }
+
+    @Override
     public String toString() {
-        return "Car{" +
-                "brand=" + brand +
-                ", color=" + color +
-                ", maxSpeed=" + maxSpeed +
-                ", speed=" + speed +
-                ", status=" + status +
-                '}';
+        return "Car[" +
+                " Marca: " + brand +
+                ", color: " + color +
+                ", maxima velocidad: " + maxSpeed +
+                ", velocidad: " + speed +
+                ", estado: " + status +
+                ']';
     }
 }
