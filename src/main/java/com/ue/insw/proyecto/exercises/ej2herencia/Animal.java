@@ -7,16 +7,28 @@ public class Animal{
     private String nombre;
     private int edad;
 
-    public Animal(String raza, String nombre) {
+    public Animal(String raza, String nombre,int edad) {
         this.raza = raza;
         this.nombre = nombre;
+        this.edad = edad;
     }
 
     public int getEdad() {
+
         return edad;
     }
 
     public void setEdad(int edad) {
+
         this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal [raza= " + raza + " nombre= " + nombre + ", edad= " + edad + "]";
+    }
+    interface Speak {
+String speak();
+
     }
 }

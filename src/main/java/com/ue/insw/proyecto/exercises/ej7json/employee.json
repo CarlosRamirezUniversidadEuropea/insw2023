@@ -1,0 +1,24 @@
+[
+  {
+    "name":"paco",
+    "email":"paquin@gmail.com",
+    "phone": 600003003,
+    "subscribed" :  false,
+    "birth" : "2002-8-31"
+  },
+  {
+    "name":"beto",
+    "email":"betobullicio@gmail.com",
+    "phone": 633342333,
+    "subscribed" : true,
+    "birth" : "2000-1-1"
+  },
+  {
+    "name":"fernando",
+    "email":"nando@gmail.com",
+    "phone": 688393882,
+    "subscribed" : false,
+    "birth" : "2002-10-30"
+  }
+
+]
