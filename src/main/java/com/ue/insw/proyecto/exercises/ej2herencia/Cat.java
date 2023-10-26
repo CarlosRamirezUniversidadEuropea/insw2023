@@ -27,6 +27,6 @@ public class Cat extends Animal implements Speak {
 
 
     public String toString() {
-        return "Gato sonido=" + sonido + ", raza=" + getRaza() + ", nombre=" + getNombre() + ", edad=" + getEdad();
+        return "Gato sonido=" + sonido + ", raza=" + getRaza() + ", nombre=" + getNombre() + ", edad=" + getEdad() + ".";
     }
 }

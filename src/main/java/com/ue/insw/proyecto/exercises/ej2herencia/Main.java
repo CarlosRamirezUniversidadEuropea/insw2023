@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         //todo crear dog, cat y human y llamar a método speak
 
-        Cat cat = new Cat("Persa", "Michi", "miau", 3);
+        Cat cat = new Cat("Persa", "Michi", "miau", 9);
         System.out.println(cat.toString());
         cat.speak();
 
