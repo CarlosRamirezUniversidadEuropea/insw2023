@@ -10,4 +10,9 @@ public class Human extends Animal implements Speak{
     public void speak() {
         System.out.println("buenos dias");
     }
+    public String toString() {
+        return "edad = " + getEdad() +
+                ", raza = " + getRaza() +
+                ", nombre = " + getNombre();
+    }
 }

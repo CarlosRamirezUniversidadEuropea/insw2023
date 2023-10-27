@@ -14,4 +14,5 @@ public class Vehicle {
     public BigDecimal getPrice(){
         return price;
     }
+
 }

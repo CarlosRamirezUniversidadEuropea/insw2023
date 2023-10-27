@@ -9,6 +9,10 @@ public class Cat extends Animal implements Speak{
     public void speak() {
         System.out.println("Miau");
     }
-
+    public String toString() {
+        return "edad = " + getEdad() +
+                ", raza = " + getRaza() +
+                ", nombre = " + getNombre();
+    }
     // todo extends Animal implements speak, override methods
 }

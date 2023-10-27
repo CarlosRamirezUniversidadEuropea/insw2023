@@ -10,4 +10,9 @@ public class Dog extends Animal implements Speak{
         System.out.println("Guau");
     }
     // todo complete extends Animal implements speak, override methods
+    public String toString() {
+        return "edad = " + getEdad() +
+                ", raza = " + getRaza() +
+                ", nombre = " + getNombre();
+    }
 }

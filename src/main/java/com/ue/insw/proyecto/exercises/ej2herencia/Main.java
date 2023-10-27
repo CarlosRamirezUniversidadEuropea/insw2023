@@ -17,5 +17,8 @@ public class Main {
         Human h = new Human("humano:", "jose", 19);
         System.out.println("humano:");
         h.speak();
+        System.out.println(a.toString());
+        System.out.println(c.toString());
+        System.out.println(h.toString());
     }
 }

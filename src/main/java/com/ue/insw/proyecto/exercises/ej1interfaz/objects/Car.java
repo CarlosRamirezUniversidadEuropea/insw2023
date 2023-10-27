@@ -61,18 +61,44 @@ public class Car extends Vehicle implements Cleanable {
      * @param gasoline type of gas
      * @param liters number of liters
      */
-    public void fillCombustible(Gasoline gasoline, int liters) {
+    public void fillCombustible(Gasoline gasoline, int liters) throws Exception{
         //todo Create method to fill car
-
+        if(this.gasoline == gasoline){
+            if(this.deposito == this.depMaximo){
+                throw new Exception ("el deposito esta lleno");
+            }
+            else{
+                if(liters <= 0){
+                    throw new Exception("el numero debe ser positivo");
+                }
+                if(liters > depMaximo){
+                    throw new Exception("El numero de litros supera el deposito");
+                }
+                else{
+                    deposito += liters;
+                    System.out.println("cantidad en el deposito: " + deposito);
+                }
+            }
+        }
+        else {
+            throw new Exception("gasolina incompatible");
+        }
     }
 
     /**
      * Starts driving the car
      * @param speed desired to drive
-     * @param time in seconds
+     *
      */
-    public void startDriving (int speed, int time) {
+    public void startDriving (int speed) {
         // todo Create method to start driving
+        if(speed > 0 && speed < maxSpeed){
+            if(deposito > 0){
+                this.status = ON;
+                System.out.println("velocidad: " + speed);
+                setSpeed(speed);
+            }
+        }
     }
 
     @Override
@@ -101,8 +127,14 @@ public class Car extends Vehicle implements Cleanable {
     }
 
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
+    public void setMaxSpeed(int maxSpeed) throws Exception{
         this.maxSpeed = maxSpeed;
+        if(maxSpeed < 0){
+            throw new Exception("la velocidad debe ser positiva");
+        }
+        else{
+            this.maxSpeed = maxSpeed;
+        }
     }
 
     public int getSpeed() {

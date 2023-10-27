@@ -27,12 +27,7 @@ public class Empleado extends Persona{
      * @param departamento Departamento donde trabajara el empleado
      * @param puesto Puesto que ocupara el empleado dentro de la empresa
      */
-    public Empleado(String nombre, 
-                    int edad, 
-                    char sexo, 
-                    int numeroEmpleado, 
-                    String departamento, 
-                    String puesto){
+    public Empleado(String nombre, int edad, char sexo, int numeroEmpleado, String departamento, String puesto){
         super(nombre, edad, sexo);
         this.numeroEmpleado = numeroEmpleado;
         this.departamento = departamento;

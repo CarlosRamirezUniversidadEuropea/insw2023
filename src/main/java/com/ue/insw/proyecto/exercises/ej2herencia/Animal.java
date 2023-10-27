@@ -21,6 +21,14 @@ public class Animal implements Speak{
         this.edad = edad;
     }
 
+    public String getRaza() {
+        return raza;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
     @Override
     public void speak() {
 
