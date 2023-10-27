@@ -1,0 +1,30 @@
+[
+{
+  "name" : "Maylen",
+  "email" : "maylen020704@gmail.com",
+  "phone" : "658914512",
+  "subscribed" : true,
+  "birth" : "2004-07-21"
+},
+  {
+    "name" : "Juan",
+    "email" : "juan28@gmail.com",
+    "phone" : "621802108",
+    "subscribed" : false,
+    "birth" : "2000-05-28"
+  },
+  {
+    "name" : "Maria",
+    "email" : "maria04@gmail.com",
+    "phone" : "628132458",
+    "subscribed" : false,
+    "birth" : "1995-10-11"
+  },
+  {
+    "name" : "Santiago",
+    "email" : "santiago122@gmail.com",
+    "phone" : "628211171",
+    "subscribed" : false,
+    "birth" : "2004-07-21"
+  }
+]
