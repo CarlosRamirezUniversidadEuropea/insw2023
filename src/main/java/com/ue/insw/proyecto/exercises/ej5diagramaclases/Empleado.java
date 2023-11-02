@@ -20,8 +20,9 @@ public class Empleado extends Persona{
     /**
      * To string method to print the object
      */
-    public String mostrar() {
-        return "Empleado{" + "name=" + getNombre() + ", age=" + getEdad() + ", salary=" + sueldo_bruto + '}';
+    @Override
+    public String toString() {
+        return "Empleado{" + "name=" + super.getNombre() + ", age=" + super.getEdad() + ", salary=" + sueldo_bruto + '}';
     }
 
     /**

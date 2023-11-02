@@ -27,8 +27,9 @@ public class Cliente extends Persona{
     /**
      * To string method to print the object
      */
-    public String mostrar() {
-        return "Cliente{" + "name=" + getNombre() + ", age=" + getEdad() + ", company=" + empresa + ", phone=" + telefono_de_contacto + '}';
+    @Override
+    public String toString() {
+        return "Cliente{" + "name=" + super.getNombre() + ", age=" + super.getEdad() + ", company=" + empresa + ", phone=" + telefono_de_contacto + '}';
     }
 
     /**

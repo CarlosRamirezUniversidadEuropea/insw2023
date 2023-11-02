@@ -23,7 +23,8 @@ public class Persona {
     /**
      * To string method to print the object
      */
-    public String mostrar() {
+    @Override
+    public String toString() {
         return "Persona{" + "name=" + nombre + ", age=" + edad + '}';
     }
 

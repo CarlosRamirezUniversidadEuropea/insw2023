@@ -21,8 +21,9 @@ public class Directivo extends Empleado{
     /**
      * To string method to print the object
      */
-    public String mostrar() {
-        return "Directivo{" + "name=" + getNombre() + ", age=" + getEdad() + ", salary=" + getSueldo_bruto() + ", category=" + categoria + '}';
+    @Override
+    public String toString() {
+        return "Directivo{" + "name=" + super.getNombre() + ", age=" + super.getEdad() + ", salary=" + super.getSueldo_bruto() + ", category=" + categoria + '}';
     }
 
     /**
