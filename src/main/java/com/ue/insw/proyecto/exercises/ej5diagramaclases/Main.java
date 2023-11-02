@@ -6,5 +6,7 @@ public class Main {
         //TODO crear las clases del diagrama con sus atributos y métodos.
         //TODO crear aquí en el main una empresa, con sus empledados y clientes. Imprimir por pantalla toda la información
 
+        
+        
     }
 }
