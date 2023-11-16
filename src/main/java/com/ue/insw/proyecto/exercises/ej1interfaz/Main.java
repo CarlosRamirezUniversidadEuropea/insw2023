@@ -12,13 +12,19 @@ import java.math.BigDecimal;
 public class Main {
 
     public static void main(String[] args) {
-        Car peugeot = new Car(Brand.PEUGEOT, Color.BLACK, 150, new BigDecimal(12000), 40);
+        Car peugeot = new Car(Brand.PEUGEOT, Color.BLACK, 150, new BigDecimal(12000));
         System.out.println(peugeot.getPrice());
         System.out.println(peugeot.getBrand());
         System.out.println(peugeot.getColor());
         System.out.println(peugeot.toString());
-        peugeot.fillCombustible(Gasoline.GASOLEO_A,40);
-        peugeot.startDriving(0);
+        try {
+            peugeot.fillCombustible(Gasoline.GASOLEO_A,80);
+        } catch (Exception e) {
+            System.out.println(e);;
+        }
+        peugeot.startDriving(40);
+        peugeot.setMaxSpeed(-40);
+        System.out.println(peugeot.toString());
         peugeot.clean();
 
         Truck Man = new Truck(Brand.MAN, Color.WHITE, 89, new BigDecimal(12000), 60);

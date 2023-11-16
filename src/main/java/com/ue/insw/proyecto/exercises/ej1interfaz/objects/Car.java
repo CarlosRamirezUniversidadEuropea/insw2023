@@ -27,12 +27,11 @@ public class Car extends Vehicle implements Cleanable {
 
     private int litros_actuales;
 
-    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, int speed) {
+    public Car(Brand brand, Color color, int maxSpeed, BigDecimal price) {
         super(price);
         this.brand = brand;
         this.color = color;
         this.maxSpeed = maxSpeed;
-        this.speed = speed;
         this.litros_actuales =0;
         this.status = STOPED;
     }
@@ -100,10 +99,10 @@ public class Car extends Vehicle implements Cleanable {
         this.status = status;
     }
 
-    public void fillCombustible(Gasoline gs, int litros){
+    public void fillCombustible(Gasoline gs, int litros) throws Exception{
         System.out.println("Se esta llenando el déposito");
         if (capacidad<litros){
-            System.out.println("La gasolina excede la capacidad ");
+           throw new Exception("ERROR: La gasolina excede la capacidad ");
         }
         else{
             litros_actuales = litros;
@@ -113,11 +112,10 @@ public class Car extends Vehicle implements Cleanable {
     }
 
     public void startDriving(int speed){
-   if (speed>0){
-      setStatus(status.ON);
-      setSpeed(speed);
-   }
-
+        if (speed>0){
+            setStatus(status.ON);
+            setSpeed(speed);
+        }
     }
     @Override
     public String toString() {
