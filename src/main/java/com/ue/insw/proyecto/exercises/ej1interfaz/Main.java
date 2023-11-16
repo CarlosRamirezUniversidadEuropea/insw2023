@@ -19,7 +19,7 @@ public class Main {
         System.out.println(peugeot.getPrice());
         System.out.println(peugeot.getBrand());
         System.out.println(peugeot.getColor());
-        System.out.println(peugeot.toString());
+        System.out.println(peugeot);
         peugeot.clean();
 
         Bicycle orbea = new Bicycle(new BigDecimal(300), Brand.ORBEA, Color.BLUE);
@@ -27,13 +27,13 @@ public class Main {
         System.out.println(orbea.getColor());
         System.out.println(orbea.getBrand());
         System.out.println(orbea.getPrice());
-        System.out.println(orbea.toString());
+        System.out.println(orbea);
         orbea.clean();
 
         Truck mercedes = new Truck(new BigDecimal(50000), Brand.MERCEDES, Color.RED, 200, 5000, Gasoline.OCTANE_98);
         mercedes.on();
         mercedes.fillCombustible(Gasoline.OCTANE_98, 600);
         mercedes.startDriving(180, 60);
-        System.out.println(mercedes.toString());
+        System.out.println(mercedes);
     }
 }

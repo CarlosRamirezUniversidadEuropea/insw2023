@@ -15,9 +15,9 @@ public class Main {
 
         System.out.println("----------------------------------------------------------------");
 
-        System.out.println(cat.toString());
-        System.out.println(dog.toString());
-        System.out.println(human.toString());
+        System.out.println(cat);
+        System.out.println(dog);
+        System.out.println(human);
 
     }
 }

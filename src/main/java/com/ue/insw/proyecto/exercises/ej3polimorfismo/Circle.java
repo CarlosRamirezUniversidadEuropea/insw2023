@@ -8,19 +8,25 @@ public class Circle extends Shape{
     }
     @Override
     public double calculatePerimeter() {
-        this.perimetro = radio * 2 * 3.1416;
-        return perimetro;
+        return getRadio() * 2 * 3.1416;
+    }
+
+    public double getRadio() {
+        return radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
     }
 
     @Override
     public double calculateArea() {
-        this.area = (radio * radio) * 3.1416;
-        return area;
+        return (radio * radio) * 3.1416;
     }
 
     @Override
     public String toString() {
-        String aux = "Circle = [radio = " + radio + ", area = " + area + ", perimetro = " + perimetro + "]";
+        String aux = "Circle = [radio = " + radio + "area:" + calculateArea() + " perimetro " + calculatePerimeter()+ "]";
         return aux ;
     }
 }

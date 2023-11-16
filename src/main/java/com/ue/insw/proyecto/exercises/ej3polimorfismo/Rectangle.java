@@ -4,6 +4,8 @@ package com.ue.insw.proyecto.exercises.ej3polimorfismo;
 public class Rectangle extends Shape {
     private double lado1;
     private double lado2;
+    private double perimetro;
+    private double area;
 
     public Rectangle(double lado1, double lado2) {
         this.lado1 = lado1;
