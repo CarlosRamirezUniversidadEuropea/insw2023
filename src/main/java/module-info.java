@@ -4,6 +4,7 @@ module com.ue.insw.proyecto {
     requires org.json;
     requires com.google.gson;
     requires java.desktop;
+    requires junit;
 
     opens com.ue.insw.proyecto.exercises.ej7json to com.google.gson;
     exports com.ue.insw.proyecto.fxml.controller;
