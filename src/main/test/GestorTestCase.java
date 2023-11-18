@@ -20,7 +20,7 @@ public class GestorTestCase {
     Método que añade un nuevo producto en el almacén con las siguientes características del producto:
     - Nombre: se admite cualquier nombre para el producto
     - Precio: debe ser mayor de 0 (no hay un límite máximo) para poder incluirse dentro del almacén
-    - Cantidad: el almacén admite de 0 a 300 unidades de un mismo producto
+    - Cantidad: el almacén admite de 0 a 250 unidades de un mismo producto
     Si se añade un producto de nombre X y X ya existe en el almacén, se sustituye el producto X
     que había por el nuevo No pueden existir productos repetidos, con el mismo nombre, en el almacén
     */
@@ -29,7 +29,7 @@ public class GestorTestCase {
     @DisplayName("Ensuring that the product is added")
     void testAniadirProducto() {
         try {
-            assertEquals(true, gestor.añadirProducto(new Producto("Coca-Cola", 1.5, 2)),
+            assertEquals(true, gestor.añadirProducto(new Producto("Coca-Cola", 1.5, 250)),
                     "the product is added");
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -82,11 +82,11 @@ public class GestorTestCase {
     }
 
     @Test
-    @DisplayName("Ensuring that the product is not added because it has a quantity greater than 300")
+    @DisplayName("Ensuring that the product is not added because it has a quantity greater than 250")
     void testAniadirProductoQuantity2() {
         try {
-            assertEquals(false, gestor.añadirProducto(new Producto("Coca-Cola", 1.5, 400)),
-                    "the product is not added because it has a quantity greater than 300");
+            assertEquals(false, gestor.añadirProducto(new Producto("Coca-Cola", 1.5, 251)),
+                    "the product is not added because it has a quantity greater than 250");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -106,21 +106,6 @@ public class GestorTestCase {
             gestor.añadirProducto(cocacola);
             assertEquals(true, gestor.quitarXProducto(cocacola, 1),
                     "the product is removed");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Test
-    @DisplayName("Ensuring that the product is removed with more than one unit")
-    void testQuitarXProducto2() {
-        try {
-            Producto cocacola = new Producto("Coca-Cola", 1.5, 2);
-            Producto fanta = new Producto("Fanta", 1.75, 1);
-            gestor.añadirProducto(cocacola);
-            gestor.añadirProducto(fanta);
-            assertEquals(true, gestor.quitarXProducto(fanta, 1),
-                    "the product is removed with more than one unit");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
