@@ -36,36 +36,31 @@ class CalculatorTestCase {
     @Test
     @DisplayName("Simple concatenation should work")
     void testConcat() {
-        assertEquals("HolaMundo", calculator.concat("Hola", "Mundo"),
-                "Regular concatenation should work");
+        assertEquals("HolaMundo", calculator.concat("Hola", "Mundo"), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testNull() {
-        assertEquals("Hola", calculator.concat("Hola", null),
-                "Regular concatenation should work");
+        assertEquals("Hola", calculator.concat("Hola", null), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testNull2() {
-        assertEquals("Hola", calculator.concat(null, "Hola"),
-                "Regular concatenation should work");
+        assertEquals("Hola", calculator.concat(null, "Hola"), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testConcat2() {
-        assertEquals("HolaMundo", calculator.concat2("Hola", "Mundo"),
-                "Regular concatenation should work");
+        assertEquals("HolaMundo", calculator.concat2("Hola", "Mundo"), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testNull3() {
-        assertEquals(Calculator.EMPTY, calculator.concat2("Hola", null),
-                "Regular concatenation should work");
+        assertEquals(Calculator.EMPTY, calculator.concat2("Hola", null), "Regular concatenation should work");
     }
 
 }

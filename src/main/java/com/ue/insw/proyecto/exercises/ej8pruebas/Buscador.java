@@ -16,19 +16,23 @@ public class Buscador {
     }
 
     public boolean buscarPalabra(String palabra, List<String> lista){
-        return lista.contains(palabra);
+
+        return lista.contains(palabra); //devuelve la palabra que contenga la lista
     }
 
     public String devolverPalabra(List<String> lista, int posicion){
-        return lista.get(posicion);
+
+        return lista.get(posicion); //devuelve la palabra de la posicion que le hayamos introducido
     }
 
     public String devolverPrimerElemento(List<String> lista){
-        return lista.get(0);
+
+        return lista.get(0); //devuelve el elememto de la primera posicion
     }
 
     public String devolverUltimoElemento(List<String> lista){
-        return lista.get(lista.size());
+
+        return lista.get(lista.size()-1); //devuelve el size del array, que seria 3, y le resta 1 posicion para que devuelva el ultimo elemento
     }
 
 }
