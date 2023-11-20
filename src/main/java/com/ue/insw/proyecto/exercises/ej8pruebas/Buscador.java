@@ -25,9 +25,12 @@ public class Buscador {
         }
     }
 
-    public String devolverPalabra(List<String> lista, int posicion){
+    public String devolverPalabra(List<String> lista, int posicion) throws Exception{
         if(posicion>lista.size()){
-            return "Index out of bounds exception";
+            throw new Exception("Index out of bounds exception");
+        }
+        else if(posicion<0){
+            throw new Exception("Posicion negativa, eso no es posible");
         }
         else {
             return lista.get(posicion);

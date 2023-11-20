@@ -1,4 +1,5 @@
 import com.ue.insw.proyecto.exercises.ej8pruebas.Buscador;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -69,13 +70,45 @@ public class BuscadorTestCase {
     }
     @Test
     @DisplayName("DevolverPalabra should work")
-    void testDevolverPalabra(){
+    void testDevolverPalabraPosicionNegativa() throws Exception {
         List<String> listPalabras = new ArrayList<String>();
         listPalabras.add("e");
         listPalabras.add("f");
         listPalabras.add("g");
         listPalabras.add("h");
-        assertEquals("e", buscador.devolverPalabra(listPalabras,0));
+        Exception exception = assertThrows(Exception.class, () -> {
+            buscador.devolverPalabra(listPalabras,-50);
+        });
+
+        String expectedMessage = "Posicion negativa, eso no es posible";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.equals(expectedMessage));
+    }
+    @Test
+    @DisplayName("devolverPalabra should work")
+    void testDevolverPalabraListaExcedida() throws Exception {
+        List<String> listPalabras = new ArrayList<String>();
+        listPalabras.add("e");
+        listPalabras.add("f");
+        listPalabras.add("g");
+        listPalabras.add("h");
+        Exception exception = assertThrows(Exception.class, () -> {
+            buscador.devolverPalabra(listPalabras,50);
+        });
+
+        String expectedMessage = "Index out of bounds exception";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.equals(expectedMessage));
+    }
+    @Test
+    @DisplayName("devolverPalabra should work")
+    void testDevolverPalabra() throws Exception{
+        List<String> listP = new ArrayList<String>();
+        listP.add("i");
+        listP.add("j");
+        listP.add("k");
+        listP.add("l");
+        assertEquals("i", buscador.devolverPalabra(listP,0));
     }
     @Test
     @DisplayName("DevolverPrimerElemento should work")
