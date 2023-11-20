@@ -2,27 +2,43 @@ package com.ue.insw.proyecto.exercises.ej8pruebas;
 import java.util.List;
 
 public class Buscador {
-
     public boolean buscarFrase(String frase, List<String> lista) {
-        for(String phrase: lista){
-            if(phrase.equals(frase)){
+        if (frase == null || lista == null) {
+            return false;  // O maneja este caso según la lógica de tu aplicación
+        }
+        for (String phrase : lista) {
+            if (frase.equals(phrase)) {
                 return true;
-            } else {
-                return false;
             }
         }
         return false;
     }
-    public boolean buscarPalabra(String palabra, List<String> lista){
+
+    public boolean buscarPalabra(String palabra, List<String> lista) {
         return lista.contains(palabra);
     }
-    public String devolverPalabra(List<String> lista, int posicion){
+
+    public String devolverPalabra(List<String> lista, int posicion) {
+        if (lista == null) {
+            throw new IllegalArgumentException("La lista no puede ser nula");
+        }
+        if (posicion < 0 || posicion >= lista.size()) {
+            throw new IndexOutOfBoundsException("Posición fuera de rango");
+        }
         return lista.get(posicion);
     }
-    public String devolverPrimerElemento(List<String> lista){
+
+    public String devolverPrimerElemento(List<String> lista) {
+        if (lista == null || lista.isEmpty()) {
+            throw new IllegalArgumentException("La lista es nula o esta vacía");
+        }
         return lista.get(0);
     }
-    public String devolverUltimoElemento(List<String> lista){
-        return lista.get(lista.size()-1);
+
+    public String devolverUltimoElemento(List<String> lista) {
+        if (lista == null || lista.isEmpty()) {
+            throw new IllegalArgumentException("La lista es nula o esta vacía");
+        }
+            return lista.get(lista.size() - 1);
     }
 }
