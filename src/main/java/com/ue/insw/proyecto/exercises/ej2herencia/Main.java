@@ -8,7 +8,8 @@ public class Main {
         Human humano= new Human("Caucasico","Noe",90);
 
         System.out.println(perro.toString());
-        System.out.println(gato.toString());
+        System.out.println(perro.speak("tengo hambre"));
+        System.out.println(gato.quienSoy());
         System.out.println(humano.toString());
 
         //todo crear dog, cat y human y llamar a método speak

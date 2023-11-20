@@ -7,7 +7,7 @@ public class Human extends Animal implements habalar {
     }
 
     @Override
-    public String speak() {
+    public String speak(String mensaje) {
         return "Hola";
     }
 

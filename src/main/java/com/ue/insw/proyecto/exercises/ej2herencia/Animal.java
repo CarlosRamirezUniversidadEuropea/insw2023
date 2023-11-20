@@ -23,12 +23,12 @@ public class Animal implements habalar{
 
     @Override
     public String toString() {
-        return " Animal { "+" Raza:"+raza+" Nombre: "+nombre+" Edad: "+edad+ " Speak: "+speak()+" } ";
+        return " Animal { "+" Raza:"+raza+" Nombre: "+nombre+" Edad: "+edad+ " Speak: "+" } ";
 
     }
 
     @Override
-    public String speak() {
-        return null;
+    public String speak(String mensaje) {
+        return mensaje;
     }
 }

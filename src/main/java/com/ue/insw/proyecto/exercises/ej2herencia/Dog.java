@@ -7,8 +7,8 @@ public class Dog extends Animal implements habalar {
     }
 
     @Override
-    public String speak() {
-        return "guau";
+    public String speak(String mensaje) {
+        return "guau" + mensaje;
     }
 
 

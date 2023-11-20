@@ -8,9 +8,13 @@ public class Cat extends Animal implements habalar {
         this.setEdad(edad);
     }
 
+    public String quienSoy(){
+        return "soy un gato";
+    }
+
     @Override
-    public String speak() {
-        return "Miau";
+    public String speak(String mensaje) {
+        return "Miau" + mensaje;
     }
 
 

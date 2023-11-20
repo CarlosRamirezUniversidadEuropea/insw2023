@@ -15,7 +15,7 @@ public class Calculator {
 	 * @param a The first parameter
 	 * @param b The second parameter
 	 * @return The result of multiplying a by b 
-	 */
+	 */ 	
     public int multiply(int a, int b) {
         return a * b;
     }
