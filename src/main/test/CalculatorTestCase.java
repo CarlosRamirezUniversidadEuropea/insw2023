@@ -1,71 +1,66 @@
-
-//todo importar Junit en maven y ejecutar test
-import static org.junit.jupiter.api.Assertions.*;
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
 
 import com.ue.insw.proyecto.exercises.ej8pruebas.Calculator;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-
 class CalculatorTestCase {
-
-
     Calculator calculator;
+
+    CalculatorTestCase() {
+    }
 
     @BeforeEach
     void setUp() {
-        calculator = new Calculator();
+        this.calculator = new Calculator();
     }
 
     @Test
     @DisplayName("Simple multiplication should work")
     void testMultiply() {
-        assertEquals(20, calculator.multiply(4, 5),
-                "Regular multiplication should work");
+        Assertions.assertEquals(20, this.calculator.multiply(4, 5), "Regular multiplication should work");
     }
 
     @RepeatedTest(5)
     @DisplayName("Ensure correct handling of zero")
     void testMultiplyWithZero() {
-        assertEquals(0, calculator.multiply(0, 5), "Multiple with zero should be zero");
-        assertEquals(0, calculator.multiply(5, 0), "Multiple with zero should be zero");
+        Assertions.assertEquals(0, this.calculator.multiply(0, 5), "Multiple with zero should be zero");
+        Assertions.assertEquals(0, this.calculator.multiply(5, 0), "Multiple with zero should be zero");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testConcat() {
-        assertEquals("HolaMundo", calculator.concat("Hola", "Mundo"),
-                "Regular concatenation should work");
+        Assertions.assertEquals("HolaMundo", this.calculator.concat("Hola", "Mundo"), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testNull() {
-        assertEquals("Hola", calculator.concat("Hola", null),
-                "Regular concatenation should work");
+        Assertions.assertEquals("Hola", this.calculator.concat("Hola", (String)null), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testNull2() {
-        assertEquals("Hola", calculator.concat(null, "Hola"),
-                "Regular concatenation should work");
+        Assertions.assertEquals("Hola", this.calculator.concat((String)null, "Hola"), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testConcat2() {
-        assertEquals("HolaMundo", calculator.concat2("Hola", "Mundo"),
-                "Regular concatenation should work");
+        Assertions.assertEquals("HolaMundo", this.calculator.concat2("Hola", "Mundo"), "Regular concatenation should work");
     }
 
     @Test
     @DisplayName("Simple concatenation should work")
     void testNull3() {
-        assertEquals(Calculator.EMPTY, calculator.concat2("Hola", null),
-                "Regular concatenation should work");
+        Assertions.assertEquals("vacio", this.calculator.concat2("Hola", (String)null), "Regular concatenation should work");
     }
-
 }
