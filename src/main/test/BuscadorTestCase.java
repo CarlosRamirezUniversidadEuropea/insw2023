@@ -24,17 +24,27 @@ class BuscadorTestCase {
     }
 
     @Test
-    @DisplayName("BuscarFrase")
-    void testBuscarFrase() {
+    @DisplayName("Buscar palabra que esta en la lista")
+    void testBuscarFraseEnLista() {
         list = new ArrayList<>();
         list.add("Hola");
         list.add("Que");
         list.add("Tal");
-        assertTrue(buscador.buscarFrase("Hola", list)); // assertEquals pero con expected: true
+        assertTrue(buscador.buscarFrase("Hola", list));
+    }
+
+    @Test
+    @DisplayName("Buscar palabra que no esta en la lista")
+    void testBuscarFraseNoEnLista() {
+        list = new ArrayList<>();
+        list.add("Hola");
+        list.add("Que");
+        list.add("Tal");
+        assertFalse(buscador.buscarFrase("Adios", list));
     }
     @Test
-    @DisplayName("BuscarPalabra")
-    void testBuscarPalabra() {
+    @DisplayName("Buscar palabra que esta en la lista")
+    void testBuscarPalabraEnLista() {
         list = new ArrayList<>();
         list.add("Hola");
         list.add("Que");
@@ -43,8 +53,18 @@ class BuscadorTestCase {
     }
 
     @Test
-    @DisplayName("DevolverPalabra")
-    void testDevolverPalabra() {
+    @DisplayName("Buscar palabra que no esta en la lista")
+    void testBuscarPalabraNoEnLista() {
+        list = new ArrayList<>();
+        list.add("Hola");
+        list.add("Que");
+        list.add("Tal");
+        assertFalse(buscador.buscarPalabra("Adios", list)); // assertEquals pero con expected: true
+    }
+
+    @Test
+    @DisplayName("Devolver palabra con una posicion valida")
+    void testDevolverPalabraPosicionValida() {
         list = new ArrayList<>();
         list.add("Hola");
         list.add("Que");
@@ -53,7 +73,17 @@ class BuscadorTestCase {
     }
 
     @Test
-    @DisplayName("DevolverPrimerElemento")
+    @DisplayName("Devolver palabra con una posicion invalida")
+    void testDevolverPalabraPosicionInvalida() {
+        list = new ArrayList<>();
+        list.add("Hola");
+        list.add("Que");
+        list.add("Tal");
+        assertNull(null, buscador.devolverPalabra(list, 5));
+    }
+
+    @Test
+    @DisplayName("Devolver el primer elemento con una lista con cosas")
     void testDevolverPrimerElemento() {
         list = new ArrayList<>();
         list.add("Hola");
@@ -63,12 +93,24 @@ class BuscadorTestCase {
     }
 
     @Test
-    @DisplayName("DevolverUltimoElemento")
+    @DisplayName("Devolver el primer elemento con una lista null")
+    void testDevolverPrimerElementoListaNUll() {
+        assertNull(null, buscador.devolverPrimerElemento(null));
+    }
+
+    @Test
+    @DisplayName("Devolver el ultimo elemeto con una lista con cosas")
     void testDevolverUltimoElemento() {
         list = new ArrayList<>();
         list.add("Hola");
         list.add("Que");
         list.add("Tal");
         assertEquals("Tal", buscador.devolverUltimoElemento(list));
+    }
+
+    @Test
+    @DisplayName("Devolver ultimo elemento con una lista null")
+    void testDevolverUltimoElementoListaNull() {
+        assertNull(null, buscador.devolverUltimoElemento(null));
     }
 }
