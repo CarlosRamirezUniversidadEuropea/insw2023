@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
-        String ruta = "src/main/java/com/ue/insw/proyecto/exercises/json/person.json";
+        String ruta = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/person.json";
         // Create a File object for the JSON file
         File file = new File(ruta);
         Gson gson = new Gson();
