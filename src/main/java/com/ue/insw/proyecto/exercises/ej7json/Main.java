@@ -30,8 +30,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // Ruta al archivo JSON de persona local (cambiar a la ubicación correcta)
-        String ruta = "persona.json";
+        String ruta = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/person.json";
+        // Create a File object for the JSON file
         File file = new File(ruta);
         Gson gson = new Gson();
 
