@@ -8,19 +8,27 @@ public class Buscador {
         for(String phrase: lista){
             if(phrase.equals(frase)){
                 return true;
-            } else {
-                return false;
             }
         }
         return false;
     }
 
-    public boolean buscarPalabra(String palabra, List<String> lista){
-        return lista.contains(palabra);
+    public boolean buscarPalabra(String palabra, List<String> lista) {
+        if (lista != null) {
+            return lista.contains(palabra);
+        }else{
+            return false;
+        }
     }
 
-    public String devolverPalabra(List<String> lista, int posicion){
-        return lista.get(posicion);
+    public String devolverPalabra(List<String> lista, int posicion)  {
+        if(posicion<=lista.size()-1 && posicion>=0) {
+            return lista.get(posicion);
+        }
+        else{
+           return null;
+        }
+
     }
 
     public String devolverPrimerElemento(List<String> lista){
@@ -28,7 +36,7 @@ public class Buscador {
     }
 
     public String devolverUltimoElemento(List<String> lista){
-        return lista.get(lista.size());
+        return lista.get(lista.size()-1);
     }
 
 }
