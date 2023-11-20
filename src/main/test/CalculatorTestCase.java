@@ -1,5 +1,3 @@
-
-//todo importar Junit en maven y ejecutar test
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.ue.insw.proyecto.exercises.ej8pruebas.Calculator;
@@ -8,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 
 class CalculatorTestCase {
 
@@ -66,6 +65,17 @@ class CalculatorTestCase {
     void testNull3() {
         assertEquals(Calculator.EMPTY, calculator.concat2("Hola", null),
                 "Regular concatenation should work");
+    }
+
+    @Test
+    @DisplayName("Simple summatory should work")
+    void testSummatory() {
+        assertEquals(91, calculator.calcularSumatorio(new ArrayList<Integer>(){{
+            add(1);
+            add(50);
+            add(40);
+        }}),
+                "Regular summatory should work");
     }
 
 }
