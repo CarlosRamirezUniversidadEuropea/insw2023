@@ -1,3 +1,5 @@
+package com.ue.insw.proyecto.exercises.ej5diagramaclases;
+
 public class Empleado extends Persona {
     private double sueldo_bruto;
 

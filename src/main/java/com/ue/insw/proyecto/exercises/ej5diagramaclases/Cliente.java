@@ -1,3 +1,5 @@
+package com.ue.insw.proyecto.exercises.ej5diagramaclases;
+
 public class Cliente extends Persona {
     private String nombre_empresa;
     private String telefono_de_contacto;
