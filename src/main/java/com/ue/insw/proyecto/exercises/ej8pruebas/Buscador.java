@@ -8,8 +8,6 @@ public class Buscador {
         for(String phrase: lista){
             if(phrase.equals(frase)){
                 return true;
-            } else {
-                return false;
             }
         }
         return false;
@@ -28,7 +26,7 @@ public class Buscador {
     }
 
     public String devolverUltimoElemento(List<String> lista){
-        return lista.get(lista.size());
+        return lista.get(lista.size()-1);
     }
 
 }
