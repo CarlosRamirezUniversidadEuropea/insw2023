@@ -7,14 +7,14 @@ package com.ue.insw.proyecto.exercises.ej8pruebas;
  */
 public class Calculator {
 	
-	public final static String EMPTY = "vacio";
+	public final static String EMPTY = "";
 
 	/**
 	 * Calculates multiplication of two Integer parameters
 	 * 
 	 * @param a The first parameter
 	 * @param b The second parameter
-	 * @return The result of multiplying a by b 
+	 * @return The result of multiplying a times b 
 	 */
     public int multiply(int a, int b) {
         return a * b;

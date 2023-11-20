@@ -8,76 +8,10 @@ public class Print {
 
 	private void m1(String palabra) {
 		//Imprime palabra 70 veces
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
+		for(int i =0; i<70;i++){
+			System.out.println(palabra);
+		}
+		
 	}
 
 }
