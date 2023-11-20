@@ -27,8 +27,15 @@ public class Buscador {
         return lista.get(0);
     }
 
-    public String devolverUltimoElemento(List<String> lista){
-        return lista.get(lista.size());
+    public String devolverUltimoElemento(List<String> lista) {
+        if (!lista.isEmpty()) {
+            // Restamos 1
+            return lista.get(lista.size() - 1);
+        } else {
+            // poemos fin de lista
+            return "Fi Lista";
+        }
     }
 
 }
+
