@@ -8,15 +8,17 @@ public class Buscador {
         for(String phrase: lista){
             if(phrase.equals(frase)){
                 return true;
-            } else {
-                return false;
             }
         }
         return false;
     }
 
-    public boolean buscarPalabra(String palabra, List<String> lista){
-        return lista.contains(palabra);
+    public boolean buscarPalabra(String palabra, List<String> lista) {
+        if (lista != null) {
+            return lista.contains(palabra);
+        }else{
+            return false;
+        }
     }
 
     public String devolverPalabra(List<String> lista, int posicion){
@@ -28,7 +30,7 @@ public class Buscador {
     }
 
     public String devolverUltimoElemento(List<String> lista){
-        return lista.get(lista.size());
+        return lista.get(lista.size()-1);
     }
 
 }
