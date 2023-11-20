@@ -1,3 +1,4 @@
+package com.ue.insw.proyecto;
 
 //todo importar Junit en maven y ejecutar test
 import static org.junit.jupiter.api.Assertions.*;
