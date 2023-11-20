@@ -70,18 +70,16 @@ public class Bicycle extends  Vehicle implements Cleanable {
     public void setBrand(Brand brand) {this.brand = brand; }
     public Color getColor() {return color; }
     public void setColor(Color color) {this.color = color; }
-    public Color getCMaxSpeed() {return maxSpeed; }
+    public int getCMaxSpeed() {return maxSpeed; }
 
     //la velocidad tiene que estar en numero positivo, encapsulamiento, modificar metodo
 
     public void setMaxSpeed(int maxSpeed) {this.maxSpeed = maxSpeed; }
-    public int getSpeed() {return speed; }
 
     public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public void setSpeed(int Speed) {this.speed = speed; }
     public Status getStatus() {return status; }
     public void setStatus(Status status) {this.status = status; }
 
