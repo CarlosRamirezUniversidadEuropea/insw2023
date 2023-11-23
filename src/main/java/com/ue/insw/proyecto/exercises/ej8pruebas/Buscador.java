@@ -4,7 +4,7 @@ import java.util.List;
 public class Buscador {
     public boolean buscarFrase(String frase, List<String> lista) {
         if (frase == null || lista == null) {
-            return false;  // O maneja este caso según la lógica de tu aplicación
+            return false;
         }
         for (String phrase : lista) {
             if (frase.equals(phrase)) {
