@@ -16,24 +16,24 @@ public class Buscador {
     }
 
     public String devolverPalabra(List<String> lista, int posicion) {
-        if(posicion<0 || posicion>=lista.size()){
+        if (posicion < 0 || posicion >= lista.size()) {
             return null;
         }
         return lista.get(posicion);
     }
 
     public String devolverPrimerElemento(List<String> lista) {
-        if(lista == null){
+        if (lista == null) {
             return null;
         }
         return lista.get(0);
     }
 
     public String devolverUltimoElemento(List<String> lista) {
-        if(lista == null){
+        if (lista == null) {
             return null;
         }
-        return lista.get(lista.size()-1);
+        return lista.get(lista.size() - 1);
     }
 
 }

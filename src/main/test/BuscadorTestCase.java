@@ -13,8 +13,6 @@ import java.util.List;
 
 
 class BuscadorTestCase {
-
-
     Buscador buscador;
     List<String> list;
 
@@ -38,6 +36,7 @@ class BuscadorTestCase {
     void testBuscarFraseNoEnLista() {
         assertFalse(buscador.buscarFrase("Adios", list));
     }
+
     @Test
     @DisplayName("Buscar palabra que esta en la lista")
     void testBuscarPalabraEnLista() {
