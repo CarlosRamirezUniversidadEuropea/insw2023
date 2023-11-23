@@ -42,7 +42,32 @@ public class GestorTestCase{
     @DisplayName("Añadir producto 3")
     public void testAñadirProducto3() throws Exception {
         try {
-            assertFalse(gestor.añadirProducto(new Producto("Leche", 0.80, -1)), "Al haber menos de 1, el producto no debería ser añadido");
+            assertFalse(gestor.añadirProducto(new Producto("Leche", 0.80, -1)), "Al haber menos de 0, el producto no debería ser añadido");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    @DisplayName("Añadir producto 4")
+    public void testAñadirProducto4() throws Exception {
+        try {
+            try {
+                gestor.añadirProducto(new Producto("Leche", 0.80, 6));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            assertTrue(gestor.añadirProducto(new Producto("Leche", 0.80, 6)), "Al haber un producto con el mismo nombre, el producto se añade a la cantidad existente");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    @DisplayName("Añadir producto 5")
+    public void testAñadirProducto5() throws Exception {
+        try {
+            assertFalse(gestor.añadirProducto(null), "Al ser null, el producto no debería ser añadido");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -87,7 +112,7 @@ public class GestorTestCase{
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            assertFalse(gestor.quitarXProducto(new Producto("Leche", 0.80, 0), -1), "Al quitar una cantidad menor a 1, el producto no debería ser quitado");
+            assertFalse(gestor.quitarXProducto(new Producto("Leche", 0.80, 0), -1), "Al quitar una cantidad menor a 0, el producto no debería ser quitado");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

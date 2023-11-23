@@ -6,14 +6,30 @@ public class Buscador {
 
     public boolean buscarFrase(String frase, List<String> lista) {
         // CÓDIGO CORREGIDO
-        String listaString = "";
-        for (String word : lista) {
-            listaString += word;
-        }
-        if (listaString.contains(frase)) {
-            return true;
-        } else {
+        if (lista.size() == 0) {
             return false;
+        } else if (lista.size() == 1) {
+            return lista.get(0).equals(frase);
+        } else {
+            String listaString = "";
+            for (String word : lista) {
+                listaString += word;
+            }
+            if (listaString.contains(frase)) {
+                return true;
+            } else {
+                listaString = "";
+                // Añadimos espacios al concatenar esta vez
+                for (String word : lista) {
+                    listaString += word + " ";
+                }
+                if (listaString.contains(frase)) {
+                    return true;
+                } 
+                else {
+                    return false;
+                }
+            }
         }
 
         /**
@@ -43,7 +59,11 @@ public class Buscador {
 
     public String devolverUltimoElemento(List<String> lista){
         // CÓDIGO CORREGIDO
-        return lista.get(lista.size() - 1);
+        if (lista.size() == 0) {
+            return "La lista está vacía";
+        } else {
+            return lista.get(lista.size() - 1);
+        }
 
         /**
         * CÓDIGO ORIGINAL

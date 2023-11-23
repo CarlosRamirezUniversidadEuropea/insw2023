@@ -26,7 +26,7 @@ public class BuscadorTestCase {
     }
 
     // No encuentra la frase porque busca la frase entera como un elemento de la lista
-    // Después de corregir el código, da error porque no concatena con espacios
+    // Después de corregir el código, encuentra la frase a la segunda iteración
     @Test
     @DisplayName("Buscar frase 2")
     public void testBuscarFrase2(){
