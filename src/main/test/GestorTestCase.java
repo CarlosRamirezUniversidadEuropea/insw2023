@@ -44,7 +44,7 @@ public class GestorTestCase {
         assertEquals(0,m.getCantidad());
     }
     @Test
-    @DisplayName("comprobar si devuelve la cantidad del producto")
+    @DisplayName("comprobar si devuelve la cantidad que contiene el almacen")
     void ObtenerCantidad() throws Exception {
         Producto m = new Producto("manzana", 1,1);
         Producto p = new Producto("platano", 2,3);
