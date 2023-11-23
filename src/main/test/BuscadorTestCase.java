@@ -37,13 +37,13 @@ public class BuscadorTestCase {
         assertEquals(true, buscador.buscarPalabra("b", list), "BuscadorPalabra debería funcionar");
     }
     @Test
-    @DisplayName("BuscarPalabra debería funcionar")
+    @DisplayName("BuscarPalabraNull debería funcionar")
     void testBuscarPalabraNull(){
         List<String> list = new ArrayList<String>();
         list.add("a");
         list.add("b");
         list.add("c");
-        assertEquals(false, buscador.buscarPalabra("z", list), "BuscadorPalabra debería funcionar");
+        assertEquals(false, buscador.buscarPalabra(null, list), "BuscadorPalabra debería funcionar");
     }
 
     @Test
