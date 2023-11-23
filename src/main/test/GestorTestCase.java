@@ -21,23 +21,23 @@ public class GestorTestCase {
 
     @Test
     public void testGetNombre() {
-        assertEquals("Kinder Bueno", producto.getNombre());
+        assertEquals("Kinder Bueno", producto.getNombre(), "testGetNombre correcto");
     }
 
     @Test
     public void testGetPrecio() {
-        assertEquals(1.00, producto.getPrecio());
+        assertEquals(1.00, producto.getPrecio(), "testGetPrecio correcto");
     }
 
     @Test
     public void testGetCantidad() {
-        assertEquals(10, producto.getCantidad());
+        assertEquals(10, producto.getCantidad(), "testGetCantidad correcto");
     }
 
     @Test
     public void testAñadirCantidad() {
         producto.añadirCantidad(5);
-        assertEquals(15, producto.getCantidad());
+        assertEquals(15, producto.getCantidad(), "testAñadirCantidad correto");
     }
 
     @Test
@@ -48,7 +48,7 @@ public class GestorTestCase {
 
         assertTrue(gestor.añadirProducto(producto1));
         assertTrue(gestor.añadirProducto(producto2));
-        assertFalse(gestor.añadirProducto(producto3)); // Comprobar que no se puede añadir un producto nulo
+        assertFalse(gestor.añadirProducto(producto3));
     }
 
     @Test
@@ -61,8 +61,8 @@ public class GestorTestCase {
             gestor.añadirProducto(producto2);
         });
 
-        assertTrue(gestor.quitarXProducto(producto1, 50));
-        assertFalse(gestor.quitarXProducto(producto1, 150)); // Intentar quitar más cantidad de la existente
+        assertTrue(gestor.quitarXProducto(producto1, 3));
+        assertFalse(gestor.quitarXProducto(producto1, 10));
     }
 
     @Test
@@ -89,7 +89,7 @@ public class GestorTestCase {
         gestor.añadirProducto(producto1);
         gestor.añadirProducto(producto2);
 
-        assertEquals(3, gestor.getCantidadTotal());
+        assertEquals(3, gestor.getCantidadTotal(), "testGetCantidadTotal correcto");
     }
 
 
