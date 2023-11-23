@@ -98,7 +98,7 @@ class GestorTestCase {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        assertEquals(false, gestor.quitarXProducto(null, 2));
+        assertEquals(false, gestor.quitarXProducto(null, 1));
     }
 
 }
