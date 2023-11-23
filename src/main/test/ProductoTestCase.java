@@ -11,13 +11,13 @@ public class ProductoTestCase {
 
     @BeforeEach
     void setup() {
-        producto = new Producto("", 1, 1);
+        producto = new Producto("Patatas", 1, 1);
     }
 
     @Test
-    @DisplayName("Evitar que getNombre este vacio")
+    @DisplayName("getName funciona")
     void testGetNombreVacio() {
-        assertNotSame("", producto.getNombre(), "El nombre del producto no puede estar vacio");
+        assertEquals("Patatas", producto.getNombre(), "El nombre del producto no puede estar vacio");
     }
 
     @Test
