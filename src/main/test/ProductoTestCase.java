@@ -45,4 +45,10 @@ public class ProductoTestCase {
         producto.añadirCantidad(-10);
         assertEquals(10, producto.getCantidad(), "getCantidad deberia funcionar");
     }
+    @Test
+    @DisplayName("getCantidad deberia funcionar")
+    void añadirCantidadResta2(){
+        producto.añadirCantidad(-100);
+        assertEquals(0, producto.getCantidad(), "getCantidad deberia funcionar");
+    }
 }
