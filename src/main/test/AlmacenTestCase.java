@@ -48,7 +48,7 @@ public class AlmacenTestCase {
     @DisplayName("quitarXProducto should work")
     //En este caso, salta otro error, puesto que necesitaríamos otro condicional que nos devolviese false cuando se le mete un null.
     void quitarXProductoNull(){
-        assertEquals(false,null, "Eliminado correctamente");
+        assertEquals(false,null, "Producto no eliminado");
     }
     @Test
     @DisplayName("getAlmacen should work")
@@ -92,13 +92,25 @@ public class AlmacenTestCase {
     void getCantidad(){
         Producto product = new Producto("Aquarius", 1.50, 3);
         assertEquals(3, product.getCantidad(), "Precio obtenido perfectamente");
+    }@Test
+    @DisplayName("getCantidad should work")
+    void getCantidadNull(){
+        Producto product = null;
+        assertEquals(3, product.getCantidad(), "Precio no obtenido");
     }
-    /**
     @Test
     @DisplayName("añadirCantidad should work")
     void añadirCantidad(){
         Producto product = new Producto("Aquarius", 1.50, 3);
-        assertEquals(6,product.añadirCantidad(3),"");
+        product.añadirCantidad(3);
+        assertEquals(6,product.getCantidad(),"Añadido Correctamente");
     }
-    */
+    @Test
+    @DisplayName("añadirCantidad should work")
+    //En este ejemplo pasa igual, al no tener ese caso en
+    void añadirCantidadNegativo(){
+        Producto product = new Producto("Aquarius", 1.50, 3);
+        product.añadirCantidad(-3);
+        assertEquals(6,product.getCantidad(),"Producto no añadido");
+    }
 }
