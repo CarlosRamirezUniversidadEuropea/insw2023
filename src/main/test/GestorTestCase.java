@@ -24,7 +24,7 @@ public class GestorTestCase {
     }
 
     @Test
-    @DisplayName("añadir producto que supera o iguala el limite del almacen")
+    @DisplayName("añadir producto que supera o iguala el limite del almacen (30000)")
     void testAñadirProductoMaxAlmacen() {
         assertFalse(producto.getCantidad() + gestor.getCantidadTotal() >= 30000,
                 "Se ha alcanzado el limite del almacen");
