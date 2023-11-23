@@ -2,8 +2,6 @@ import com.ue.insw.proyecto.exercises.ej6iteratorpattern.List;
 import com.ue.insw.proyecto.exercises.ej8pruebas.Buscador;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.RepeatedTest;
-import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
