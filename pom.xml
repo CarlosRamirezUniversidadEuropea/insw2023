@@ -81,7 +81,7 @@
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
                            <includes>
-                              <include>Sample.java</include>
+                              <include>BuscadorTestCase.java</include>
                            </includes>
                         </configuration>
                     </execution>
