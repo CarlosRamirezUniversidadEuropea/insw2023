@@ -1,5 +1,4 @@
 
-//todo importar Junit en maven y ejecutar test
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.ue.insw.proyecto.exercises.ej8pruebas.Calculator;
@@ -7,10 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-
+import java.util.Arrays;
+import java.util.List;
 
 class CalculatorTestCase {
-
 
     Calculator calculator;
 
@@ -42,6 +41,13 @@ class CalculatorTestCase {
 
     @Test
     @DisplayName("Simple concatenation should work")
+    void testConcatWithNull() {
+        assertEquals("Mundo", calculator.concat("", "Mundo"),
+                "Regular concatenation should work");
+    }
+
+    @Test
+    @DisplayName("Simple concatenation should work")
     void testNull() {
         assertEquals("Hola", calculator.concat("Hola", null),
                 "Regular concatenation should work");
@@ -66,6 +72,47 @@ class CalculatorTestCase {
     void testNull3() {
         assertEquals(Calculator.EMPTY, calculator.concat2("Hola", null),
                 "Regular concatenation should work");
+    }
+
+    @Test
+    @DisplayName("Simple summatory should work")
+    void testSummatory(){
+        Double uno = new Double(1);
+        Double cincuenta = new Double(50);
+        Double cuarenta = new Double(40);
+        List<Double> numeros = Arrays.asList(uno,cincuenta,cuarenta);
+        double resultado = calculator.calcularSumatorio(numeros);
+        assertEquals(91, resultado,"Sumatorio should work");
+    }
+
+    @Test
+    @DisplayName("Simple summatory should work")
+    void testSummatory2(){
+        Double uno = new Double(1);
+        Double dos=new Double(2);
+        List<Double> numeros = Arrays.asList(uno,dos);
+        double resultado = calculator.calcularSumatorio(numeros);
+        assertEquals(3, resultado,"Sumatorio should work");
+    }
+
+    @Test
+    @DisplayName("Simple summatory should work")
+    void testSummatory3(){
+        Double uno = null;
+        Double dos=new Double(2);
+        List<Double> numeros = Arrays.asList(uno,dos);
+        double resultado = calculator.calcularSumatorio(numeros);
+        assertEquals(2, resultado,"Sumatorio should work");
+    }
+
+    @Test
+    @DisplayName("Simple summatory should work")
+    void testSummatory4(){
+        Double nan = Double.NaN;
+        Double dos=new Double(2);
+        List<Double> numeros = Arrays.asList(nan,dos);
+        double resultado = calculator.calcularSumatorio(numeros);
+        assertEquals(2, resultado,"Sumatorio should work");
     }
 
 }

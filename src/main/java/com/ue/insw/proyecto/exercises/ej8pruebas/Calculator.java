@@ -1,6 +1,8 @@
 package com.ue.insw.proyecto.exercises.ej8pruebas;
 
 
+import java.util.List;
+
 /**
  * Class for mathematics calculations
  * 
@@ -29,6 +31,16 @@ public class Calculator {
     		return b;
     	}
     }
+
+	public double calcularSumatorio(List<Double> precios){
+		double total = 0;
+		for(Double numero: precios){
+			if(numero!=null && !numero.isNaN()) {
+				total = total + numero;
+			}
+		}
+		return total;
+	}
     
     public String concat2(String a, String b) {
     	if(b!=null && a !=null) {
