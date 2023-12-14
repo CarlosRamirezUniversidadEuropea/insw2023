@@ -80,6 +80,9 @@
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                           <includes>
+                              <include>Sample.java</include>
+                           </includes>
                         </configuration>
                     </execution>
                 </executions>
