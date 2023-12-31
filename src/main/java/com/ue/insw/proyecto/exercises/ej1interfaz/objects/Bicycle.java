@@ -38,19 +38,26 @@ public class Bicycle extends Vehicle implements Cleanable {
         this.speed = 0;
         this.status = STOPED;
     }
-
+    private void validarVelocidadMaxima(int speed) throws Exception {
+        if ( speed > maxSpeed) {
+            throw new Exception("No puede superar la velocidad maxima");
+        }
+    }
+    private void validarVelocidadNegativa(int speed) throws Exception {
+        if ( speed > maxSpeed) {
+            throw new Exception("No puede superar la velocidad maxima");
+        }
+    }
     //todo
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-    public void startDriving(int speed) {
+    public void startDriving(int speed) throws Exception{
         // todo Create method to start driving
-        if (speed > 0 && speed < maxSpeed) {
-                this.status = ON;
-                setSpeed(speed);
-
-        }
-
+        validarVelocidadMaxima(speed);
+        validarVelocidadNegativa(speed);
+            this.status = ON;
+            setSpeed(speed);
     }
 
     @Override
@@ -82,9 +89,8 @@ public class Bicycle extends Vehicle implements Cleanable {
     public void setMaxSpeed(int maxSpeed) throws Exception {
         if (maxSpeed < 0) {
             throw new Exception("La velocidad no puede ser negativa");
-        } else {
-            this.maxSpeed = maxSpeed;
         }
+            this.maxSpeed = maxSpeed;
     }
 
     public int getSpeed() {

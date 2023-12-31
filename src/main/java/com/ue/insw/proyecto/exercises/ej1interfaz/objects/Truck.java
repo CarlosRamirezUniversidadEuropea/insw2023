@@ -61,39 +61,60 @@ public class Truck  extends Vehicle implements Cleanable {
      * @param liters   number of liters
      */
     public void fillCombustible(Gasoline gasoline, int liters) throws Exception {
-        //todo Create method to fill car
-        if (this.gasoline == gasoline) {
-            if (this.deposito == this.depMaximo) {
-                throw new Exception("El deposito esta lleno");
-            } else {
-                if (liters <= 0) {
-                    throw new Exception("No se puede llenar con litros negativos");
-                }
-                if (liters > depMaximo) {
-                    throw new Exception("Los litros no pueden superar la capacidad del deposito");
-                } else {
-                    this.deposito += liters;
-                    System.out.println("Se han ingresado los litros en el deposito");
-                }
-            }
-        }
-        throw new Exception("No coincide el tipo de gasolina");
+        validarGasolina(gasoline);
+        comprobarDeposito();
+        validarLitrosNegativos(liters);
+        validarLitrosDeposito(liters);
+
+        this.deposito += liters;
+        System.out.println("Se han ingresado los litros en el deposito");
     }
 
+    private void validarGasolina(Gasoline gasoline) throws Exception {
+        if (this.gasoline != gasoline) {
+            throw new Exception("No coincide el tipo de gasolina");
+        }
+    }
+
+    private void comprobarDeposito() throws Exception {
+        if (this.deposito == this.depMaximo) {
+            throw new Exception("El deposito esta lleno");
+        }
+    }
+
+    private void validarLitrosNegativos(int liters) throws Exception {
+        if (liters <= 0) {
+            throw new Exception("Los litros no son válidos");
+        }
+    }
+    private void validarLitrosDeposito(int liters) throws Exception {
+        if (liters > depMaximo) {
+            throw new Exception("Los litros no son válidos");
+        }
+    }
     /**
      * Starts driving the car
      *
      * @param speed desired to drive
      */
-    public void startDriving(int speed) {
-        // todo Create method to start driving
-        if (speed > 0 && speed < maxSpeed) {
-            if (deposito > 0) {
-                this.status = ON;
-                setSpeed(speed);
-            }
+    private void validarVelocidadMaxima(int speed) throws Exception {
+        if ( speed > maxSpeed) {
+            throw new Exception("No puede superar la velocidad maxima");
         }
-
+    }
+    private void validarVelocidadNegativa(int speed) throws Exception {
+        if ( speed > maxSpeed) {
+            throw new Exception("No puede superar la velocidad maxima");
+        }
+    }
+    public void startDriving (int speed) throws Exception {
+        // todo Create method to start driving
+        validarVelocidadMaxima(speed);
+        validarVelocidadNegativa(speed);
+        if(deposito > 0){
+            this.status = ON;
+            setSpeed(speed);
+        }
     }
 
     @Override

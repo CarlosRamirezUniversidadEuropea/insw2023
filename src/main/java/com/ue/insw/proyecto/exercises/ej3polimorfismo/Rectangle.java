@@ -16,8 +16,8 @@ public class Rectangle extends Shape {
     }
     @Override
     public double calculatePerimeter() {
-        perimetro = 2*ladoCorto + 2*ladoLargo;
-        return perimetro;
+        perimetro =  2 * (ladoCorto + ladoLargo);
+        return  perimetro;
     }
 
     @Override
