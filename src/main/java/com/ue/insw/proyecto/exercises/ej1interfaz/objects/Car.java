@@ -19,8 +19,8 @@ public class Car extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
-    private int tankCurrCapacity;
-    private int tankMaxCapacity;
+    private float tankCurrCapacity;
+    private float tankMaxCapacity;
     private Gasoline gasoline;
 
     public Car(Brand brand, Color color, int maxSpeed, BigDecimal price, Gasoline gasoline, int tankMaxCapacity) throws Exception{
@@ -30,7 +30,7 @@ public class Car extends Vehicle implements Cleanable {
         this.maxSpeed = maxSpeed;
         this.speed = 0;
         this.status = STOPPED;
-        this.tankCurrCapacity = tankMaxCapacity;
+        this.tankCurrCapacity = (float) (tankMaxCapacity*0.5);
         this.tankMaxCapacity = tankMaxCapacity;
         // check if the gasoline is a valid one from the enum
         if (gasoline != Gasoline.OCTANE_95 && gasoline != Gasoline.OCTANE_98 && gasoline != Gasoline.GASOLEO_A) {
