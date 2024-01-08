@@ -1,6 +1,8 @@
 package com.ue.insw.proyecto.exercises.ej1interfaz.objects;
 
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Brand;
 import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Color;
+import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline;
 import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Status;
 import com.ue.insw.proyecto.exercises.ej1interfaz.interfaces.Cleanable;
 import java.math.BigDecimal;
@@ -16,14 +18,21 @@ public class Bicycle extends Vehicle implements Cleanable {
     private int maxSpeed;
     private int speed;
     private Status status;
+    private Brand brand;
 
+    private int presionRuedas;
 
-    public Bicycle(BigDecimal price, Color color, int maxSpeed, int speed) {
+    private int presion_actual;
+
+    public Bicycle(BigDecimal price, Color color, int maxSpeed, int speed, Brand brand, int presionRuedas, int presion_actual) {
         super(price);
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.speed = speed;
         this.status = STOPED;
+        this.brand= brand;
+        this.presion_actual= presion_actual;
+        this.presionRuedas= presionRuedas;
     }
 
     public void on() {
@@ -45,10 +54,6 @@ public class Bicycle extends Vehicle implements Cleanable {
         this.status = status;
     }
 
-    public Bicycle(BigDecimal price) {
-        super(price);
-    }
-
     //todo
     public void setSpeed(int speed) {
         this.speed = speed;
@@ -59,22 +64,15 @@ public class Bicycle extends Vehicle implements Cleanable {
         return color;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
     public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+        if(maxSpeed>0){
+            this.maxSpeed = maxSpeed;
+        }else{
+            System.out.println("La velocidad no puede ser negativa");
+        }
     }
 
-    public int getSpeed() {
-        return speed;
-    }
 
     public void startDriving(int speed) {
         if (speed > 0) {
@@ -83,10 +81,20 @@ public class Bicycle extends Vehicle implements Cleanable {
         }
 
     }
+    public void fillRuedas(int presionInrtoducida){
+        System.out.println("Se estan hinchadon las ruedas");
+        if (presion_actual+presionInrtoducida>presionRuedas){
+            System.out.println("La presion excede la capacidad ");
+        }
+        else{
+            presion_actual = presion_actual+presionInrtoducida;
+            System.out.println("Ruedas hinchadas correctamente");
+        }
+    }
 
     public String toString() {
 
-        return "Bicicleta{" + " color=" + color + ", maxSpeed=" + maxSpeed + ", speed=" + speed + ", status=" + status + '}';
+        return "Bicicleta{" + " color=" + color + ", maxSpeed=" + maxSpeed + ", speed=" + speed + ", status=" + status +  '}';
     }
 
     public void clean() {

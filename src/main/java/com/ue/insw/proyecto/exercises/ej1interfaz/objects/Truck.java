@@ -36,9 +36,6 @@ public class Truck extends Vehicle implements Cleanable  {
         this.status = STOPED;
     }
 
-    public Truck(BigDecimal price) {
-        super(price);
-    }
 
     //todo
     public void on() {
@@ -83,8 +80,15 @@ public class Truck extends Vehicle implements Cleanable  {
     }
 
     //todo la velocidad tiene que ser un numero positivo, modificar método, encapsulamiento
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public int  setMaxSpeed(int maxSpeed) {
+        if(maxSpeed>0){
+            this.maxSpeed = maxSpeed;
+            return maxSpeed;
+
+        }else{
+            System.out.println("La velocidad no puede ser negativa");
+            return 0;
+        }
     }
 
     public int getSpeed() {
@@ -106,7 +110,7 @@ public class Truck extends Vehicle implements Cleanable  {
         }
         else{
             litros_actuales = litros;
-            System.out.println("Deposiyo llenado correctamente");
+            System.out.println("Deposito llenado correctamente");
             capacidad = capacidad - litros;
         }
     }

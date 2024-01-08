@@ -32,6 +32,14 @@ public class Persona {
         this.last_name = last_name;
     }
 
+    public boolean isOnline() {
+        return online;
+    }
+
+    public void setOnline(boolean online) {
+        this.online = online;
+    }
+
     public String getLocation() {
         return location;
     }
@@ -40,13 +48,6 @@ public class Persona {
         this.location = location;
     }
 
-    public boolean isOnline() {
-        return online;
-    }
-
-    public void setOnline(boolean online) {
-        this.online = online;
-    }
 
     public int getFollowers() {
         return followers;
