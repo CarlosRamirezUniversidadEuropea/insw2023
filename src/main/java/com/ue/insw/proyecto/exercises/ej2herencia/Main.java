@@ -9,13 +9,18 @@ public class Main {
         Human human = new Human("Humano", "Ishmael", 20);
 
         // Hacer que los animales hablen
+        System.out.println("El perro dice: ");
         dog.speak();
+        System.out.println("El gato dice: ");
         cat.speak();
+        System.out.println("El humano dice: ");
         human.speak();
+
+        System.out.println();
         
         // Mostrar los datos de los animales
-        dog.toString();
-        cat.toString();
-        human.toString();
+        System.out.println(dog.toString());
+        System.out.println(cat.toString());
+        System.out.println(human.toString());
     }
 }

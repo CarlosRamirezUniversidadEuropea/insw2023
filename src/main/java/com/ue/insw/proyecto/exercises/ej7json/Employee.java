@@ -23,7 +23,7 @@ public class Employee {
     }
 
     public void setName(String name) {
-        if (name.length() > 0) {
+        if (!name.isEmpty()) {
             this.name = name;
         } else {
             System.out.println("Error: El nombre no puede estar vacío");
@@ -35,7 +35,7 @@ public class Employee {
     }
 
     public void setEmail(String email) {
-        if (email.length() > 0) {
+        if (!email.isEmpty()) {
             this.email = email;
         } else {
             System.out.println("Error: El correo electrónico no puede estar vacío");
@@ -72,7 +72,7 @@ public class Employee {
     }
 
     public void setBirth(String birth) {
-        if (birth.length() > 0) {
+        if (!birth.isEmpty()) {
             this.birth = birth;
         } else {
             System.out.println("Error: La fecha de nacimiento no puede estar vacía");

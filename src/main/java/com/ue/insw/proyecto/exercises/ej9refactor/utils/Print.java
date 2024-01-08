@@ -7,77 +7,7 @@ public class Print {
 	}
 
 	private void m1(String palabra) {
-		//Imprime palabra 70 veces
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
-		System.out.println(palabra);
+		//Nota: Se elimina las 70 veces que se imprime la palabra
 		System.out.println(palabra);
 	}
-
 }

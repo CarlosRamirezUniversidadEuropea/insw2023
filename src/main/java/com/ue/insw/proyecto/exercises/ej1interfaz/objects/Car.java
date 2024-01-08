@@ -98,12 +98,7 @@ public class Car extends Vehicle implements Cleanable {
         if (speed > this.maxSpeed) {
             this.speed = this.maxSpeed;
         }
-        else if (speed < 0) {
-            this.speed = 0;
-        }
-        else {
-            this.speed = speed;
-        }
+        else this.speed = Math.max(speed, 0);
     }
 
     @Override

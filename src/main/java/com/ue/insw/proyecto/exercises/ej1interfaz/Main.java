@@ -7,26 +7,37 @@ import com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline;
 
 import java.math.BigDecimal;
 
+import static com.ue.insw.proyecto.exercises.ej1interfaz.enumerates.Gasoline.OCTANE_98;
+
 public class Main {
 
     public static void main(String[] args) {
         // Creamos un coche y probamos que tódos los métodos funcionan.
-        Car gt3rs = null;
         try {
-            gt3rs = new Car(Brand.PORSCHE, Color.BLACK, 296, new BigDecimal(287000), Gasoline.OCTANE_98, 92);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (gt3rs != null) {
+            Car gt3rs = new Car(Brand.PORSCHE, Color.BLACK, 296, new BigDecimal(287000), OCTANE_98, 92);
+
             System.out.println(gt3rs.getPrice());
             System.out.println(gt3rs.getBrand());
             System.out.println(gt3rs.getColor());
-            System.out.println(gt3rs.toString());
+            System.out.println(gt3rs.getMaxSpeed());
+            System.out.println(gt3rs.getSpeed());
+            System.out.println(gt3rs.getStatus());
+            System.out.println(gt3rs);
             gt3rs.clean();
+            try {
+                gt3rs.fillCombustible(OCTANE_98, 100);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             gt3rs.on();
             gt3rs.setSpeed(100);
             System.out.println(gt3rs.getSpeed());
             gt3rs.stop();
+            System.out.println(gt3rs.getStatus());
+            gt3rs.setColor(Color.RED);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

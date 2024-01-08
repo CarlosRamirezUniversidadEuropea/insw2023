@@ -1,6 +1,7 @@
 package com.ue.insw.proyecto.exercises.ej7json;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
@@ -15,7 +16,10 @@ import java.nio.file.Paths;
 public class Main {
     public static void main(String[] args) {
         // Create a Gson object
-        Gson gson = new Gson();
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+
 
         String ruta_1 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/person.json";
         String ruta_2 = "src/main/java/com/ue/insw/proyecto/exercises/ej7json/json/employees.json";
@@ -33,10 +37,11 @@ public class Main {
                 Persona person = gson.fromJson(reader, Persona.class);
 
                 // Print the data from the Java object
-                System.out.println(person.getFirst_name());
-                System.out.println(person.getLast_name());
-                System.out.println(person.getLocation());
-                System.out.println(person.getFollowers());
+                System.out.println("Information of the person:");
+                System.out.println(" - First name: " + person.getFirst_name());
+                System.out.println(" - Last name: " + person.getLast_name());
+                System.out.println(" - Location: " + person.getLocation());
+                System.out.println(" - Followers: " + person.getFollowers());
 
                 
                 // Read the JSON file into a string
@@ -45,14 +50,18 @@ public class Main {
                 // Convert the JSON string to a Java object
                 Employee[] employee = gson.fromJson(reader2, Employee[].class);
 
-                for (int i = 0; i < args.length; i++) {
+                // make the for loop iterate over the employees
+                for (int i = 0; i < employee.length; i++) {
                     // Print the data from the Java object
-                    System.out.println(employee[i].getFirst_name());
-                    System.out.println(employee[i].getLast_name());
-                    System.out.println(employee[i].getLocation());
-                    System.out.println(employee[i].getFollowers());
+                    System.out.println("Information of the employee Nº " + i+1 + ":");
+                    System.out.println(" - First name: " + employee[i].getFirst_name());
+                    System.out.println(" - Email: " + employee[i].getEmail());
+                    System.out.println(" - Phone: " + employee[i].getPhone());
+                    System.out.println(" - Subscribed: " + employee[i].isSubscribed());
+                    System.out.println(" - Birth: " + employee[i].getBirth());
+                    System.out.println();
                 }
-                    
+
             } catch (IOException e) {
                 System.out.println("Error: No se pudo leer el archivo");
                 // Handle exceptions
@@ -75,13 +84,15 @@ public class Main {
             // Convert the JSON string to a Java object
             SensorValue[] value = gson.fromJson(jsonArray, SensorValue[].class);
 
-            for (int i = 0; i < value.length; i++) {
+            for (SensorValue sensorValue : value) {
                 // Print the data from the Java object
-                System.out.println(value[i].getNum());
-                System.out.println(value[i].getType());
-                System.out.println(value[i].getClass());
-                System.out.println(value[i].getValues());
+                System.out.println("Information for sensor " + sensorValue.getNum());
+                System.out.println(" - Sensor Nº: \t" + sensorValue.getNum());
+                System.out.println(" - Type: \t" + sensorValue.getType());
+                System.out.println(" - Value: \t" + sensorValue.getValues());
+                System.out.println();
             }
+
                 
         } catch (IOException e) {
             System.out.println("Error: No se pudo leer el archivo");
@@ -101,12 +112,13 @@ public class Main {
             // Convert the JSON string to a Java object
             Sensor[] sensor = gson.fromJson(jsonArray, Sensor[].class);
 
-            for (int i = 0; i < sensor.length; i++) {
+            for (Sensor value : sensor) {
                 // Print the data from the Java object
-                System.out.println(sensor[i].getNum());
-                System.out.println(sensor[i].getType());
-                System.out.println(sensor[i].getFields());
-                System.out.println(sensor[i].getProperties());
+                System.out.println("Information detail for sensor " + value.getNum());
+                System.out.println(" - Type: \t" + value.getType());
+                System.out.println(" - Fields: \t" + value.getFields());
+                System.out.println(" - Properties: \t" + value.getProperties());
+                System.out.println();
             }
                 
         } catch (IOException e) {

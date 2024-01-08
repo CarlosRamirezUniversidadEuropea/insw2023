@@ -102,6 +102,14 @@ class Field {
     public void setDecPrecision(int decPrecision) {
         this.decPrecision = decPrecision;
     }
+
+    public String toString() {
+        return "Field{" +
+                "name='" + name + '\'' +
+                ", unit='" + unit + '\'' +
+                ", decPrecision=" + decPrecision +
+                '}';
+    }
 }
 
 class Property {
@@ -127,5 +135,12 @@ class Property {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String toString() {
+        return "Property{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
